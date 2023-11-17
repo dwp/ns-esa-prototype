@@ -1,0 +1,77 @@
+{% extends "layoutWithPhoneNumbers.html" %}
+
+{% block pageTitle %}
+ You may not be eligible - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post">
+
+
+    <fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <h1 class="govuk-fieldset__heading">
+        Based on your answers, you may not be eligible for New Style ESA</h1>
+  </legend>
+
+  <p>New Style ESA supports you if you have a disability or health condition that affects your ability to work. If you&rsquo;re on a low income or out of work, you can apply for <a href="https://www.gov.uk/how-to-claim-universal-credit" class="govuk-link" rel="noreferrer noopener" target="_blank">Universal Credit (opens in new tab)</a> or <a href="https://www.gov.uk/guidance/new-style-jobseekers-allowance" class="govuk-link" rel="noreferrer noopener" target="_blank">New Style Jobseeker&rsquo;s Allowance (JSA) (opens in new tab)</a> instead.</p>
+
+  <p>Or you can continue to apply for New Style ESA if you still think you’re eligible for it.</p>
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h2 class="govuk-fieldset__heading">
+          What do you want to do?</h2>
+      </legend>
+
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="no-health-condition-1" name="no-health-condition" type="radio" value="uc~https://www.gov.uk/how-to-claim-universal-credit/" data-aria-controls="yes-cond">
+          <label class="govuk-label govuk-radios__label" for="no-health-condition-1">
+            Apply for Universal Credit
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="no-health-condition-2" name="no-health-condition" type="radio" value="nsjsa~https://www.gov.uk/jobseekers-allowance/">
+          <label class="govuk-label govuk-radios__label" for="no-health-condition-2">
+            Apply for New Style JSA
+          </label>
+        </div>
+<div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="no-health-condition-3" name="no-health-condition" type="radio" value="nsesa~/apply/v14/state-pension">
+          <label class="govuk-label govuk-radios__label" for="no-health-condition-3">
+            Continue to apply for New Style ESA
+          </label>
+        </div>
+
+      </div>
+    </fieldset>
+  </div>
+
+  <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+  </form>
+
+</div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+

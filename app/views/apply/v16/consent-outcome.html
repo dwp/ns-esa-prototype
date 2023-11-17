@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Consent to share the outcome with your doctor - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="checkanswers">
+
+      <div class="govuk-form-group">
+      <h1 class="govuk-heading-l">
+      Sharing the outcome of an assessment with your doctor
+      </h1>
+    <p>The Department for Work and Pensions (DWP) would like to share the decision made based on the result of your claim with your doctor, or any doctor treating you. This will help your doctor, as it will tell them when they no longer need to provide you with Statements of Fitness for Work (also known as fit notes or medical certificates) for the purposes of this claim.</p>
+    <p>DWP needs your agreement to do this.</p>
+    <p>You do not have to give your agreement. This will not affect your claim for New Style ESA. DWP will keep a record of the decision you make.</p>
+    <p>You can withdraw your agreement at any time before DWP contacts your doctor by calling them on 0800 169 0310. Welsh language telephone: 0800 328 1744. If you withdraw your agreement, DWP will not share the decision based on the outcome of your claim with your doctor. However, this will not affect the way in which DWP uses your information.</p>
+    <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h2 class="govuk-fieldset__heading">I agree to my doctor, or any other doctor treating me, being informed about the result of my claim.</h2>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="consent-1" name="consent-outcome" type="radio" value='Yes'>
+        <label class="govuk-label govuk-radios__label" for="consent-1">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="consent-2" name="consent-outcome" type="radio" value='No'>
+        <label class="govuk-label govuk-radios__label" for="consent-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+  <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+
+    </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Claim start date - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="">
+
+
+      <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" >
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What date do you want to claim from?
+              </h1>
+            </legend>
+            <p>You need evidence to cover the period – for example, a fit note (also known as a sick note) or an isolation note if you’re self-isolating because of coronavirus.</p>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="claim-hint" role="group">
+                    <div class="govuk-date-input" id="claim">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="claim-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="claim-day" name="claim-day" type="text" pattern="[0-9]*" maxlength="2">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="claim-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="claim-month" name="claim-month" type="text" pattern="[0-9]*" maxlength="2">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="claim-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="claim-year" name="claim-year" type="text" pattern="[0-9]*"maxlength="4">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+            </div>
+          </fieldset>
+                </div>
+
+            </div>
+          </fieldset>
+
+         <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div> <!-- govuk-form-group -->
+
+        <!-- <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="date-hint" role="group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                When  do you want to claim from?
+              </h1>
+            </legend>
+            <p>You'll need a self-certification form or a fit note covering the period you want to claim from.</p>
+            <span id="claim-hint" class="govuk-hint">
+              For example, 31 3 2018.
+            </span>
+            <div class="govuk-date-input" id="claim">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="claim-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="claim-day" name="claim-day" type="number" pattern="[0-9]*">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="claim-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="claim-month" name="claim-month" type="number" pattern="[0-9]*">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="claim-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="claim-year" name="claim-year" type="number" pattern="[0-9]*">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+      </div> -->
+
+
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="statutory-pay-other">
+
+
+		<div class="govuk-form-group">
+		  <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+		    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+		    	<span class="govuk-caption-l">Part 2 of 6: Work</span>
+		      <h1 class="govuk-fieldset__heading">
+		        When does your Statutory Sick Pay end?
+		      </h1>
+		    </legend>
+        <p>You can find this date on form SSP1 if your employer has given it to you. If not, check with your employer or accountant.</p>
+		    </span>
+        <span id="dob-hint" class="govuk-hint">
+          For example, 29 8 2019
+        </span>
+		    <div class="govuk-date-input" id="dob">
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="ssp-dob-day">
+		            Day
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="ssp-dob-day" name="ssp-dob-day" type="text" maxlength="2" pattern="[0-9]*">
+		        </div>
+		      </div>
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="ssp-dob-month">
+		            Month
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="ssp-dob-month" name="ssp-dob-month" type="text" maxlength="2" pattern="[0-9]*">
+		        </div>
+		      </div>
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="ssp-dob-year">
+		            Year
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="ssp-dob-year" name="ssp-dob-year" type="text" maxlength="4" pattern="[0-9]*">
+		        </div>
+		      </div>
+		    </div>
+		  </fieldset>
+		</div>
+
+		<input type="submit" class="govuk-button" value="Continue" id="submit">
+
+ 	</form>
+
+ </div>
+</div>
+
+{% endblock %}

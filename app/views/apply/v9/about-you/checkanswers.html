@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="declaration">
+
+      <h1 class="govuk-heading-l">Check your answers: your details</h1>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Sarah Philips
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="name">
+                Change<span class="govuk-visually-hidden"> first name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              5 January 1978
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              National Insurance number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              QQ 12 34 56 C
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Home address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              72 Guild Street<br>
+              London<br>
+              SE23 6FH
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> home address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Alternative contact address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              34 Guild Street<br>
+              London<br>
+              SE23 6FH
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> contact address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Mobile phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              07700 900457
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Claim start date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            18 January 2019
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        </dl>
+
+        <a href="../list?yourdetails=completed" class="govuk-button">Confirm and continue</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

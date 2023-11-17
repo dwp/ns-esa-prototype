@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="work-emp-details">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      Are you a company director?
+    </h1>
+
+    <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="work-1" name="work" type="radio" value="in_paid_work">
+          <label class="govuk-label govuk-radios__label" for="work-1">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="no_work" aria-controls="no-reveal">
+          <label class="govuk-label govuk-radios__label" for="work-3">
+            No
+          </label>
+        </div>
+      </div>
+    </div> <!-- form-group -->
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

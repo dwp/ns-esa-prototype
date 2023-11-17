@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ National Insurance number - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new window)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="address">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+      What is your National Insurance number?
+    </h1>
+
+    <div class="govuk-form-group">
+      <span id="national-insurance-number-hint" class="govuk-hint">
+        It’s on your National Insurance card, benefit letter, payslip or P60. 
+      </span>
+      <span id="national-insurance-number-hint" class="govuk-hint">
+        For example, ‘QQ 12 34 56 C’.
+      </span>
+      <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" aria-describedby="national-insurance-number-hint">
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

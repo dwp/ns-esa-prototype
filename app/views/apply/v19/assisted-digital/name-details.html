@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Name - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="2address">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+      What is your name?
+    </h1>
+
+    <div class="govuk-form-group">
+    <label class="govuk-label" for="first-name">
+    First name
+    </label>
+    <input class="govuk-input govuk-input--width-20" id="first-name" name="first-name" type="text">
+    </div>
+    <div class="govuk-form-group">
+    <label class="govuk-label" for="last-name">
+    Last name
+    </label>
+    <input class="govuk-input govuk-input--width-20" id="last-name" name="last-name" type="text">
+    </div>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+         If you need help completing your application online
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Telephone:  0300 303 5035</li>
+          <li>Textphone:  0300 303 5075</li>
+          <li><a href="#">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 7478</li>
+        </ul>
+  
+      </div>
+    </details>
+
+    
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+   
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

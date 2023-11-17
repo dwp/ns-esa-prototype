@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="consent">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Do you get money from a workplace pension scheme?
+          </h1>
+        </legend>
+
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes" data-aria-controls="yes-cond">
+            <label class="govuk-label govuk-radios__label" for="changed-name-1">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="yes-cond">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">
+                  Your workplace pension details
+                </h2>
+              </legend>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="pension-provider">
+                  Pension provider
+                  <span class="govuk-visually-hidden">line 1 of 2</span>
+                </label>
+                <input class="govuk-input govuk-!-width-one-half" id="pension-provider" name="pension-provider" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="pension-reference-number">
+                  Pension reference number
+                  <span class="govuk-visually-hidden">line 1 of 2</span>
+                </label>
+                <input class="govuk-input govuk-!-width-one-half" id="pension-reference-number" name="pension-reference-number" type="text">
+              </div>
+
+            </fieldset>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

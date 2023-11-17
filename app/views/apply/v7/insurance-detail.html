@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="insurancepremiums">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      Permanent health insurance details 
+    </h1>
+
+    <input type="hidden" value="" name="insurance-provider" id="insurance-provider-hidden"/>
+
+    <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="insurance-provider-name">
+            Insurance provider
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="insurance-provider-name" name="insurance-provider-1" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="surgery">
+            Insurance reference number
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="surgery" name="surgery" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="surgery">
+            Insurance provider telephone number
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="surgery" name="surgery" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Insurance provider address
+            <span class="govuk-visually-hidden">line 1 of 2</span>
+          </label>
+          <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-2">
+            <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+          </label>
+          <input class="govuk-input" id="address-line-2" name="address-line-2" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-town">
+            Town or city
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            County
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+        </div>
+
+    </fieldset>
+    <!-- <div class="form-group">
+      <button id="add-button" class="govuk-button button-add-another-vertical" onclick="javascript:return false">Add another</button>
+    </div> -->
+
+    <input type="submit" class="govuk-button" value="Continue" id="formbutton"><!-- insurnacepremiums -->
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+
+
+{% endblock %}
+
+
+{% block pageScripts %}
+<!--
+  Using jQuery to branch the page flow based on which radio buttons are checked.
+-->
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+
+    // grab the existing data from the session (if it is there)
+    var session_data = "{{ data['insurance-provider'] }}" ;
+    // put it in log
+    console.log(session_data);
+
+
+    // whemn button is clicked
+    $('#formbutton').on('click',function(e)
+    {
+      // don't submit the form
+      e.preventDefault();
+      // grab what was typed into the name box.
+      var name = $('#insurance-provider-name').val();
+      // add that to the existing session data
+      var new_session_data = (session_data) ? session_data + ',' + name : name;
+      // put this new data back into the form (hidden)
+      $('#insurance-provider-hidden').val(new_session_data);
+      // submit the form as usual
+      $("#form").submit();
+    })
+  });
+</script>
+
+
+
+{% endblock %}

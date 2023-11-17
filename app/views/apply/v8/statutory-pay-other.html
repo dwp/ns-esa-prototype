@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="fit-for-work">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="statutory-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Are you getting any of the following payments?
+          </h1>
+        </legend>
+        <span id="waste-hint" class="govuk-hint">
+          Select all that apply.
+        </span>
+        <div class="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="statutory-1" name="adoption" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="statutory-1">
+              Statutory Adoption Pay
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="statutory-2" name="maternal" type="checkbox" value="mines">
+            <label class="govuk-label govuk-checkboxes__label" for="statutory-2">
+              Statutory Maternity Pay
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="statutory-3" name="paternal" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="statutory-3">
+              Statutory Paternity Pay
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="statutory-4" name="shared" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="statutory-4">
+              Statutory Shared Parental Pay
+            </label>
+          </div>
+          <div class="govuk-radios__divider">or</div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="statutory-5" name="none" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="statutory-5">
+              None of these
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- expecting-to-work -->
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Who is applying - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+
+    <form id="form" method="post" action="">
+
+   <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Who is applying?</h1>
+        </legend>
+
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="someone-else" name="someone-else" type="radio" value="myself~/apply/v17/eligibility-start" aria-describedby="someone-else-item-hint">
+                <label class="govuk-label govuk-radios__label" for="someone-else">
+                  I’m applying for myself
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="someone-else-2" name="someone-else" type="radio" value="applying-someone~/apply/v17/cannot-apply-online" aria-describedby="someone-else-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="someone-else-2">
+                  I’m applying for someone else
+                </label>
+                <div id="someone-else-2-item-hint" class="govuk-hint govuk-radios__hint">
+                  I’m a registered appointee, deputy, belong to a Corporate Acting Body (CAB) or have power of attorney
+                </div>
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="someone-else-3" name="someone-else" type="radio" value="helping-somone~/apply/v17/helping-someone-apply" aria-describedby="someone-else-3-item-hint">
+              <label class="govuk-label govuk-radios__label" for="someone-else-3">
+                I’m helping someone apply
+              </label>
+              <div id="someone-else-3-item-hint" class="govuk-hint govuk-radios__hint">
+                The applicant is giving me the answers and I’m supporting them with their application
+              </div>
+            </div>
+          </div>
+        
+          </fieldset>
+        
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+          {% include "includes/get-help.html" %}
+
+</form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+

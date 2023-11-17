@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Language preference for speaking – Apply for New Style Employment and Support Allowance – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+
+    <form id="form" method="post" action="telephone">
+
+   <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+          What language do you want us to speak to you in?</h1>
+        </legend>
+
+        <p>If you live in Wales you can choose to communicate with us in Welsh.</p>
+
+        <div class="govuk-hint">This includes phone calls and face-to-face meetings.</div>
+        
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="language-preference-speaking-1" name="language-preference-speaking" type="radio" value='English' data-aria-controls="yes-cond">
+            <label class="govuk-label govuk-radios__label" for="language-preference-speaking-1">
+              English
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="language-preference-speaking-2" name="language-preference-speaking" type="radio" value='Welsh'>
+            <label class="govuk-label govuk-radios__label" for="language-preference-speaking-2">
+              Welsh
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+
+

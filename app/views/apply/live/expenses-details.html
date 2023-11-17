@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Expenses detail - {{ data['employer-details'] | split(',') | last | default("Asda")}} - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+    <form id="form" method="post" action="work-another">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+        What are the expenses for and how much do you get?
+        </h1>
+        </legend>
+
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
+          <div class="govuk-form-group">
+            <div id="with-hint-hint" class="govuk-hint">
+              Give as much information as you can.
+            </div>
+            <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+          </div>
+
+          <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+            You can enter up to 500 characters
+          </div>
+
+        </div>
+
+          
+
+          <input type="submit" class="govuk-button" value="Continue" id="submit">
+        </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+
+        {% endblock %}

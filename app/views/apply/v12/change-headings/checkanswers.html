@@ -1,0 +1,791 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new window)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="declaration">
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <h1 class="govuk-heading-l">
+          Check your answers before sending your application
+        </h1>
+
+        <!-- only add a heading for a list if there is more than one list -->
+
+
+          <h2 class="govuk-heading-m">
+          Personal details
+          </h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Sarah Philips
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> first name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              5 January 1978
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              National Insurance number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              QQ 12 34 56 C
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Home address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              72 Guild Street<br>
+              London<br>
+              SE23 6FH
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> home address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Alternative contact address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              34 Guild Street<br>
+              London<br>
+              SE23 6FH
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> contact address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Mobile phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              07700 900457
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+        <h2 class="govuk-heading-m">
+          Your health conditions
+        </h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Claiming because of coronavirus
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> conditions</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date first affected by coronavirus
+            </dt>
+            <dd class="govuk-summary-list__value">
+              3 March 2020
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> conditions</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Other health conditions
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> conditions</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Conditions
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Abdominal pain<br>
+              Started 1 June 2013<br>
+              <br>
+              Broken leg<br>
+              Started 20 November 2018
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> conditions</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Doctor's details
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Dr Sarah Philips<br>
+              72 Guild street<br>
+              London<br>
+              SF23 6FH<br>
+              020 7946 0809<br>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> licence period</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Life expectancy
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Could be less than 6 months<br>
+              More than 6 months<br>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> life expectancy</span>
+              </a>
+            </dd>
+          </div>
+         <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              DS1500 form sent
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Currently in hospital
+             </dt>
+             <dd class="govuk-summary-list__value">
+               Yes
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a href="#">
+                 Change
+               </a>
+             </dd>
+           </div>
+           <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Hospital details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Ear, nose and throat ward<br>
+                Hallamshire Hospital<br>
+                <br>
+                Admitted on 19 December 2018<br>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="#">
+                  Change
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Pregnant
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes<br>
+              Baby due on 14 May 2019<br>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> licence period</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Doctor can share details with DWP
+             </dt>
+             <dd class="govuk-summary-list__value">
+               Yes
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a href="#">
+                 Change
+               </a>
+             </dd>
+           </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">
+          Voluntary work
+        </h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              <h3 class="govuk-heading-m">Your role at Oxfam</h3>
+            </dt>
+            <dd class="govuk-summary-list__value"></dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Remove
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Voluntary work details
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Oxfam<br>
+              72 Guild street<br>
+              London<br>
+              SF23 6FH<br>
+              020 7946 0809<br>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> voluntary work details</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Type of voluntary work
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Spend some time helping on the tills and washing clothes before they go on sale.
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change<span class="govuk-visually-hidden"> life expectancy</span>
+              </a>
+            </dd>
+          </div>
+         <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Hours of voluntary work each week
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1 hour
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change
+              </a>
+            </dd>
+          </div>
+         </dl>
+         <h4 class="govuk-heading-m">Other voluntary work</h4>
+         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Doing other voluntary work
+             </dt>
+             <dd class="govuk-summary-list__value">
+             No
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a href="#">
+                 Change
+               </a>
+             </dd>
+           </div>
+         </dl>
+         <h2 class="govuk-heading-m">
+           Paid work
+         </h2>
+
+         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+           <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Currently employed
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="#">
+                  Change
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                <h3 class="govuk-heading-m">Your job at Boots</h3>
+              </dt>
+              <dd class="govuk-summary-list__value"></dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Remove
+              </a>
+            </dd>
+          </div>
+        </dl>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Employment details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Sales assistant<br>
+                Boots<br>
+                020 7946 0076<br>
+                72 Guild Street<br>
+                London<br>
+                S10 4JF<br>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="#">
+                  Change
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Off sick from this work
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="#">
+                  Change
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Employment status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Employee
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="#">
+                  Change
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Hours you work each week
+              </dt>
+              <dd class="govuk-summary-list__value">
+                7 hours
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="#">
+                  Change
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Earnings
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £124 weekly
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="#">
+                  Change
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Professional support worker
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="#">
+                  Change
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Expenses
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Travel and subsistence
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="#">
+                  Change
+                </a>
+              </dd>
+            </div>
+          </dl>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              <h3 class="govuk-heading-m">Your job at Co op</h3>
+            </dt>
+            <dd class="govuk-summary-list__value"></dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Remove
+            </a>
+          </dd>
+        </div>
+      </dl>
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Employment details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Operational coordinator<br>
+                Co-op<br>
+                020 7946 0076<br>
+                72 Guild Street<br>
+                London<br>
+                S10 4JF<br>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="#">
+                  Change
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Off sick from this work
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="#">
+                  Change
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Last worked
+              </dt>
+              <dd class="govuk-summary-list__value">
+                17 December 2018
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="#">
+                  Change
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Employment status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Employee
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="#">
+                  Change
+                </a>
+              </dd>
+            </div>
+
+        </dl>
+        <h4 class="govuk-heading-m">Other paid work</h4>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Any other jobs
+            </dt>
+            <dd class="govuk-summary-list__value">
+            No
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">
+          Statutory pay
+        </h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Getting Statutory Sick Pay
+             </dt>
+             <dd class="govuk-summary-list__value">
+               Yes
+               No
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a href="#">
+                 Change
+               </a>
+             </dd>
+           </div>
+           <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Statutory Sick Pay in the last 12 weeks
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes
+
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="#">
+                  Change
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+               <dt class="govuk-summary-list__key">
+                 Statutory Sick Pay ended
+               </dt>
+               <dd class="govuk-summary-list__value">
+                 18 December 2018
+               </dd>
+               <dd class="govuk-summary-list__actions">
+                 <a href="#">
+                   Change
+                 </a>
+               </dd>
+             </div>
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Statutory Sick Pay ends
+             </dt>
+             <dd class="govuk-summary-list__value">
+               18 January 2019
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a href="#">
+                 Change
+               </a>
+             </dd>
+           </div>
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Other statutory payments
+             </dt>
+             <dd class="govuk-summary-list__value">
+               Statutory Maternity Pay
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a href="#">
+                 Change
+               </a>
+             </dd>
+           </div>
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Return to work date
+             </dt>
+             <dd class="govuk-summary-list__value">
+               18 March 2019
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a href="#">
+                 Change
+               </a>
+             </dd>
+           </div>
+       </dl>
+
+       <h2 class="govuk-heading-m">Claim date</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Claim start date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            18 January 2019
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      <h2 class="govuk-heading-m">Working and living abroad</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Worked abroad in the last 5 years
+         </dt>
+         <dd class="govuk-summary-list__value">
+           Yes
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="#">
+             Change<span class="govuk-visually-hidden"> contact details</span>
+           </a>
+         </dd>
+       </div>
+       <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Lived abroad with family member in the armed forces in the last 12 weeks
+         </dt>
+         <dd class="govuk-summary-list__value">
+           Yes
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="#">
+             Change<span class="govuk-visually-hidden"> contact details</span>
+           </a>
+         </dd>
+       </div>
+      </dl>
+       <h2 class="govuk-heading-m">
+          Pensions
+        </h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+             
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Getting money from a pension or annuity
+             </dt>
+             <dd class="govuk-summary-list__value">
+               Yes
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a href="#">
+                 Change
+               </a>
+             </dd>
+           </div>
+          </dl>
+         
+
+
+          <h2 class="govuk-heading-m">
+           Permanent health insurance
+         </h2>
+         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+           
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Permanent health insurance
+             </dt>
+             <dd class="govuk-summary-list__value">
+               Yes
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a href="#">
+                 Change
+               </a>
+             </dd>
+           </div>
+       </dl>
+
+      <h2 class="govuk-heading-m">
+         Sharing the decision with your doctor
+       </h2>
+       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             DWP can share decision with your doctor
+           </dt>
+           <dd class="govuk-summary-list__value">
+             Yes
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a href="#">
+               Change
+             </a>
+           </dd>
+         </div>
+        </dl>
+
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div>
+    </div>
+
+          </main>
+
+
+</div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Claiming because of coronavirus - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new window)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+
+    <form id="form" method="post" action="insurance-detail">
+
+   <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Is coronavirus (COVID-19) the main reason for your claim?</h1>
+        </legend>
+
+        <p class="govuk-body">Select yes if one of the following applies to you or your child, now or some time in the past:</p>
+        <ul class="govuk-list govuk-list--bullet">
+        <li>you're at high risk because you have an underlying health condition (shielding)</li>
+        <li>you're self-isolating because you have symptoms of coronavirus</li>
+        <li>you're self-isolating because you came into contact with someone who has symptoms of coronavirus. Or you were told to self-isolate by a test and trace service</li>
+      </ul>
+
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="coronavirus-1" name="coronavirus" type="radio" value="yes~/apply/v13/state-pension" data-aria-controls="yes-cond">
+            <label class="govuk-label govuk-radios__label" for="coronavirus-1">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="coronavirus-2" name="coronavirus" type="radio" value="no~/apply/v13/disability-or-health-condition">
+            <label class="govuk-label govuk-radios__label" for="coronavirus-2">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+

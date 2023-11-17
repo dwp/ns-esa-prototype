@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+You cannot apply online for someone else - Gwneud cais am Lwfans Cyflogaeth a Chymorth Dull Newydd - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        Mae hwn yn wasanaeth newydd – bydd eich <a class="govuk-link" href="feedback">adborth (agor mewn tab newydd)</a> yn ein helpu i’w wella.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <h1 class="govuk-fieldset__heading">
+      Ni allwch wneud cais ar-lein ar gyfer rhywun arall</h1>
+  </legend>
+  <p>Gwnewch gais dros y ffôn os ydych yn benodai cofrestredig, dirprwy neu bwer atwrnai neu'n perthyn i Gorff Gweithredu Corfforaethol.</p>
+
+  <p>Ffoniwch y llinell gymorth Credyd Cynhwysol i wneud cais am ESA Dull Newydd.</p>
+  <p class="small">Ffôn: 0800 055 6688 (dewiswch opsiwn 3)</p>
+  <p class="margin-bottom-30 small">Ffôn testun: 0800 328 1344 (dewiswch opsiwn 3)</p>
+  <p class="margin-bottom-30 small"><a href="https://www.relayuk.bt.com/">Relay UK</a> (os na allwch glywed neu siarad dros y ffôn): 18001 yna 0800 055 6688</p>
+  <p class="margin-bottom-30 small"><a href="https://dwpesaclaim.signvideo.net/">Gwasanaeth cyfnewid fideo</a> ar gyfer defnyddwyr Iaith Arwyddion Prydain (BSL). <a href="https://www.youtube.com/watch?v=Osx7FFxFpNY" class="govuk-link" rel="noreferrer noopener" target="_blank">Gwiriwch os allwch ddefnyddio y gwasanaeth cyfnewid fideo (agor mewn tab newydd).</a>.</p>
+  <p class="margin-bottom-30 small">Llinell Iaith Gymraeg: 0800 328 1744</p>
+  <p class="margin-bottom-30 small">Dydd Llun i ddydd Gwener, 8am tan 6pm</p>
+  <p class="margin-bottom-30 small"><a href="https://www.gov.uk/call-charges" class="govuk-link" rel="noreferrer noopener" target="_blank">Darganfyddwch am gostau galwadau (agor mewn tab newydd)</a>.</p>	
+
+
+  </div>
+
+
+
+    </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

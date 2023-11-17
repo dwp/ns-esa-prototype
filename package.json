@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "dev": "govuk-prototype-kit dev",
+    "serve": "govuk-prototype-kit serve",
+    "start": "govuk-prototype-kit start"
+  },
+  "name": "govuk-prototype-kit",
+  "dependencies": {
+    "@govuk-prototype-kit/step-by-step": "2.1.0",
+    "govuk-frontend": "4.6.0",
+    "govuk-prototype-kit": "13.9.0",
+    "jquery": "3.7.0",
+    "moment": "^2.29.4",
+    "notifications-node-client": "5.2.3"
+  }
+}

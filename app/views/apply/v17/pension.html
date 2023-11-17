@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Pension or annuity payments - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="insurance">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Are you getting regular payments from a pension or annuity?
+          </h1>
+        </legend>
+        
+            <p>You do not need to tell us about single lump sum pension payments.</p>
+            <p id="pension-payments-hint">Pensions include:
+              <ul class="govuk-list govuk-list--bullet">
+                <li>workplace pensions</li>
+                <li>personal pensions</li>
+                <li>public service pensions</li>
+                <li>stakeholder pensions</li>
+                <li>a pension from a self employed pension scheme</li>
+              </ul>
+            </p>
+            <p>An annuity is an insurance product that allows you to swap your pension savings for a guaranteed regular income that will last for the rest of your life.</p>
+          
+        <div class="govuk-radios govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="pension-1" name="pension" type="radio" value='Yes~/apply/v17/pension-inherit' data-aria-controls="yes-cond">
+            <label class="govuk-label govuk-radios__label" for="pension-1">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="pension-2" name="pension" type="radio" value='No~/apply/v17/insurance'>
+            <label class="govuk-label govuk-radios__label" for="pension-2">
+              No
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="pension-2" name="pension" type="radio" value='notsure~/apply/v17/insurance'>
+            <label class="govuk-label govuk-radios__label" for="pension-3">
+              I’m not sure
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+          {% include "includes/get-help.html" %}
+
+</form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+

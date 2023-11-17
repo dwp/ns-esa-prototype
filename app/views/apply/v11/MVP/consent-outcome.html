@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="">
+
+      <div class="govuk-form-group">
+      <h1 class="govuk-heading-xl">
+      Sharing the outcome of an assessment with your doctor
+      </h1>
+    <p>The Department for Work and Pensions (DWP) would like to share the decision made based on the result of your claim with your doctor, or any doctor treating you. This will help your doctor, as it will tell them when they no longer need to provide you with Statements of Fitness for Work (also known as fit notes or medical certificates) for the purposes of this claim.</p>
+    <p>DWP needs your agreement to do this.</p>
+    <p>You do not have to give your agreement. This will not affect your claim for New Style ESA. DWP will keep a record of the decision you make.</p>
+    <p>You can withdraw your agreement at any time before DWP contacts your doctor by calling them on 0800 169 0310. If you withdraw your agreement, DWP will not share the decision based on the outcome of your claim with your doctor. However, this will not affect the way in which DWP uses your information.</p>
+    <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h2 class="govuk-fieldset__heading">I agree to my doctor, or any other doctor treating me, being informed about the result of my claim.</h2>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="consent-1" name="consent" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="consent-1">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="consent-2" name="consent" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="consent-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+  <a href="checkanswers" class="govuk-button">Continue</a>
+
+    </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

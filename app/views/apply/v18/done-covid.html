@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6" style="padding: 0">
+      <h1 class="govuk-panel__large" style="font-size: 32px; margin-bottom: 5px">
+        Application sent
+      </h1>
+      <div class="govuk-panel__body" style="font-size: 28px;">Your reference number is your National Insurance number
+      </div>
+      <p></p>
+    </div>
+
+  </div> 
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">What happens next</h2>
+    
+    <p class="govuk-body">We will contact you about your claim by <span class="new-date"></span>.</p>
+
+    <p>You can claim for up to 14 days for coronavirus isolation. For claims longer than 14 days we will contact you to
+      book a <a href="https://www.gov.uk/guidance/new-style-employment-and-support-allowance#after-you-apply"
+        class="govuk-link" rel="noreferrer noopener" target="_blank">‘Claimant Commitment’ (opens in new tab)</table>
+        </a> appointment. This is normally over the phone unless you have told us you need an alternative format.</p>
+
+    <p>The date of your claim must be before 24 March 2022. This is due to the temporary regulations that provided eligibility to Employment and Support Allowance (ESA) if you had been affected by coronavirus ending.</p>
+
+    <h3 class="govuk-heading-m">Send us your evidence to tell us you were self-isolating</h3>
+    
+   
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>an isolation note online from <a href="#" target="_blank">NHS 111 (opens in a new tab)</a>, if you or your child were self-isolating in line with your government guidance and you could not work</li>
+      <li>a notification from the NHS or public health authorities, if you had come into contact with someone with COVID-19</li>
+     
+      <li>the letter confirming the date of your procedure if you were advised by your doctor or healthcare professional to self-isolate before going into hospital for surgery
+      </li>
+     
+    </ul>
+
+    
+    <div class="govuk-inset-text">
+      <h4 class="govuk-heading-s">Post your evidence to:</h4>
+      <p>Freepost DWP ESA 26</p>
+    </div>
+   
+
+
+    {# If Covid #}
+    {% if (data['coronavirus'] == "yes" ) %}
+    <p class="govuk-body">We will contact you about your claim by <span class="new-date"></span>.</p>
+
+    <p>Claimant Commitments ??</p>
+
+    <p>The date of your claim must be before 24 March 2022. This is due to the temporary regulations that allowed entitlement to Employment and Support Allowance (ESA) if you had been affected by coronavirus ending.</p>
+
+    <h3 class="govuk-heading-m">Send us your evidence to tell us you were self-isolating:</h3>
+
+   
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>an isolation note online from NHS 111 - if you or your child were self-isolating in line with you government guidance and you cannot work</li>
+      <li>a notification from the NHS or public health authorities - if you had come into contact with someone with COVID-19</li>
+      <li>the letter confirming the date of your procedure if you were advised by your doctor or healthcare professional to self-isolate before going into hospital for surgery
+      </li>
+      <li>your travel information - if you’re quarantining after returning from abroad (Wales and Scotland only)
+      </li>
+    </ul>
+
+    
+    <div class="govuk-inset-text">
+      <h4 class="govuk-heading-s">Post your evidence to:</h4>
+      <p>Freepost DWP ESA 26</p>
+    </div>
+    {% endif %}
+    {# End of COVID #}
+
+    {# Universal Credit block #}
+   
+    {% if (data['universal-credit'] == "No") %}
+
+
+    <h3 class="govuk-heading-m">Do you need help with housing costs or support for a partner or child?</h3>
+
+    <p class="govuk-body">If you‘re on a low income or out of work, you can apply for Universal Credit as part of a dual
+      claim with New Style ESA.</p>
+
+    <p>Unlike New Style ESA, you can apply with a partner and get support for housing costs, children and childcare.</p>
+
+    <p class="govuk-body">You or your partner must have less than £16,000 in savings or investments to be eligible.</p>
+
+    <p class="govuk-body">Find out <a href="https://www.gov.uk/how-to-claim-universal-credit" target="_blank">how to
+        claim for Universal Credit on GOV.UK (opens in new tab)</a>.</p>
+
+    {% endif %}
+
+    {% if (data['universal-credit'] == "Yes") %}
+
+    <h3 class="govuk-heading-m">Tell Universal Credit</h3>
+
+    <p class="govuk-body">If you get or have applied for Universal Credit, you will need to tell them that you’ve
+      applied for New Style ESA. You can do this by <a href="https://www.gov.uk/sign-in-universal-credit"
+        target="_blank">signing in to your Universal Credit account (opens in new tab)</a> and using the journal to
+      contact your case manager.</p>
+
+    <p class="govuk-body">You must also enter details from your medical evidence into your Universal Credit account. For
+      example, if you have a fit note, you do not need to send it to Universal Credit, but you must enter the dates.</p>
+
+    {% endif %}
+    {# End of Universal Credit block #}
+
+
+    <h3 class="govuk-heading-m">Give us your feedback</h3>
+
+    <p class="govuk-body"><a href="feedback.html" class="govuk-link" rel="noreferrer noopener" target="_blank">What did
+        you think of this service? (opens in a new window)</a>. It takes 30 seconds.</p>
+    <p class="govuk-body">Volunteer to<a href="https://getinvolved.dwp.gov.uk/digital/f56c176f" class="govuk-link"
+        rel="noreferrer noopener" target="_blank"> take part in research (opens in a new window)</a> to help improve
+      this service.
+
+
+    <p><a href="https://www.gov.uk/employment-support-allowance/your-esa-claim" class="govuk-button">Finish</a></p>
+
+  </div>
+  {% endblock %}

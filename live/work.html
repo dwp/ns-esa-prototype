@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Paid work - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="work-hours">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+      Are you currently employed or self-employed, even if you’re unable to work at the moment?
+    </h1>
+    <p>
+     Select yes if you’re on a zero hours contract.
+    </p>
+    <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="work-1" name="work" type="radio" value="yes~/apply/live/employment-status">
+          <label class="govuk-label govuk-radios__label" for="work-1">
+            Yes, I’m employed or self-employed
+          </label>
+        </div>
+        <!-- If user answers yes to getting SSP in eligibility, then ask when it ends -->
+        {% if (data['statutory-pay'] == "yes") %}
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="no~/apply/live/statutory-pay-end" aria-controls="no-reveal">
+          <label class="govuk-label govuk-radios__label" for="work-3">
+            No, I’m unemployed
+          </label>
+        </div>
+        <!-- If user answers no to getting SSP in eligibity, then ask if they've had it in last 12 weeks -->
+        {% else %}
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="no~/apply/live/statutory-pay-recent" aria-controls="no-reveal">
+          <label class="govuk-label govuk-radios__label" for="work-3">
+            No, I’m unemployed
+          </label>
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+

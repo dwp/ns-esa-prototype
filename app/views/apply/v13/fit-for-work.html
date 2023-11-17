@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Back to work date - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new window)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="claimdate">
+
+      <div class="govuk-form-group">
+       <fieldset class="govuk-fieldset" >
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Do you know when you’ll go back to work?
+            </h1>
+           </legend>
+
+           <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="yes" name="fit-work" type="radio" value='yes' data-aria-controls="conditional-how-contacted-conditional-1">
+                <label class="govuk-label govuk-radios__label" for="yes">
+                Yes, I know the date that I’ll go back to work
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend">
+              <label class="govuk-fieldset__heading govuk-body govuk-!-font-weight-bold">
+                Date you go back to work
+              </label>
+              <span id="fit-hint" class="govuk-hint">
+                For example, 31 3 2019
+              </span>
+              </legend>
+                <div class="govuk-date-input" id="fit">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="fit-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="fit-day" name="fit-day" type="text" pattern="[0-9]*" maxlength="2">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="fit-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="fit-month" name="fit-month" type="text" pattern="[0-9]*" maxlength="2">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="fit-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="fit-year" name="fit-year" type="text" pattern="[0-9]*" maxlength="4">
+                      </div>
+                    </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="no" name="fit-work" type="radio" value='no' data-aria-controls="conditional-how-contacted-conditional-2">
+                <label class="govuk-label govuk-radios__label" for="no">
+                  No, I do not know
+                </label>
+              </div>
+          </div>
+    </div>
+  </fieldset>
+
+ <!-- form-group -->
+
+
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+
+{% endblock %}

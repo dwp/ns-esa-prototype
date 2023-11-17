@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-breadcrumbs govuk-!-margin-bottom-9" style="margin-top:-20px">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Benefits</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">
+      <a class="govuk-breadcrumbs__link" href="">Carers and disability benefits</a>
+    </li>
+  </ol>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Apply for Employment Support Allowance</h1>
+
+    <p class="govuk-body-s govuk-!-margin-bottom-1">Contents</p>
+    <ul class="govuk-list govuk-list--bullet govuk-list--bullet-dash">
+      <li>Overview</li>
+      <li><a href="govuk-whatyouget">What you'll get</a></li>
+      <li><a href="govuk-eligibility">Eligibility</a></li>
+      <li><a href="govuk-apply">Apply</a></li>
+    </ul>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+  <div class="govuk-grid-column-one-third">
+    &nbsp;
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <hr class="govuk-section-break govuk-section-break--visible"> 
+
+    <h2 class="govuk-heading-l govuk-!-padding-top-3">Overview</h2>
+    <div class="govuk-inset-text">
+      Use a <a href="#" class="govuk-link">benefit calculator</a> to check if you can get Employment and Support Allowance (ESA) or Universal Credit before you apply.
+    </div>
+    <p class="govuk-body">If you’re ill or disabled, Employment and Support Allowance (ESA) offers you:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="#" class="govuk-link">financial support</a> if you're unable to work</li>
+      <li>personalised help so that you can work if you’re able to</li>
+    </ul>
+    <p class="govuk-body">You can <a href="#" class="govuk-link">apply for ESA</a> if you’re employed, self-employed or unemployed.</p>
+    <p class="govuk-body">You might be tranferred to ESA if you’ve been claiming other benefits like Income Support or Incapacity Benefit.</p>
+    <div class="govuk-inset-text">
+      This guide is also available in <a href="#" class="govuk-link">in Welsh (Cymreag)</a>
+    </div>
+
+    <h3 class="govuk-heading-l govuk-!-padding-top-3">Work capability assessment</h3>
+    <p class="govuk-body">If you claim ESA you must have a<a href="#" class="govuk-link">work capability assessment.</a> This is to see to what extent your illness or disability affects your ability to work.</p>
+    <p class="govuk-body">You’ll then be placed in one of 2 groups if you’re entitled to ESA:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>work-related activity group, where you’ll have regular interviews with an adviser</li>
+      <li>support group, where you do not have interviews</li>
+    </ul>    
+
+    <h4 class="govuk-heading-l govuk-!-padding-top-3">What you'll get</h4>
+    <p class="govuk-body">How much ESA you get depends on:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>your circumstance, such as <a href="#" class="govuk-link">income</a> </li>
+      <li>the<a href="#" class="govuk-link">type of ESA</a> you qualify for</li>
+      <li>where you are in the assessment process</li>
+    </ul>   
+    <p class="govuk-body">Use a <a href="#" class="govuk-link">benefits calculator</a> to work out how much you can get.</p>
+
+    <a class="govuk-pagnav" href="govuk-whatyouget">
+      <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+        <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg>
+      Next
+    </a>  
+
+  </div><!-- govuk-grid-column-two-thirds -->
+  <div class="govuk-grid-column-one-third">
+
+    {#
+      I've stuck the right col in a
+      separate file just becaue it doesn't
+      change across all these pages.
+    #}
+    {% include path+"/inc_govuk_rightcol.html" %}
+
+  </div><!-- govuk-grid-column-one-third -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

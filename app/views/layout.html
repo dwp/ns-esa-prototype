@@ -1,0 +1,41 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% if useAutoStoreData %}
+  {% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+        {
+          href: "https://www.gov.uk/help",
+          text: "Help"
+        },
+        {
+          href: "/apply/v21/accessibility-statement",
+          text: "Accessibility statement"
+        },
+
+        {
+          href: "/apply/v21/cookie_policy",
+          text: "Cookies"
+        },
+         
+        {
+          href: "https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter",
+          text: "Privacy"
+        },  
+        {
+          text: "|"
+        },  
+        {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ]
+      }
+    }) }}
+  {% endblock %}
+{% endif %}

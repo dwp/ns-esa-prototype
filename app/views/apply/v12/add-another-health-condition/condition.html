@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form id="form" method="post" action="condition-date">
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+                What health conditions, illnesses, disabilities or injuries do you have?
+            </h1>
+            <p>You can add up to 12 conditions if you need to. You can add them in any order.</p>
+
+            <input type="hidden" value="" name="condition-details" id="condition-details-hidden"/>
+
+            <div class="govuk-form-group">
+                <input class="govuk-input govuk-!-width-one-half" id="condition-name" name="condition" type="text">
+            </div>
+
+            <input type="submit" class="govuk-button" value="Continue" id="formbutton">
+        </form>
+    </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+
+{% block pageScripts %}
+<!--
+  Using jQuery to branch the page flow based on which radio buttons are checked.
+-->
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+
+    // grab the existing data from the session (if it is there)
+    var session_data = "{{ data['condition-details'] }}" ;
+    // put it in log
+    console.log(session_data);
+
+
+    // whemn button is clicked
+    $('#formbutton').on('click',function(e)
+    {
+      // don't submit the form
+      e.preventDefault();
+      // grab what was typed into the name box.
+      var name = $('#condition-name').val();
+      // add that to the existing session data
+      var new_session_data = (session_data) ? session_data + ',' + name : name;
+      // put this new data back into the form (hidden)
+      $('#condition-details-hidden').val(new_session_data);
+      // submit the form as usual
+      $("#form").submit();
+    })
+  });
+</script>
+{% endblock %}

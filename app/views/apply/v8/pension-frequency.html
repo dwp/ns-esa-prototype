@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="pension-deductions">
+
+    
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              How often do you get your {{ data['pension-provider'] | split(',') | last }} pension paid?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="daily" name="options" type="radio" value="daily">
+              <label class="govuk-label govuk-radios__label" for="daily">
+                Daily
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="weekly" name="options" type="radio" value="weekly">
+              <label class="govuk-label govuk-radios__label" for="weekly">
+                Weekly
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="two-weeks" name="options" type="radio" value="two-weeks">
+              <label class="govuk-label govuk-radios__label" for="two-weeks">
+                Every 2 weeks
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="four-weeks" name="options" type="radio" value="four-weeks">
+              <label class="govuk-label govuk-radios__label" for="four-weeks">
+                Every 4 weeks
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="monthly" name="options" type="radio" value="monthly">
+              <label class="govuk-label govuk-radios__label" for="monthly">
+                Monthly
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="quarterly" name="options" type="radio" value="quarterly">
+              <label class="govuk-label govuk-radios__label" for="quarterly">
+                Quarterly
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="six-months" name="options" type="radio" value="six-months">
+              <label class="govuk-label govuk-radios__label" for="six-months">
+                Every 6 months
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="annually" name="options" type="radio" value="annually">
+              <label class="govuk-label govuk-radios__label" for="annually">
+                Annually
+              </label>
+            </div>
+    </div>
+        </fieldset>
+      </div> <!-- form-group -->
+
+     
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+  {% endblock %}

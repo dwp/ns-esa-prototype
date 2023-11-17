@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+    <h1 class="govuk-fieldset__heading">
+      Based on your answers, you may be eligible for New Style ESA</h1>
+  </legend>
+
+  <div class="govuk-inset-text">
+    <p>You will not be able to save your answers and come back to the form later. But you’ll get a chance to check and update your answers before you send them.</p>
+    </div>
+
+  <p>We will treat your personal information carefully. We may use it for any of our purposes. To learn about your information rights and how we use information, see our <a href="https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter">personal information charter</a>.</p>
+
+  <p><a href="../MVP/name" class="govuk-button">Start now</a></p>
+
+  </div>
+
+
+    </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

@@ -1,0 +1,166 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+  <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6" style="padding: 0">
+    <h1 class="govuk-panel__large" style="font-size: 32px; margin-bottom: 5px">
+      Application sent
+    </h1>
+    <div class="govuk-panel__body" style="font-size: 28px;">Your reference number is your National Insurance number</div>
+    <p></p>
+  </div>
+
+  </div> <!-- govuk.grid-column-full -->
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">What happens next</h2>
+
+  {# BAU #}
+    {% if (data['coronavirus'] == "no" ) %}
+
+    <p class="govuk-body">Someone from your local jobcentre will contact you, by <span class="new-date"></span>. They will book you a ‘Claimant Commitment’ appointment with a work coach, which is normally over the phone.</p>
+
+    <p class="govuk-body">Your work coach will talk to you about what you need to do to get New Style ESA, including asking you to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>explain how your illness or disability affects your ability to work</li>
+        <li>provide medical evidence</li>
+        <li>agree to tell us if your circumstances change</li>
+      </ul>
+
+    <p class="govuk-body">You must agree to your Claimant Commitment before you can get New Style ESA.</p>
+
+    <h3 class="govuk-heading-m">Send us evidence to support your application</h3>
+    {% if (data['terminal-illness'] == "No") %}
+    {% if (data['statutory-pay-recent'] == "yes") or (data['employment-status'] == "Employee") %}
+    <p>Send us your SSP1. You can get this from your employer.</p>
+    {% endif %}
+    {% endif %}
+
+    
+
+
+    <p>You can self-certify for the first 7 days of your claim but you need to send us medical evidence from day 8 onwards.</p>
+    <p>The most common type of medical certificate is a fit note (also called a statement of fitness for work or a sick note), but we also accept other types of medical evidence.</p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Other types of medical evidence
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p id="other-medical-evidence-hint">As well as fit notes, we also accept these medical certificates:
+          
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Med10 (a hospital certificate given to inpatients if your treatment lasts more than 7 days)</li>
+      <li>MATB1 (if you’re pregnant but you cannot get Statutory Maternity Pay or Maternity Allowance)</li>
+      <li>CF73 (a form issued by a psychiatric hospital)</li>
+      <li>DS1500 (a form completed and sent to us by a doctor, consultant or specialist nurse if they think you might not live longer than 6 months, because of your condition)</li>
+    </ul>
+
+    <p>Other forms of evidence might include a doctor’s statement, consultant’s report or Local Authority notice.</p>
+  
+  </div>
+  </details>
+
+  <p>You will need to keep sending us medical evidence as long as you’re unfit for work. We will tell you when you can stop sending it. For example, if your fit note is for 14 days, you will need to send us another one when it runs out.</p>
+
+
+
+    <h3 class="govuk-heading-m">How to send your evidence</h3>
+
+    <p>If you have a fit note, you can use the <a href="https://www.gov.uk/send-fit-note" target="_blank">Send Your Fit Note service (opens in tab)</a> to send it to us online.</p>
+
+    <p>If you have another form of medical evidence, you can send it to us by post. You can also post your fit note{% if (data['terminal-illness'] == "No") %}{% if (data['statutory-pay-recent'] == "yes") or (data['employment-status'] == "Employee") %} and your SSP1{% endif %}{% endif %}.</p>
+
+  <div class="govuk-inset-text">
+  <h4 class="govuk-heading-s">Where to send your evidence by post</h4>
+  <p>Freepost DWP ESA 26</p>
+  </div>
+  {% endif %}
+  {# End of BAU Evidence #}
+
+  {# If Covid #}
+  {% if (data['coronavirus'] == "yes" ) %}
+  <p class="govuk-body">We will contact you about your claim by <span class="new-date"></span>.</p>
+
+  <p>You can claim for up to 14 days for coronavirus isolation. For claims longer than 14 days we will contact you to book a <a href="https://www.gov.uk/guidance/new-style-employment-and-support-allowance#after-you-apply" class="govuk-link" rel="noreferrer noopener" target="_blank">‘Claimant Commitment’ (opens in new tab)</table></a> appointment, which is normally over the phone.</p>
+
+  <h3 class="govuk-heading-m">Send us evidence that you’re self-isolating to support your application</h3>
+
+  <p>There are different instructions depending on the reason you're self-isolating.</p>
+
+  <p>Send us your evidence as soon as you can so we can process your claim.</p>
+  
+  <h4 class="govuk-heading-s">If you’re self-isolating (but not for surgery)</h4>
+
+  <p>You can get an <a href="https://111.nhs.uk/isolation-note/">‘isolation note’ online from NHS 111 (opens in new tab)</a> if any of the following apply:</p>
+  <ul class="govuk-list govuk-list--bullet">
+      <li>you’re self-isolating because you have symptoms of coronavirus</li>
+      <li>you’re self-isolating because you came into contact with someone who has symptoms of coronavirus</li>
+      <li>you were told to self-isolate by a test and trace service</li>
+      <li>you’re in quarantine because you’re returning from a trip abroad</li>
+    </ul>
+
+  <p>You do not have to go to your doctor or a hospital.</p>
+
+  <p>Your isolation note will have a 16-digit reference number. We will contact you about your claim and take this reference number from you.</p>
+  
+  <h4 class="govuk-heading-s">If you’re self-isolating because you have surgery</h4>
+
+  <p>If you’ve been advised by your doctor or healthcare professional to self-isolate before going into hospital for surgery, your letter confirming the date of your procedure is proof. Send us a copy of your appointment letter.</p>
+
+  <p>If you do not have a printed copy of your letter or cannot leave your home to post it, your local council might be able to help. Go to GOV.UK to <a href="https://www.gov.uk/coronavirus-local-help">find coronavirus help in your local area (opens in new tab)</a>.</p>
+
+  <div class="govuk-inset-text">
+  <h4 class="govuk-heading-s">Where to send your letter by post</h4>
+  <p>Freepost DWP ESA 26</p>
+  </div>
+  {% endif %}
+  {# End of Self isolating and "other" Evidence #}
+
+  {# Universal Credit block #}
+  {# {% if (data['universal-credit'] == "no" and data['national-insurance'] == "yes" or data['national-insurance'] == "notsure" ) %} #}
+  {% if (data['universal-credit'] == "No") %}
+
+
+  <h3 class="govuk-heading-m">Do you need help with housing costs or support for a partner or child?</h3>
+
+      <p class="govuk-body">If you‘re on a low income or out of work, you can apply for Universal Credit as part of a dual claim with New Style ESA.</p>
+
+      <p>Unlike New Style ESA, you can apply with a partner and get support for housing costs, children and childcare.</p>
+      
+      <p class="govuk-body">You or your partner must have less than £16,000 in savings or investments to be eligible.</p>
+
+      <p class="govuk-body">Find out <a href="https://www.gov.uk/how-to-claim-universal-credit" target="_blank">how to claim for Universal Credit on GOV.UK (opens in new tab)</a>.</p>
+
+  {% endif %}    
+
+  {% if (data['universal-credit'] == "Yes") %}
+
+  <h3 class="govuk-heading-m">Tell Universal Credit</h3>
+
+      <p class="govuk-body">If you get or have applied for Universal Credit, you will need to tell them that you’ve applied for New Style ESA. You can do this by <a href="https://www.gov.uk/sign-in-universal-credit" target="_blank">signing in to your Universal Credit account (opens in new tab)</a> and using the journal to contact your case manager.</p>
+      
+      <p class="govuk-body">You must also enter details from your medical evidence into your Universal Credit account. For example, if you have a fit note, you do not need to send it to Universal Credit, but you must enter the dates.</p>
+
+  {% endif %}
+  {# End of Universal Credit block #}
+
+    
+    <h3 class="govuk-heading-m">Give us your feedback</h3>
+
+<p class="govuk-body"><a href="feedback.html" class="govuk-link" rel="noreferrer noopener" target="_blank">What did you think of this service? (opens in a new window)</a>. It takes 30 seconds.</p>
+<p class="govuk-body">Volunteer to<a href="https://getinvolved.dwp.gov.uk/digital/f56c176f" class="govuk-link" rel="noreferrer noopener" target="_blank"> take part in research (opens in a new window)</a> to help improve this service.
+
+
+    <p><a href="https://www.gov.uk/employment-support-allowance/your-esa-claim" class="govuk-button">Finish</a></p>
+
+</div><!-- govuk-grid-row -->
+{% endblock %}
+

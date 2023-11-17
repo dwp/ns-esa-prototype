@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="fit-for-work">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Are you getting any of the following payments?
+          </h1>
+        </legend>
+        <div class="govuk-radios">
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="statutory-pay-2" name="statutory-pay" type="radio" value="smp">
+            <label class="govuk-label govuk-radios__label" for="statutory-pay-2">
+              Statutory Maternity Pay
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="statutory-pay-3" name="statutory-pay" type="radio" value="spp">
+            <label class="govuk-label govuk-radios__label" for="statutory-pay-3">
+              Statutory Paternity Pay
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="statutory-pay-4" name="statutory-pay" type="radio" value="sap">
+            <label class="govuk-label govuk-radios__label" for="statutory-pay-4">
+              Statutory Adoption Pay
+            </label>
+          </div>
+          <div class="govuk-radios__divider">or</div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="statutory-pay-5" name="statutory-pay" type="radio" value="none">
+            <label class="govuk-label govuk-radios__label" for="statutory-pay-5">
+              None of these
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

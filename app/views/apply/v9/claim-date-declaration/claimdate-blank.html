@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="declaration">
+
+      <h1 class="govuk-heading-l">
+        What date do you want to claim from?
+      </h1>
+
+      <p>You can claim from:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>todays date</li>
+         <!-- <li>the day after your Statutory Sick Pay ends</li>
+          <li>the day after your last day at work, if you're off sick and not currenty getting Statutory Sick Pay</li> -->
+          <li>a date up to 3 months ago as long as you have fit notes (you might call these sick notes) to cover that period</li>
+        </ul>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+
+                  <span id="dob-hint" class="govuk-hint">
+                    For example, 8 3 2019
+                  </span>
+                  <div class="govuk-date-input" id="dob">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="dob-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="dob-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="dob-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div> <!-- form-group -->
+
+         <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div> <!-- govuk-form-group -->
+
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

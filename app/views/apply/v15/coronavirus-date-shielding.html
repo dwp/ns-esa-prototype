@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Date you were first affected by coronavirus - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="condition">		
+
+
+		<div class="govuk-form-group">
+		  <fieldset class="govuk-fieldset" aria-describedby="coronavirus-hint" role="group">
+		    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+		      <h1 class="govuk-fieldset__heading">
+		        What date were you first affected by coronavirus?
+		      </h1>
+				</legend>
+				<p class="govuk-body">This might be when you received a letter or text message from the NHS.</p>
+		    <span id="coronavirus-hint" class="govuk-hint">
+		      For example, 28 2 2020
+		    </span>
+		    <div class="govuk-date-input" id="coronavirus">
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="coronavirus-day">
+		            Day
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="coronavirus-day" name="coronavirus-day" type="text" pattern="[0-9]*" maxlength="2">
+		        </div>
+		      </div>
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="coronavirus-month">
+		            Month
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="coronavirus-month" name="coronavirus-month" type="text" pattern="[0-9]*" maxlength="2">
+		        </div>
+		      </div>
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="coronavirus-year">
+		            Year
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="coronavirus-year" name="coronavirus-year" type="text" pattern="[0-9]*" maxlength="4">
+		        </div>
+		      </div>
+		    </div>
+		  </fieldset>
+		</div>
+
+		<input type="submit" class="govuk-button" value="Continue" id="submit">	
+
+ 	</form>
+
+ </div>
+</div> 	
+
+{% endblock %}
