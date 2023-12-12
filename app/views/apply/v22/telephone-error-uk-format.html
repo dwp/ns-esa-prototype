@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Mobile phone number - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post">
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#passport-issued-day">Enter a mobile number, like 0770 090 0982</a>   
+            </li>
+            <li>
+   <a href="#passport-issued-day">For international numbers, include the country code like +39 1 33 45 70 90</a>
+            </li>
+   
+          </ul>
+        </div>
+      </div>
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      
+      {% set phoneHtml %}
+      {{ govukInput({
+        id: "mobile-number",
+        errorMessage: {
+          text: "Enter a mobile number, like 0770 090 0982 For international numbers, include the country code, like  +39 1 33 45 70 90"
+        },
+      
+      
+      
+        name: "mobile-number",
+        type: "tel",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Mobile number"
+        }
+      }) }}
+      {% endset -%}
+
+
+      {# If claiming because of coronavirus, ask reason #}
+      {% if (data['coronavirus'] == "yes") %}
+
+      
+      
+      {{ govukRadios({
+        idPrefix: "how-contacted-conditional",
+        name: "mobile-phone",
+        fieldset: {
+          legend: {
+            text: "Do you have a mobile number?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "We’ll use this number to contact you about your claim."
+        },
+        items: [
+          {
+            value: "yes~/apply/v21/email",
+            text: "Yes",
+            conditional: {
+              html: phoneHtml
+            }
+          },
+          
+          {
+            value: "no~/apply/v21/landline",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {# If not claiming because of coronavirus, don't ask reason #}
+      {% else %}
+
+      {{ govukRadios({
+        idPrefix: "how-contacted-conditional",
+        name: "mobile-phone",
+        fieldset: {
+          legend: {
+            text: "Do you have a mobile number?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "We’ll use this number to contact you about your claim."
+        },
+        items: [
+          {
+            value: "yes~/apply/v21/email",
+            text: "Yes",
+            conditional: {
+              html: phoneHtml
+            }
+          },
+          {
+            value: "no~/apply/v21/landline",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {% endif %}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+</form>
+</div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+
+

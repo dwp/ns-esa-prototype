@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Other paid work - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="/apply/v21/work-another">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">You have added details for: </h2>
+            <ul class="govuk-list govuk-heading-m">
+
+              {% for item in data['employer-details'] | split(',') %}
+                <li>{{ item }}</li>
+              {% endfor %}
+              {% for item in data['employer-details-sick'] | split(',') %}
+                <li>{{ item }}</li>
+              {% endfor %}
+
+          </ul>
+
+        </legend>
+
+     <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+          Do you have another job?
+          </h1>
+        </legend>
+
+        <div class="govuk-radios govuk-radios">
+          <!-- Yes, goes to add another job -->
+        <div class="govuk-radios govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-1" name="work-another" type="radio" value='Yes~/apply/v21/employment-status' data-aria-controls="yes-cond">
+            <label class="govuk-label govuk-radios__label" for="changed-name-1">
+              Yes
+            </label>
+          </div>
+
+        <!-- If user answers yes to getting SSP in eligibility, then ask when it ends -->
+        {% if (data['statutory-pay'] == "yes") %}
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-2" name="work-another" type="radio" value='No~/apply/v21/statutory-pay-end'>
+            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+              No
+            </label>
+          </div>
+
+        <!-- If user answers no to getting SSP in eligibity, then ask if they've had it in last 12 weeks -->
+        {% else %}
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-3" name="work-another" type="radio" value='no~/apply/v21/statutory-pay-recent'>
+            <label class="govuk-label govuk-radios__label" for="changed-name-3">
+              No
+            </label>
+          </div>
+
+        {% endif %}
+        </div>
+      </fieldset>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
