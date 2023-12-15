@@ -377,15 +377,15 @@ router.use(
 );
 
 // Routes you to state-pension or may-not-be-eligible at the first radio button screen
-router.route('/apply/v21/disability-or-health-condition')
+router.route('/apply/v22/disability-or-health-condition')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['disability']) {
-    case 'yes~/apply/v21/state-pension':
-      redirectUrl = '/apply/v21/state-pension';
+    case 'yes~/apply/v22/state-pension':
+      redirectUrl = '/apply/v22/state-pension';
       break;
     case 'no~/apply/v21/may-not-be-eligible':
-      redirectUrl = '/apply/v21/may-not-be-eligible';
+      redirectUrl = '/apply/v22/may-not-be-eligible';
       break;
     default:
       redirectUrl = req.path;
