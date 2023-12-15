@@ -908,19 +908,19 @@ router.route('/apply/v21/insurance')
 });
 
 // Routes
-router.route('/apply/v21/who-is-applying')
+router.route('/apply/v22/who-is-applying')
 .post((req, res, next) => {
   req.session.destroy();
   let redirectUrl;
   switch (req.body['apply']) {
     case 'apply-myself':
-      redirectUrl = '/apply/v21/eligibility-start';
+      redirectUrl = '/apply/v22/eligibility-start';
       break;
     case 'apply-someone':
-      redirectUrl = '/apply/v21/cannot-apply-online';
+      redirectUrl = '/apply/v22/cannot-apply-online';
       break;
     case 'apply-help':
-      redirectUrl = '/apply/v21/helping-someone-apply';
+      redirectUrl = '/apply/v22/helping-someone-apply';
       break;
     default:
       redirectUrl = req.path;
