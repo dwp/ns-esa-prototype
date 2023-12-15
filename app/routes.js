@@ -36,16 +36,6 @@ router.all('/data/:data/source/:source', (req, res) => {
 
 
 
- // Code to add 14 days to current Time
- let ut = document.getElementById("14dayslater")
- function add() {
-    setInterval(() => {
-       let dt = new Date();
-       dt.setDate(dt.getDate() + 14);
-       ut.innerText = + dt.toLocaleDateString();
-    }, 1000)
- }
-
 
 
 
