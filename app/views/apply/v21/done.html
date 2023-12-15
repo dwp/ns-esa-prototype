@@ -1,28 +1,4 @@
-
-<script>
-// Code to add 14 days to current Time
-
-let ut = document.getElementById("14dayslater")
-function add() {
-   setInterval(() => {
-      let dt = new Date();
-      dt.setDate(dt.getDate() + 14);
-      ut.innerText = + dt.toLocaleDateString();
-   }, 1000)
-}
-</script>
-
-
-
-
-
-
-
-
-
-
 {% extends "layout.html" %}
-
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -86,7 +62,7 @@ function add() {
 
     <h2 class="govuk-heading-m">Claimant Commitment appointment</h2>
 
-    <p class="govuk-body">We will contact you by <span class="new-date"></span> / {{ data['14dayslater'] }} / {{ "today" | duration(5) }} to book your 'Claimant Commitment' appointment.</p>
+    <p class="govuk-body">We will contact you by <span class="new-date"></span> / {{ "today" | duration(5) }} to book your 'Claimant Commitment' appointment.</p>
 
     <p class="govuk-body">During this appointment we will ask you to:</p>
 
