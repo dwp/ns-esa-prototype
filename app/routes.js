@@ -384,7 +384,7 @@ router.route('/apply/v22/disability-or-health-condition')
     case 'yes~/apply/v22/state-pension':
       redirectUrl = '/apply/v22/state-pension';
       break;
-    case 'no~/apply/v21/may-not-be-eligible':
+    case 'no~/apply/v22/may-not-be-eligible':
       redirectUrl = '/apply/v22/may-not-be-eligible';
       break;
     default:
@@ -395,15 +395,15 @@ router.route('/apply/v22/disability-or-health-condition')
 });
 
 // Routes
-router.route('/apply/v21/state-pension')
+router.route('/apply/v22/state-pension')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['state-pension']) {
-    case 'yes~/apply/v21/national-insurance':
-      redirectUrl = '/apply/v21/national-insurance';
+    case 'yes~/apply/v22/national-insurance':
+      redirectUrl = '/apply/v22/national-insurance';
       break;
-    case 'no~/apply/v21/may-not-be-eligible-state-pension':
-      redirectUrl = '/apply/v21/may-not-be-eligible-state-pension';
+    case 'no~/apply/v22/may-not-be-eligible-state-pension':
+      redirectUrl = '/apply/v22/may-not-be-eligible-state-pension';
       break;
     default:
       redirectUrl = req.path;
