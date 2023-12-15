@@ -377,15 +377,15 @@ router.use(
 );
 
 // Routes you to state-pension or may-not-be-eligible at the first radio button screen
-router.route('/apply/v22/disability-or-health-condition')
+router.route('/apply/v21/disability-or-health-condition')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['disability']) {
-    case 'yes~/apply/v22/state-pension':
-      redirectUrl = '/apply/v22/state-pension';
+    case 'yes~/apply/v21/state-pension':
+      redirectUrl = '/apply/v21/state-pension';
       break;
-    case 'no~/apply/v22/may-not-be-eligible':
-      redirectUrl = '/apply/v22/may-not-be-eligible';
+    case 'no~/apply/v21/may-not-be-eligible':
+      redirectUrl = '/apply/v21/may-not-be-eligible';
       break;
     default:
       redirectUrl = req.path;
@@ -395,15 +395,15 @@ router.route('/apply/v22/disability-or-health-condition')
 });
 
 // Routes
-router.route('/apply/v22/state-pension')
+router.route('/apply/v21/state-pension')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['state-pension']) {
-    case 'yes~/apply/v22/national-insurance':
-      redirectUrl = '/apply/v22/national-insurance';
+    case 'yes~/apply/v21/national-insurance':
+      redirectUrl = '/apply/v21/national-insurance';
       break;
-    case 'no~/apply/v22/may-not-be-eligible-state-pension':
-      redirectUrl = '/apply/v22/may-not-be-eligible-state-pension';
+    case 'no~/apply/v21/may-not-be-eligible-state-pension':
+      redirectUrl = '/apply/v21/may-not-be-eligible-state-pension';
       break;
     default:
       redirectUrl = req.path;
@@ -908,19 +908,19 @@ router.route('/apply/v21/insurance')
 });
 
 // Routes
-router.route('/apply/v22/who-is-applying')
+router.route('/apply/v21/who-is-applying')
 .post((req, res, next) => {
   req.session.destroy();
   let redirectUrl;
   switch (req.body['apply']) {
     case 'apply-myself':
-      redirectUrl = '/apply/v22/eligibility-start';
+      redirectUrl = '/apply/v21/eligibility-start';
       break;
     case 'apply-someone':
-      redirectUrl = '/apply/v22/cannot-apply-online';
+      redirectUrl = '/apply/v21/cannot-apply-online';
       break;
     case 'apply-help':
-      redirectUrl = '/apply/v22/helping-someone-apply';
+      redirectUrl = '/apply/v21/helping-someone-apply';
       break;
     default:
       redirectUrl = req.path;
