@@ -257,9 +257,9 @@ router.post('/welsh-or-not-18', function (req, res) {
   const welsh = req.session.data['address-postcode']
 
   if (welsh == 'wales' ) {
-    res.redirect('/apply/v22/language-preference-writing')
+    res.redirect('/apply/v21/language-preference-writing')
   } else {
-    res.redirect('/apply/v22/telephone')
+    res.redirect('/apply/v21/telephone')
   }
 })
 
@@ -377,15 +377,15 @@ router.use(
 );
 
 // Routes you to state-pension or may-not-be-eligible at the first radio button screen
-router.route('/apply/v22/disability-or-health-condition')
+router.route('/apply/v21/disability-or-health-condition')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['disability']) {
-    case 'yes~/apply/v22/state-pension':
-      redirectUrl = '/apply/v22/state-pension';
+    case 'yes~/apply/v21/state-pension':
+      redirectUrl = '/apply/v21/state-pension';
       break;
-    case 'no~/apply/v22/may-not-be-eligible':
-      redirectUrl = '/apply/v22/may-not-be-eligible';
+    case 'no~/apply/v21/may-not-be-eligible':
+      redirectUrl = '/apply/v21/may-not-be-eligible';
       break;
     default:
       redirectUrl = req.path;
@@ -395,15 +395,15 @@ router.route('/apply/v22/disability-or-health-condition')
 });
 
 // Routes
-router.route('/apply/v22/state-pension')
+router.route('/apply/v21/state-pension')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['state-pension']) {
-    case 'yes~/apply/v22/national-insurance':
-      redirectUrl = '/apply/v22/national-insurance';
+    case 'yes~/apply/v21/national-insurance':
+      redirectUrl = '/apply/v21/national-insurance';
       break;
-    case 'no~/apply/v22/may-not-be-eligible-state-pension':
-      redirectUrl = '/apply/v22/may-not-be-eligible-state-pension';
+    case 'no~/apply/v21/may-not-be-eligible-state-pension':
+      redirectUrl = '/apply/v21/may-not-be-eligible-state-pension';
       break;
     default:
       redirectUrl = req.path;
@@ -413,18 +413,18 @@ router.route('/apply/v22/state-pension')
 });
 
 // Routes
-router.route('/apply/v22/national-insurance')
+router.route('/apply/v21/national-insurance')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['severe-disability']) {
-    case 'yes~/apply/v22/statutory-pay':
-      redirectUrl = '/apply/v22/statutory-pay';
+    case 'yes~/apply/v21/statutory-pay':
+      redirectUrl = '/apply/v21/statutory-pay';
       break;
-    case 'no~/apply/v22/may-not-be-eligible-national-insurance':
-      redirectUrl = '/apply/v22/may-not-be-eligible-national-insurance';
+    case 'no~/apply/v21/may-not-be-eligible-national-insurance':
+      redirectUrl = '/apply/v21/may-not-be-eligible-national-insurance';
       break;
-    case 'notsure~/apply/v22/statutory-pay':
-      redirectUrl = '/apply/v22/statutory-pay';
+    case 'notsure~/apply/v21/statutory-pay':
+      redirectUrl = '/apply/v21/statutory-pay';
       break;
     default:
       redirectUrl = req.path;
@@ -434,15 +434,15 @@ router.route('/apply/v22/national-insurance')
 });
 
 // Routes
-router.route('/apply/v22/statutory-pay')
+router.route('/apply/v21/statutory-pay')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['statutory-pay']) {
     case 'Yes':
-      redirectUrl = '/apply/v22/statutory-pay-date';
+      redirectUrl = '/apply/v21/statutory-pay-date';
       break;
     case 'No':
-      redirectUrl = '/apply/v22/why-no-ssp';
+      redirectUrl = '/apply/v21/why-no-ssp';
       break;
     default:
       redirectUrl = req.path;
@@ -452,15 +452,15 @@ router.route('/apply/v22/statutory-pay')
 });
 
 // Routes
-router.route('/apply/v22/statutory-pay-date')
+router.route('/apply/v21/statutory-pay-date')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['statutory-pay-end']) {
-    case 'yes~/apply/v22/may-be-eligible':
-      redirectUrl = '/apply/v22/may-be-eligible';
+    case 'yes~/apply/v21/may-be-eligible':
+      redirectUrl = '/apply/v21/may-be-eligible';
       break;
-    case 'no~/apply/v22/may-not-be-eligible-statutory-pay':
-      redirectUrl = '/apply/v22/may-not-be-eligible-statutory-pay';
+    case 'no~/apply/v21/may-not-be-eligible-statutory-pay':
+      redirectUrl = '/apply/v21/may-not-be-eligible-statutory-pay';
       break;
     default:
       redirectUrl = req.path;
@@ -470,15 +470,15 @@ router.route('/apply/v22/statutory-pay-date')
 });
 
 // Routes
-router.route('/apply/v22/address')
+router.route('/apply/v21/address')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['send-letters']) {
-    case 'yes~/apply/v22/telephone':
-      redirectUrl = '/apply/v22/telephone';
+    case 'yes~/apply/v21/telephone':
+      redirectUrl = '/apply/v21/telephone';
       break;
-    case 'no~/apply/v22/correspondence-address':
-      redirectUrl = '/apply/v22/correspondence-address';
+    case 'no~/apply/v21/correspondence-address':
+      redirectUrl = '/apply/v21/correspondence-address';
       break;
     default:
       redirectUrl = req.path;
@@ -488,15 +488,15 @@ router.route('/apply/v22/address')
 });
 
 // Routes
-router.route('/apply/v22/telephone')
+router.route('/apply/v21/telephone')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['mobile-phone']) {
-    case 'yes~/apply/v22/email':
-      redirectUrl = '/apply/v22/email';
+    case 'yes~/apply/v21/email':
+      redirectUrl = '/apply/v21/email';
       break;
-    case 'no~/apply/v22/landline':
-      redirectUrl = '/apply/v22/landline';
+    case 'no~/apply/v21/landline':
+      redirectUrl = '/apply/v21/landline';
       break;
     default:
       redirectUrl = req.path;
@@ -506,15 +506,15 @@ router.route('/apply/v22/telephone')
 });
 
 // Routes
-router.route('/apply/v22/condition-another')
+router.route('/apply/v21/condition-another')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['condition-another']) {
     case 'yes':
-      redirectUrl = '/apply/v22/condition';
+      redirectUrl = '/apply/v21/condition';
       break;
     case 'no':
-      redirectUrl = '/apply/v22/gpsurgery';
+      redirectUrl = '/apply/v21/gpsurgery';
       break;
     default:
       redirectUrl = req.path;
@@ -524,15 +524,15 @@ router.route('/apply/v22/condition-another')
 });
 
 // Routes
-router.route('/apply/v22/live-less-than-12-months')
+router.route('/apply/v21/live-less-than-12-months')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['terminal-illness']) {
     case 'Yes':
-      redirectUrl = '/apply/v22/sr1-report';
+      redirectUrl = '/apply/v21/sr1-report';
       break;
     case 'No':
-      redirectUrl = '/apply/v22/hospital';
+      redirectUrl = '/apply/v21/hospital';
       break;
     default:
       redirectUrl = req.path;
@@ -542,15 +542,15 @@ router.route('/apply/v22/live-less-than-12-months')
 });
 
 // Routes
-router.route('/apply/v22/hospital')
+router.route('/apply/v21/hospital')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['hospital']) {
     case 'Yes':
-      redirectUrl = '/apply/v22/hospital-details';
+      redirectUrl = '/apply/v21/hospital-details';
       break;
     case 'No':
-      redirectUrl = '/apply/v22/pregnant';
+      redirectUrl = '/apply/v21/pregnant';
       break;
     default:
       redirectUrl = req.path;
@@ -560,15 +560,15 @@ router.route('/apply/v22/hospital')
 });
 
 // Routes
-router.route('/apply/v22/pregnant')
+router.route('/apply/v21/pregnant')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['pregnancy']) {
     case 'Yes':
-      redirectUrl = '/apply/v22/pregnant-due-date';
+      redirectUrl = '/apply/v21/pregnant-due-date';
       break;
     case 'No':
-      redirectUrl = '/apply/v22/consent';
+      redirectUrl = '/apply/v21/consent';
       break;
     default:
       redirectUrl = req.path;
@@ -578,15 +578,15 @@ router.route('/apply/v22/pregnant')
 });
 
 // Routes
-router.route('/apply/v22/voluntary-work')
+router.route('/apply/v21/voluntary-work')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['voluntary']) {
     case 'Yes':
-      redirectUrl = '/apply/v22/voluntary-details';
+      redirectUrl = '/apply/v21/voluntary-details';
       break;
     case 'No':
-      redirectUrl = '/apply/v22/work';
+      redirectUrl = '/apply/v21/work';
       break;
     default:
       redirectUrl = req.path;
@@ -596,15 +596,15 @@ router.route('/apply/v22/voluntary-work')
 });
 
 // Routes
-router.route('/apply/v22/voluntary-work-another')
+router.route('/apply/v21/voluntary-work-another')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['voluntary-another']) {
     case 'Yes':
-      redirectUrl = '/apply/v22/voluntary-details';
+      redirectUrl = '/apply/v21/voluntary-details';
       break;
     case 'No':
-      redirectUrl = '/apply/v22/work';
+      redirectUrl = '/apply/v21/work';
       break;
     default:
       redirectUrl = req.path;
@@ -614,18 +614,18 @@ router.route('/apply/v22/voluntary-work-another')
 });
 
 // Routes
-router.route('/apply/v22/work')
+router.route('/apply/v21/work')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['work']) {
     case 'Yes':
-      redirectUrl = '/apply/v22/employment-status';
+      redirectUrl = '/apply/v21/employment-status';
       break;
     case 'No':
-      redirectUrl = '/apply/v22/statutory-pay-recent';
+      redirectUrl = '/apply/v21/statutory-pay-recent';
       break;
     case 'No':
-      redirectUrl = '/apply/v22/statutory-pay-recent';
+      redirectUrl = '/apply/v21/statutory-pay-recent';
       break;
     default:
       redirectUrl = req.path;
@@ -635,15 +635,15 @@ router.route('/apply/v22/work')
 });
 
 // Routes
-router.route('/apply/v22/worksick')
+router.route('/apply/v21/worksick')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['offSick']) {
     case 'Yes':
-      redirectUrl = '/apply/v22/last-work';
+      redirectUrl = '/apply/v21/last-work';
       break;
     case 'No':
-      redirectUrl = '/apply/v22/work-hours';
+      redirectUrl = '/apply/v21/work-hours';
       break;
     default:
       redirectUrl = req.path;
@@ -653,18 +653,18 @@ router.route('/apply/v22/worksick')
 });
 
 // Routes
-router.route('/apply/v22/work-another')
+router.route('/apply/v21/work-another')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['work-another']) {
-    case 'Yes~/apply/v22/employment-status':
-      redirectUrl = '/apply/v22/employment-status';
+    case 'Yes~/apply/v21/employment-status':
+      redirectUrl = '/apply/v21/employment-status';
       break;
-    case 'No~/apply/v22/statutory-pay-end':
-      redirectUrl = '/apply/v22/statutory-pay-end';
+    case 'No~/apply/v21/statutory-pay-end':
+      redirectUrl = '/apply/v21/statutory-pay-end';
       break;
-    case 'no~/apply/v22/statutory-pay-recent':
-      redirectUrl = '/apply/v22/statutory-pay-recent';
+    case 'no~/apply/v21/statutory-pay-recent':
+      redirectUrl = '/apply/v21/statutory-pay-recent';
       break;
     default:
       redirectUrl = req.path;
@@ -674,15 +674,15 @@ router.route('/apply/v22/work-another')
 });
 
 // Routes
-router.route('/apply/v22/work-hours')
+router.route('/apply/v21/work-hours')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['work-hours']) {
-    case 'yes~/apply/v22/payfrequency':
-      redirectUrl = '/apply/v22/payfrequency';
+    case 'yes~/apply/v21/payfrequency':
+      redirectUrl = '/apply/v21/payfrequency';
       break;
-    case 'no~/apply/v22/pay-varies-frequency':
-      redirectUrl = '/apply/v22/pay-varies-frequency';
+    case 'no~/apply/v21/pay-varies-frequency':
+      redirectUrl = '/apply/v21/pay-varies-frequency';
       break;
     default:
       redirectUrl = req.path;
@@ -692,18 +692,18 @@ router.route('/apply/v22/work-hours')
 });
 
 // Routes
-router.route('/apply/v22/work-supported')
+router.route('/apply/v21/work-supported')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['work-supported']) {
     case 'Yes':
-      redirectUrl = '/apply/v22/expenses';
+      redirectUrl = '/apply/v21/expenses';
       break;
     case 'No':
-      redirectUrl = '/apply/v22/expenses';
+      redirectUrl = '/apply/v21/expenses';
       break;
     case 'I’m not sure':
-      redirectUrl = '/apply/v22/expenses';
+      redirectUrl = '/apply/v21/expenses';
       break;
     default:
       redirectUrl = req.path;
@@ -713,15 +713,15 @@ router.route('/apply/v22/work-supported')
 });
 
 // Routes
-router.route('/apply/v22/expenses')
+router.route('/apply/v21/expenses')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['expenses']) {
-    case 'yes~/apply/v22/expenses-details':
-      redirectUrl = '/apply/v22/expenses-details';
+    case 'yes~/apply/v21/expenses-details':
+      redirectUrl = '/apply/v21/expenses-details';
       break;
-    case 'no~/apply/v22/work-another':
-      redirectUrl = '/apply/v22/work-another';
+    case 'no~/apply/v21/work-another':
+      redirectUrl = '/apply/v21/work-another';
       break;
     default:
       redirectUrl = req.path;
@@ -731,15 +731,15 @@ router.route('/apply/v22/expenses')
 });
 
 // Routes
-router.route('/apply/v22/statutory-pay-end')
+router.route('/apply/v21/statutory-pay-end')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['statutory-pay-recent']) {
-    case 'yes~/apply/v22/statutory-pay-end':
-      redirectUrl = '/apply/v22/statutory-pay-end';
+    case 'yes~/apply/v21/statutory-pay-end':
+      redirectUrl = '/apply/v21/statutory-pay-end';
       break;
-    case 'no~/apply/v22/statutory-pay-other':
-      redirectUrl = '/apply/v22/statutory-pay-other';
+    case 'no~/apply/v21/statutory-pay-other':
+      redirectUrl = '/apply/v21/statutory-pay-other';
       break;
     default:
       redirectUrl = req.path;
@@ -749,24 +749,24 @@ router.route('/apply/v22/statutory-pay-end')
 });
 
 // Routes
-router.route('/apply/v22/statutory-pay-other')
+router.route('/apply/v21/statutory-pay-other')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['statutory-pay-other']) {
     case 'Statutory Maternity Pay':
-      redirectUrl = '/apply/v22/universal-credit';
+      redirectUrl = '/apply/v21/universal-credit';
       break;
     case 'Statutory Paternity Pay':
-      redirectUrl = '/apply/v22/universal-credit';
+      redirectUrl = '/apply/v21/universal-credit';
       break;
     case 'Statutory Adoption Pay':
-      redirectUrl = '/apply/v22/universal-credit';
+      redirectUrl = '/apply/v21/universal-credit';
       break;
     case 'Statutory Shared Parental Pay':
-      redirectUrl = '/apply/v22/universal-credit';
+      redirectUrl = '/apply/v21/universal-credit';
       break;
     case 'None':
-      redirectUrl = '/apply/v22/universal-credit';
+      redirectUrl = '/apply/v21/universal-credit';
       break;
     default:
       redirectUrl = req.path;
@@ -776,18 +776,18 @@ router.route('/apply/v22/statutory-pay-other')
 });
 
 // Routes
-router.route('/apply/v22/pension')
+router.route('/apply/v21/pension')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['pension']) {
     case 'Yes':
-      redirectUrl = '/apply/v22/pension-inherit';
+      redirectUrl = '/apply/v21/pension-inherit';
       break;
     case 'No':
-      redirectUrl = '/apply/v22/insurance';
+      redirectUrl = '/apply/v21/insurance';
       break;
     case 'Not sure':
-      redirectUrl = '/apply/v22/insurance';
+      redirectUrl = '/apply/v21/insurance';
       break;
     default:
       redirectUrl = req.path;
@@ -797,30 +797,30 @@ router.route('/apply/v22/pension')
 });
 
 // Routes
-router.route('/apply/v22/why-no-ssp')
+router.route('/apply/v21/why-no-ssp')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['severe-disability']) {
-    case '12weeks~/apply/v22/may-be-eligible':
-      redirectUrl = '/apply/v22/may-be-eligible';
+    case '12weeks~/apply/v21/may-be-eligible':
+      redirectUrl = '/apply/v21/may-be-eligible';
       break;
-    case 'employmentended~/apply/v22/may-be-eligible':
-      redirectUrl = '/apply/v22/may-be-eligible';
+    case 'employmentended~/apply/v21/may-be-eligible':
+      redirectUrl = '/apply/v21/may-be-eligible';
       break;
-    case 'sickafter~/apply/v22/may-be-eligible':
-      redirectUrl = '/apply/v22/may-be-eligible';
+    case 'sickafter~/apply/v21/may-be-eligible':
+      redirectUrl = '/apply/v21/may-be-eligible';
       break;
-    case 'ssp28weeks~/apply/v22/may-be-eligible':
-      redirectUrl = '/apply/v22/may-be-eligible';
+    case 'ssp28weeks~/apply/v21/may-be-eligible':
+      redirectUrl = '/apply/v21/may-be-eligible';
       break;
-    case 'zerohour~/apply/v22/may-be-eligible':
-      redirectUrl = '/apply/v22/may-be-eligible';
+    case 'zerohour~/apply/v21/may-be-eligible':
+      redirectUrl = '/apply/v21/may-be-eligible';
       break;
-    case 'anotherreason~/apply/v22/may-be-eligible':
-      redirectUrl = '/apply/v22/may-be-eligible';
+    case 'anotherreason~/apply/v21/may-be-eligible':
+      redirectUrl = '/apply/v21/may-be-eligible';
       break;
-    case 'notsure~/apply/v22/may-be-eligible':
-      redirectUrl = '/apply/v22/may-be-eligible';
+    case 'notsure~/apply/v21/may-be-eligible':
+      redirectUrl = '/apply/v21/may-be-eligible';
       break;  
     default:
       redirectUrl = req.path;
@@ -830,7 +830,7 @@ router.route('/apply/v22/why-no-ssp')
 });
 
 // Routes
-router.route('/apply/v22/may-not-be-eligible')
+router.route('/apply/v21/may-not-be-eligible')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['no-health-condition']) {
@@ -840,8 +840,8 @@ router.route('/apply/v22/may-not-be-eligible')
     case 'nsjsa~https://www.gov.uk/jobseekers-allowance/':
       redirectUrl = 'https://www.gov.uk/jobseekers-allowance';
       break;
-    case 'nsesa~/apply/v22/state-pension':
-      redirectUrl = '/apply/v22/state-pension';
+    case 'nsesa~/apply/v21/state-pension':
+      redirectUrl = '/apply/v21/state-pension';
       break;
     default:
       redirectUrl = req.path;
@@ -851,15 +851,15 @@ router.route('/apply/v22/may-not-be-eligible')
 });
 
 // Routes
-router.route('/apply/v22/landline')
+router.route('/apply/v21/landline')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['other-phone']) {
-    case 'yes~/apply/v22/email':
-      redirectUrl = '/apply/v22/email';
+    case 'yes~/apply/v21/email':
+      redirectUrl = '/apply/v21/email';
       break;
-    case 'no~/apply/v22/email':
-      redirectUrl = '/apply/v22/email';
+    case 'no~/apply/v21/email':
+      redirectUrl = '/apply/v21/email';
       break;
     default:
       redirectUrl = req.path;
@@ -869,12 +869,12 @@ router.route('/apply/v22/landline')
 });
 
 // Routes
-router.route('/apply/v22/may-not-be-eligible-national-insurance')
+router.route('/apply/v21/may-not-be-eligible-national-insurance')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['apply-for-uc']) {
-    case 'no~/apply/v22/statutory-pay':
-      redirectUrl = '/apply/v22/statutory-pay';
+    case 'no~/apply/v21/statutory-pay':
+      redirectUrl = '/apply/v21/statutory-pay';
       break;
     case 'yes~https://www.gov.uk/universal-credit':
       redirectUrl = 'https://www.gov.uk/universal-credit';
@@ -887,18 +887,18 @@ router.route('/apply/v22/may-not-be-eligible-national-insurance')
 });
 
 // Routes
-router.route('/apply/v22/insurance')
+router.route('/apply/v21/insurance')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['insurance']) {
     case 'Yes':
-      redirectUrl = '/apply/v22/bank';
+      redirectUrl = '/apply/v21/bank';
       break;
     case 'No':
-      redirectUrl = '/apply/v22/bank';
+      redirectUrl = '/apply/v21/bank';
       break;
     case 'Not sure':
-      redirectUrl = '/apply/v22/bank';
+      redirectUrl = '/apply/v21/bank';
       break;
     default:
       redirectUrl = req.path;
@@ -908,19 +908,19 @@ router.route('/apply/v22/insurance')
 });
 
 // Routes
-router.route('/apply/v22/who-is-applying')
+router.route('/apply/v21/who-is-applying')
 .post((req, res, next) => {
   req.session.destroy();
   let redirectUrl;
   switch (req.body['apply']) {
     case 'apply-myself':
-      redirectUrl = '/apply/v22/eligibility-start';
+      redirectUrl = '/apply/v21/eligibility-start';
       break;
     case 'apply-someone':
-      redirectUrl = '/apply/v22/cannot-apply-online';
+      redirectUrl = '/apply/v21/cannot-apply-online';
       break;
     case 'apply-help':
-      redirectUrl = '/apply/v22/helping-someone-apply';
+      redirectUrl = '/apply/v21/helping-someone-apply';
       break;
     default:
       redirectUrl = req.path;
@@ -930,15 +930,15 @@ router.route('/apply/v22/who-is-applying')
 });
 
 // Routes
-router.route('/apply/v22/claim-start-date-if-statutory-sick-pay')
+router.route('/apply/v21/claim-start-date-if-statutory-sick-pay')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['claim-date-statutory-pay']) {
     case 'yes':
-      redirectUrl = '/apply/v22/claim-end-date';
+      redirectUrl = '/apply/v21/claim-end-date';
       break;
     case 'no':
-      redirectUrl = '/apply/v22/claimdate-new';
+      redirectUrl = '/apply/v21/claimdate-new';
       break;
     default:
       redirectUrl = req.path;
@@ -948,17 +948,17 @@ router.route('/apply/v22/claim-start-date-if-statutory-sick-pay')
 });
 
 // Routes
-router.route('/apply/v22/universal-credit')
+router.route('/apply/v21/universal-credit')
 .post((req, res, next) => {
   let redirectUrl;
   var sspYear = req.session.data['ssp-year'];
 
   switch (sspYear !== undefined) {
     case true:
-      redirectUrl = '/apply/v22/claim-start-date-if-statutory-sick-pay';
+      redirectUrl = '/apply/v21/claim-start-date-if-statutory-sick-pay';
       break;
     case false:
-      redirectUrl = '/apply/v22/claimdate-new';
+      redirectUrl = '/apply/v21/claimdate-new';
       break;
     default:
       redirectUrl = req.path;
