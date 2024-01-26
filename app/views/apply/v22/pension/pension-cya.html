@@ -37,15 +37,118 @@
 
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Are you getting regular payments from a pension or annuity?</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension'] }}</dd>
+          <dd class="govuk-summary-list__value">{{ data['pension'] | default("Yes") }}</dd>
           
-          <dd class="govuk-summary-list__actions"><a href="/apply/v22/pension/pension">Change<span class="govuk-visually-hidden"> first name</span></a></dd>
+          <dd class="govuk-summary-list__actions"><a href="/apply/v22/pension/pension">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">What is the name of your pension or annuity provider?</dt>
+          <dd class="govuk-summary-list__value">{{ data['pension-name'] | default("Scottish Widows") }}</dd>
+          
+          <dd class="govuk-summary-list__actions"><a href="/apply/v22/pension/pension-name">Change<span class="govuk-visually-hidden"> pension name</span></a></dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">What is the address of your pension or annuity provider?</dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['pension-line-1'] | default("69 Morrison Street") }}
+            {{ data['pension-line-2'] }} <br>
+            {{ data['pension-town'] | default("Edinburgh") }} <br>
+            {{ data['pension-postcode'] | default("EH3 1HL") }}
+          </dd>
+          
+          <dd class="govuk-summary-list__actions"><a href="/apply/v22/pension/pension-address">Change<span class="govuk-visually-hidden"> pension address</span></a></dd>
         </div>
 
 
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">How often is your pension or annuity paid?</dt>
+          <dd class="govuk-summary-list__value">{{ data['current-pension-paid'] }}</dd>
+
+          <dd class="govuk-summary-list__actions"><a href="/apply/v22/pension/pension-amount">Change<span class="govuk-visually-hidden"> pension amount</span></a></dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">What is your gross pension or annuity?</dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['current-pension-paid']=="Weekly" %}
+              £{{ data['current-pension-paid-weekly-amount'] }}
+            {% endif %}
+            {% if data['current-pension-paid']=="Every 2 weeks" %}
+              £{{ data['current-pension-paid-fortnightly-amount'] }}
+            {% endif %}
+            {% if data['current-pension-paid']=="Every 4 weeks" %}
+              £{{ data['current-pension-paid-4weeks-amount'] }}
+            {% endif %}
+            {% if data['current-pension-paid']=="Every month" %}
+              £{{ data['current-pension-paid-monthly-amount'] }}
+            {% endif %}
+            {% if data['current-pension-paid']=="Every 3 months" %}
+              £{{ data['current-pension-paid-3monthly-amount'] }}
+            {% endif %}
+            {% if data['current-pension-paid']=="Twice a year" %}
+              £{{ data['current-pension-paid-twiceyearly-amount'] }}
+            {% endif %}
+            {% if data['current-pension-paid']=="Once a year" %}
+              £{{ data['current-pension-paid-yearly-amount'] }}
+            {% endif %}
+          </dd>
+
+          <dd class="govuk-summary-list__actions"><a href="/apply/v22/pension/pension-amount"><span class="govuk-visually-hidden"> pension amount</span></a></dd>
+        </div>
+
+
+        {% if data['pension-reference']=="No" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Do you know the policy or reference number of your pension or annuity?</dt>
+          <dd class="govuk-summary-list__value">No</dd>
+
+          <dd class="govuk-summary-list__actions"><a href="/apply/v22/pension/pension-reference">Change<span class="govuk-visually-hidden"> pension amount</span></a></dd>
+        </div>
+        {% endif %}
+
+        {% if data['pension-reference']=="Yes" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Do you know the policy or reference number of your pension or annuity?</dt>
+          <dd class="govuk-summary-list__value">Yes</dd>
+
+          <dd class="govuk-summary-list__actions"><a href="/apply/v22/pension/pension-reference">Change<span class="govuk-visually-hidden"> pension amount</span></a></dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Policy or reference number</dt>
+          <dd class="govuk-summary-list__value">{{ data['pension-reference-details'] }}</dd>
+
+          <dd class="govuk-summary-list__actions"><a href="/apply/v22/pension/pension-reference"><span class="govuk-visually-hidden"> pension amount</span></a></dd>
+        </div>
+        {% endif %}
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Is this pension or annuity inherited?</dt>
+          <dd class="govuk-summary-list__value">{{ data['pension-inherited'] | default("No") }}</dd>
+          
+          <dd class="govuk-summary-list__actions"><a href="/apply/v22/pension/pension-inherited">Change<span class="govuk-visually-hidden"> pension inherited</span></a></dd>
+        </div>
+
         
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Do you have another pension or annuity you currently receive?</dt>
+          <dd class="govuk-summary-list__value">{{ data['pension-another'] | default("No") }}</dd>
+          
+          <dd class="govuk-summary-list__actions"><a href="/apply/v22/pension/pension-another">Change<span class="govuk-visually-hidden"> pension inherited</span></a></dd>
+        </div>
+
+
+
+
+
+
         
       </dl>
 
