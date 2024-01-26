@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Pension or annuity payments - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="/apply/v22/declaration">
+
+
+      <h1 class="govuk-heading-l">
+        Check your answers before sending your application
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        Pension or annuity
+      </h2>
+   
+
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Are you getting regular payments from a pension or annuity?</dt>
+          <dd class="govuk-summary-list__value">{{ data['pension'] }}</dd>
+          
+          <dd class="govuk-summary-list__actions"><a href="/apply/v22/pension/pension">Change<span class="govuk-visually-hidden"> first name</span></a></dd>
+        </div>
+
+
+        
+        
+      </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+

@@ -1,3 +1,5 @@
+
+
 //
 // For guidance on how to create routes see:
 // https://prototype-kit.service.gov.uk/docs/create-routes
@@ -775,6 +777,7 @@ router.route('/apply/v22/statutory-pay-other')
   res.redirect(redirectUrl);
 });
 
+
 // Routes
 router.route('/apply/v22/pension')
 .post((req, res, next) => {
@@ -795,6 +798,15 @@ router.route('/apply/v22/pension')
   }
   res.redirect(redirectUrl);
 });
+
+
+
+
+
+// Routes - Pension frequency and amount
+
+
+
 
 // Routes
 router.route('/apply/v22/why-no-ssp')
@@ -965,6 +977,71 @@ router.route('/apply/v22/universal-credit')
       break;
   }
   res.redirect(redirectUrl);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// New Routes
+
+
+// Section - Pension or annuity
+
+// Pension - Are you getting regular payments from a pension or annuity?
+
+router.post('/apply/v22/pension/pension', function (req, res) {
+  var answer = req.session.data['pension'];
+  if (answer === 'No') {
+    res.redirect(`/apply/v22/pension/pension-cya`);
+  } 
+  else {
+    res.redirect(`/apply/v22/pension/pension-name`);
+  }
+});
+
+
+
+// Pension - Do you have another pension or annuity you currently receive?
+
+router.post('/apply/v22/pension/pension-another', function (req, res) {
+  var answer = req.session.data['pension-another'];
+  if (answer === 'Yes') {
+    res.redirect(`/apply/v22/pension/pension`);
+  } 
+  else {
+    res.redirect(`/apply/v22/pension/pension-cya`);
+  }
 });
 
 
