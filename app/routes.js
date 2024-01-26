@@ -1036,12 +1036,11 @@ router.post('/apply/v22/pension/pension', function (req, res) {
 
 router.post('/apply/v22/pension/pension-another', function (req, res) {
   var answer = req.session.data['pension-another'];
-  if (answer === 'Yes') {
-    res.redirect(`/apply/v22/pension/pension`);
+  if (answer === 'pension-another-yes') {
+    res.redirect(`/apply/v22/pension/pension-name`);
   } 
   else {
     res.redirect(`/apply/v22/pension/pension-cya`);
   }
 });
-
 
