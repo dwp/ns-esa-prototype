@@ -3,20 +3,209 @@
 {% block content %}
 
 
-    <h1 class="govuk-heading-l">Prototypes</h1>
 
-    <div class="govuk-grid-row">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Prototype</span>
+      New Style Employment and Support Allowance
+    </h1>
+<br><br>
+    <span class="govuk-tag govuk-!-margin-bottom-2">Latest version</span>
+    <h2 class="govuk-heading-l">Current citizen journey</h2>
 
-        <div class="govuk-grid-column-two-thirds">
-      
-          <h2 class="govuk-heading-l">Version 22</h2>
-          <p>Created: December 2023 (Last updated: 11/1/2023)</p>
-          <p><a href="/apply/v22/who-is-applying" class="govuk-button">View version 22 prototype</a></p>
+    {{ govukButton({
+      text: "Start prototype",
+      href: "/apply/v22/who-is-applying",
+      isStartButton: true
+       }) }}
+
+    <p><strong>Created:</strong> December 2023<br>
+        <strong>Last updated:</strong> 11 January 2024 <br>
+        <strong>Version:</strong> 22
+    </p>
+
+    {{ govukDetails({
+      summaryText: "Version change details",
+      html: '
    
-<br>
-<br>
+      <p>This prototype is retrived from the team Falcon in December 2023. This prototype is same as live sevice.</p>
+      <p><a href="https://www.gov.uk/guidance/new-style-employment-and-support-allowance" target="_blank">Click here to view live service.</a></p>
+   
+    
+
+      '
+      }) }}
+
+      
+      </div>
   
-    <details class="govuk-details">
+
+
+
+
+
+    <div class="govuk-grid-column-one-quarter govuk-!-padding-0 govuk-!-margin-right-4" style="border-top: 4px solid #1d71b8; float: right;">
+      <h3 class="govuk-heading-s govuk-!-margin-top-2">
+        Quick links
+      </h3>
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li><a href="/apply/v22/eligibility-start">Eligibility</a></li>
+          <li><a href="/apply/v22/name">Personal details</a></li>
+          <li><a href="/apply/v22/condition">Medical condition</a></li>
+          <li><a href="/apply/v22/voluntary-work">Voluntary work</a></li>
+          <li><a href="/apply/v22/work">Paid work</a></li>
+          <li><a href="/apply/v22/statutory-pay-recent">Benefits</a></li>
+          <li><a href="/apply/v22/pension">Pension or annuity</a></li>
+          <li><a href="/apply/v22/bank">Bank details</a></li>
+          <li><a href="/apply/v22/consent-outcome">Sharing the outcome consent</a></li>
+
+
+        </ul>
+    </div>
+  </div>
+
+
+
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="govuk-heading-l">New features and iterations</h2>
+
+
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+  
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="#in-test">
+          Testing
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#in-dev">
+          In development
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#archive">
+          Archive
+        </a>
+      </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Links for In Test -->
+
+    <div class="govuk-tabs__panel" id="in-test">
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Links</th>
+            <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Description</th>
+          </tr>
+        </thead>
+      
+      
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="border: 0;"><a href="apply/v22/pension/pension">Pension or annuity</a></th>
+              <td class="govuk-table__cell" style="border: 0;">
+                Prototype with all new questions for the 'pension or annuity' section. <br><br>
+                <p style="color: grey;">Created: December 2023 <br>Last updated:</strong> 26 January 2024</p>
+              </td>
+          </tr>
+
+
+
+        </tbody>
+      </table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="in-dev">
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Links</th>
+            <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Description</th>
+          </tr>
+        </thead>
+
+
+
+  
+      </table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="archive">
+    
+
+      <details class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
             Prototypes done by team Falcon
@@ -40,5 +229,123 @@
         </div>
       </details>
 
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 {% endblock %}
