@@ -131,7 +131,7 @@
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Is this pension or annuity inherited?</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension-inherited'] | default("No") }}</dd>
+          <dd class="govuk-summary-list__value">{{ data['pension-inherited'] }}</dd>
           
           <dd class="govuk-summary-list__actions"><a href="/apply/v22/pension/pension-inherited">Change<span class="govuk-visually-hidden"> pension inherited</span></a></dd>
         </div>
@@ -139,7 +139,7 @@
         
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Do you have another pension or annuity you currently receive?</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension-another'] | default("No") }}</dd>
+          <dd class="govuk-summary-list__value">{{ data['pension-another'] }}</dd>
           
           <dd class="govuk-summary-list__actions"><a href="/apply/v22/pension/pension-another">Change<span class="govuk-visually-hidden"> pension inherited</span></a></dd>
         </div>
