@@ -23,7 +23,7 @@
 
 
 
-    <form method="post" action="/prototype-experimental/pension/pension-add-another">
+    <form method="post" action="/prototype-experimental/pension/pension-2/pension-add-another">
 
   
       <div class="govuk-form-group">
@@ -33,6 +33,9 @@
               <ul class="govuk-list govuk-heading-m">
 
                 {% for item in data['pension-name'] | split(',') %}
+                  <li>{{ item }}</li>
+                {% endfor %}
+                {% for item in data['another-pension-name'] | split(',') %}
                   <li>{{ item }}</li>
                 {% endfor %}
                
@@ -46,13 +49,13 @@
 
           <div class="govuk-radios govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="pension-another-1" name="pension-another" type="radio" value="Yes" data-aria-controls="yes-cond">
+              <input class="govuk-radios__input" id="pension-another-1" name="pension2-another" type="radio" value="Yes" data-aria-controls="yes-cond">
               <label class="govuk-label govuk-radios__label" for="pension-another-1">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="pension-another-2" name="pension-another" type="radio" value="No">
+              <input class="govuk-radios__input" id="pension-another-2" name="pension2-another" type="radio" value="No">
               <label class="govuk-label govuk-radios__label" for="pension-another-2">
                 No
               </label>
