@@ -1020,13 +1020,13 @@ router.route('/apply/v22/universal-credit')
 
 // Pension - Are you getting regular payments from a pension or annuity?
 
-router.post("/apply/v22/pension/pension", function (req, res) {
+router.post('/apply/v22/pension/pension', function (req, res) {
   var answer = req.session.data['pension'];
-  if (answer === 'No') {
-    res.redirect(`/apply/v22/pension/pension-cya`);
+  if (answer === 'Yes') {
+    res.redirect(`/apply/v22/pension/pension-name`);
   } 
   else {
-    res.redirect(`/apply/v22/pension/pension-name`);
+    res.redirect(`/apply/v22/pension/pension-cya`);
   }
 });
 
@@ -1034,14 +1034,26 @@ router.post("/apply/v22/pension/pension", function (req, res) {
 
 // Pension - Do you have another pension or annuity you currently receive?
 
-router.post("/apply/v22/pension/pension-another", function (req, res) {
-  var answer = req.session.data['pension-another'];
-  if (answer === 'Yes') {
-    res.redirect(`/apply/v22/pension/pension-name`);
-  } 
-  else {
-    res.redirect(`/apply/v22/pension/pension-cya`);
+
+
+
+
+
+router.route('/apply/v22/pension/pension-add-another')
+.post((req, res, next) => {
+  let redirectUrl;
+  switch (req.body['pension-another']) {
+    case 'Yes':
+      redirectUrl = '/apply/v22/pension/pension-name';
+      break;
+    case 'No':
+      redirectUrl = '/apply/v22/pension/pension-cya';
+      break;
+    default:
+      redirectUrl = req.path;
+      break;
   }
+  res.redirect(redirectUrl);
 });
 
 
