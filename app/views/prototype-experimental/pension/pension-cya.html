@@ -217,7 +217,7 @@
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">How often is your pension or annuity paid?</dt>
-          <dd class="govuk-summary-list__value">{{ data['current-pension-paid'] }}</dd>
+          <dd class="govuk-summary-list__value">{{ data['current-pension2-paid'] }}</dd>
 
           <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-amount">Change<span class="govuk-visually-hidden"> pension amount</span></a></dd>
         </div>
@@ -226,26 +226,26 @@
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">What is your gross pension or annuity?</dt>
           <dd class="govuk-summary-list__value">
-            {% if data['current-pension-paid']=="Weekly" %}
-              £{{ data['current-pension-paid-weekly-amount'] }}
+            {% if data['current-pension2-paid']=="Weekly" %}
+              £{{ data['current-pension2-paid-weekly-amount'] }}
             {% endif %}
-            {% if data['current-pension-paid']=="Every 2 weeks" %}
-              £{{ data['current-pension-paid-fortnightly-amount'] }}
+            {% if data['current-pension2-paid']=="Every 2 weeks" %}
+              £{{ data['current-pension2-paid-fortnightly-amount'] }}
             {% endif %}
-            {% if data['current-pension-paid']=="Every 4 weeks" %}
-              £{{ data['current-pension-paid-4weeks-amount'] }}
+            {% if data['current-pension2-paid']=="Every 4 weeks" %}
+              £{{ data['current-pension2-paid-4weeks-amount'] }}
             {% endif %}
-            {% if data['current-pension-paid']=="Every month" %}
-              £{{ data['current-pension-paid-monthly-amount'] }}
+            {% if data['current-pension2-paid']=="Every month" %}
+              £{{ data['current-pension2-paid-monthly-amount'] }}
             {% endif %}
-            {% if data['current-pension-paid']=="Every 3 months" %}
-              £{{ data['current-pension-paid-3monthly-amount'] }}
+            {% if data['current-pension2-paid']=="Every 3 months" %}
+              £{{ data['current-pension2-paid-3monthly-amount'] }}
             {% endif %}
-            {% if data['current-pension-paid']=="Twice a year" %}
-              £{{ data['current-pension-paid-twiceyearly-amount'] }}
+            {% if data['current-pension2-paid']=="Twice a year" %}
+              £{{ data['current-pension2-paid-twiceyearly-amount'] }}
             {% endif %}
-            {% if data['current-pension-paid']=="Once a year" %}
-              £{{ data['current-pension-paid-yearly-amount'] }}
+            {% if data['current-pension2-paid']=="Once a year" %}
+              £{{ data['current-pension2-paid-yearly-amount'] }}
             {% endif %}
           </dd>
 
@@ -253,7 +253,7 @@
         </div>
 
 
-        {% if data['pension-reference']=="No" %}
+        {% if data['pension2-reference']=="No" %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Do you know the policy or reference number of your pension or annuity?</dt>
           <dd class="govuk-summary-list__value">No</dd>
@@ -262,7 +262,7 @@
         </div>
         {% endif %}
 
-        {% if data['pension-reference']=="Yes" %}
+        {% if data['pension2-reference']=="Yes" %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Do you know the policy or reference number of your pension or annuity?</dt>
           <dd class="govuk-summary-list__value">Yes</dd>
@@ -272,7 +272,7 @@
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Policy or reference number</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension-reference-details'] }}</dd>
+          <dd class="govuk-summary-list__value">{{ data['pension2-reference-details'] }}</dd>
 
           <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-reference"><span class="govuk-visually-hidden"> pension amount</span></a></dd>
         </div>
@@ -281,7 +281,7 @@
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Is this pension or annuity inherited?</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension-inherited'] }}</dd>
+          <dd class="govuk-summary-list__value">{{ data['pension2-inherited'] }}</dd>
           
           <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-inherited">Change<span class="govuk-visually-hidden"> pension inherited</span></a></dd>
         </div>
