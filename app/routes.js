@@ -1078,3 +1078,17 @@ router.route('/apply/v22/pension/pension-add-another')
 // Routes 
 // Experimental Prototype
 
+
+// Section - Pension or annuity
+
+// Pension - Are you getting regular payments from a pension or annuity?
+
+router.post('/apply/v22/pension/pension', function (req, res) {
+  var answer = req.session.data['pension'];
+  if (answer === 'Yes') {
+    res.redirect(`/apply/v22/pension/pension-name`);
+  } 
+  else {
+    res.redirect(`/apply/v22/pension/pension-cya`);
+  }
+});
