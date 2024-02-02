@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        Application complete
+      </h1>
+      <div class="govuk-panel__body">
+        Your reference number:<br><strong>{{ data['national-insurance-number'] | default("AB 00 12 34 C") }}</strong>
+      </div>
+    </div>
+
+  </div> 
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body">If you've provided an email address, we will send you the information on this page. You can also download or print it.</p>
+    </br>
+    <p class="govuk-body govuk-!-font-weight-bold"><a href="https://www.gov.uk/send-fit-note" target="_blank">Download this page</a></p>
+    <p class="govuk-body govuk-!-font-weight-bold"><a href="https://www.gov.uk/send-fit-note" target="_blank">Print this page</a></p></br>
+
+    <h2 class="govuk-heading-l">What happens next</h2>
+    <p class="govuk-body">We will process your application. We will aim to contact you within 48 hours to let you know the outcome of your claim.</p> 
+
+
+    <h2 class="govuk-heading-m">Send us medical evidence to support your application</h2>
+
+    {# BAU Evidence #}
+
+    <p class="govuk-body">You can ask your doctor, consultant or nurse to complete an SR1 form, if they have not already done so. This form provides evidence about your illness and is sent directly to DWP.</p>
+
+    <p class="govuk-body">If you have another kind of medical evidence, you can tell us about this when we contact you.</p> 
+    
+
+
+    <h3 class="govuk-heading-s">Report a change of circumstances</h3>
+    <p class="govuk-body">If your circumstances change, for example  you change your address, you need to <a href="" class="govuk-link" target="_blank">let us know (opens in a new tab).</a></p>
+<br>
+   <p><a href="" class="govuk-link" target="_blank">Learn more about the claim process</a></p>
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+  
+
+
+
+    
+
+
+   
+
+
+
+    
+    
+
+    
+  </div>
+  {% endblock %}

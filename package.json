@@ -7,6 +7,8 @@
   "name": "govuk-prototype-kit",
   "dependencies": {
     "@govuk-prototype-kit/step-by-step": "2.1.0",
+    "accessible-autocomplete": "^2.0.4",
+    "govuk-country-and-territory-autocomplete": "^1.0.2",
     "govuk-frontend": "4.6.0",
     "govuk-prototype-kit": "13.9.0",
     "jquery": "3.7.0",
