@@ -40,10 +40,38 @@
 
       <div class="govuk-form-group">
         <div class="govuk-radios" data-module="govuk-radios">
+
+
+
+
+
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="how-often-paid-0" name="how-often-paid" type="radio" value="Daily" data-aria-controls="conditional-how-often-paid-0" {{ checked("how-often-paid", "Every day") }}>
+            <label class="govuk-label govuk-radios__label" for="how-often-paid">
+              Daily
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-often-paid-0">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="how-often-paid-daily">
+                <strong>How much do you get paid each time?</strong>
+              </label>
+              <div id="how-often-paid-daily-hint" class="govuk-hint">
+                This is the exact amount that is paid into your bank account.
+              </div>
+              <div class="govuk-input__wrapper">
+                <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                <input class="govuk-input govuk-input--width-10" id="how-often-paid-daily-amount" name="how-often-paid-daily-amount" type="numeric" spellcheck="false" autocomplete="email" value="{{ data['how-often-paid-daily-amount'] }}">
+              </div>
+            </div>
+          </div>
+
+
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="how-often-paid" name="how-often-paid" type="radio" value="Weekly" data-aria-controls="conditional-how-often-paid" {{ checked("how-often-paid", "Every week") }}>
             <label class="govuk-label govuk-radios__label" for="how-often-paid">
-              Every week
+              Weekly
             </label>
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-often-paid">
@@ -106,7 +134,7 @@
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="how-often-paid-4" name="how-often-paid" type="radio" value="Every month" data-aria-controls="conditional-how-often-paid-4" {{ checked("how-often-paid", "Every month") }}>
             <label class="govuk-label govuk-radios__label" for="how-often-paid">
-              Every month
+              Monthly
             </label>
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-often-paid-4">
@@ -127,7 +155,7 @@
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="how-often-paid-5" name="how-often-paid" type="radio" value="Every 3 months" data-aria-controls="conditional-how-often-paid-5" {{ checked("how-often-paid", "Every 3 months") }}>
             <label class="govuk-label govuk-radios__label" for="how-often-paid">
-              Every 3 months
+              Quarterly
             </label>
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-often-paid-5">
@@ -148,7 +176,7 @@
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="how-often-paid-6" name="how-often-paid" type="radio" value="Twice a year" data-aria-controls="conditional-how-often-paid-6" {{ checked("how-often-paid", "Twice a year") }}>
             <label class="govuk-label govuk-radios__label" for="how-often-paid">
-              Twice a year
+              Every 6 months
             </label>
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-often-paid-6">
@@ -169,7 +197,7 @@
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="how-often-paid-7" name="how-often-paid" type="radio" value="Once a year" data-aria-controls="conditional-how-often-paid-7" {{ checked("how-often-paid", "Once a year") }}>
             <label class="govuk-label govuk-radios__label" for="how-often-paid">
-              Once a year
+              Annually
             </label>
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-often-paid-7">

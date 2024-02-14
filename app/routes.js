@@ -983,36 +983,6 @@ router.route('/apply/v22/universal-credit')
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // New Routes
 
 
@@ -1075,8 +1045,95 @@ router.route('/apply/v22/pension/pension-add-another')
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Routes 
 // Experimental Prototype
+
+
+
+// Section - Medical condition 
+
+// SREL condition - remove 'when do you want to claim until' page from the user journey
+
+
+
+
+
+
+
+
+
 
 
 // Section - Pension or annuity

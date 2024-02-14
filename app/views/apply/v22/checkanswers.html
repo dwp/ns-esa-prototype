@@ -246,6 +246,27 @@
       
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <h2 class="govuk-heading-m">
           Health details
         </h2>
@@ -264,8 +285,9 @@
               Health condition
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['condition-name'] }} <br>
-              Started {{ data['conditions-started-day'] }} {{data['conditions-{{ i }}-started-month'] }} {{data['conditions-{{ i }}-started-year'] }}
+              {{ data['condition-name-1'] }} <br>
+              Started {{ data['conditions-started-day'] }} {{data['conditions-{{ i }}-started-month'] }} {{data['conditions-{{ i }}-started-year'] }} <br>
+              Started {{data['medical-condition-1-started-day']}} {{data['medical-condition-1-started-month'] }} {{data['medical-condition-1-started-year'] }}
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-list">
                 <li><a href="remove-condition">
