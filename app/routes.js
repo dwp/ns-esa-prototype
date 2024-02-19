@@ -1120,17 +1120,81 @@ router.route('/apply/v22/pension/pension-add-another')
 // Routes 
 // Experimental Prototype
 
+// Section - Eligibility
+
+
+// Section - Personal details
 
 
 // Section - Medical condition 
 
 // SREL condition - remove 'when do you want to claim until' page from the user journey
 
+router.route('/prototype-srel/live-less-than-12-months')
+.post((req, res, next) => {
+  let redirectUrl;
+  switch (req.body['terminal-illness']) {
+    case 'Yes':
+      redirectUrl = '/prototype-srel/sr1-report';
+      break;
+    case 'No':
+      redirectUrl = '/prototype-srel/claim-start-date-if-statutory-sick-pay';
+      break;
+    default:
+      redirectUrl = req.path;
+      break;
+  }
+  res.redirect(redirectUrl);
+});
 
 
 
 
 
+
+router.route('/prototype-srel/claim-start-date-if-statutory-sick-pay')
+.post((req, res, next) => {
+  let redirectUrl;
+  switch (req.body['claim-date-statutory-pay']) {
+    case 'yes':      
+      redirectUrl = '/prototype-srel/claim-end-date';
+      break;
+    case 'no':
+      redirectUrl = '/prototype-srel/claimdate-new';
+      break;
+    default:
+      redirectUrl = req.path;
+      break;
+  }
+  res.redirect(redirectUrl);
+});
+
+
+
+router.route('/prototype-srel/claim-start-date-if-srel')
+.post((req, res, next) => {
+  let redirectUrl;
+  switch (req.body['claim-date-statutory-pay-srel']) {
+    case 'yes':      
+      redirectUrl = '/prototype-srel/work-overseas';
+      break;
+    case 'no':
+      redirectUrl = '/prototype-srel/claimdate-new';
+      break;
+    default:
+      redirectUrl = req.path;
+      break;
+  }
+  res.redirect(redirectUrl);
+});
+
+
+
+
+// Section - Work
+
+
+// Section - Benefits
 
 
 
