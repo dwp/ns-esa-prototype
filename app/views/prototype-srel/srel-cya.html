@@ -30,9 +30,6 @@
         Check your answers before sending your application
       </h1>
 
-      <h2 class="govuk-heading-m">
-        Pension or annuity
-      </h2>
    
 
 
@@ -42,257 +39,73 @@
 
 
 
-        {% if data['pension']=="No" %}
-        <div class="govuk-summary-list__row">
-            <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Are you getting regular payments from a pension or annuity?</dt>
-            <dd class="govuk-summary-list__value">{{ data['pension'] }}</dd>
-            
-            <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
-          </div>
-
-        {% endif %}
-
-        {% if data['pension']=="I am not sure" %}
-        <div class="govuk-summary-list__row">
-            <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Are you getting regular payments from a pension or annuity?</dt>
-            <dd class="govuk-summary-list__value">{{ data['pension'] }}</dd>
-            
-            <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
-          </div>
-
-        {% endif %}
-
-
-
-
-
-
-
-
-
-
-
-
-        {% if data['pension']=="Yes" %}
-
         
+
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Are you getting regular payments from a pension or annuity?</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension'] }}</dd>
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Has your doctor said you might have less than 12 months to live due to any of your conditions?</dt>
+          <dd class="govuk-summary-list__value">{{ data['terminal-illness'] }}</dd>
           
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">What is the name of your pension or annuity provider?</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension-name'] }}</dd>
-          
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension-name">Change<span class="govuk-visually-hidden"> pension name</span></a></dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">What is the address of your pension or annuity provider?</dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['pension-line-1'] }}
-            {{ data['pension-line-2'] }} <br>
-            {{ data['pension-town'] }} <br>
-            {{ data['pension-postcode'] }}
-          </dd>
-          
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension-address">Change<span class="govuk-visually-hidden"> pension address</span></a></dd>
-        </div>
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">How often is your pension or annuity paid?</dt>
-          <dd class="govuk-summary-list__value">{{ data['current-pension-paid'] }}</dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension-amount">Change<span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">What is your gross pension or annuity?</dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['current-pension-paid']=="Weekly" %}
-              £{{ data['current-pension-paid-weekly-amount'] }}
-            {% endif %}
-            {% if data['current-pension-paid']=="Every 2 weeks" %}
-              £{{ data['current-pension-paid-fortnightly-amount'] }}
-            {% endif %}
-            {% if data['current-pension-paid']=="Every 4 weeks" %}
-              £{{ data['current-pension-paid-4weeks-amount'] }}
-            {% endif %}
-            {% if data['current-pension-paid']=="Every month" %}
-              £{{ data['current-pension-paid-monthly-amount'] }}
-            {% endif %}
-            {% if data['current-pension-paid']=="Every 3 months" %}
-              £{{ data['current-pension-paid-3monthly-amount'] }}
-            {% endif %}
-            {% if data['current-pension-paid']=="Twice a year" %}
-              £{{ data['current-pension-paid-twiceyearly-amount'] }}
-            {% endif %}
-            {% if data['current-pension-paid']=="Once a year" %}
-              £{{ data['current-pension-paid-yearly-amount'] }}
-            {% endif %}
-          </dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension-amount"><span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-
-
-        {% if data['pension-reference']=="No" %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Do you know the policy or reference number of your pension or annuity?</dt>
-          <dd class="govuk-summary-list__value">No</dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension-reference">Change<span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-        {% endif %}
-
-        {% if data['pension-reference']=="Yes" %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Do you know the policy or reference number of your pension or annuity?</dt>
-          <dd class="govuk-summary-list__value">Yes</dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension-reference">Change<span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Policy or reference number</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension-reference-details'] }}</dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension-reference"><span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-        {% endif %}
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Is this pension or annuity inherited?</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension-inherited'] }}</dd>
-          
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension-inherited">Change<span class="govuk-visually-hidden"> pension inherited</span></a></dd>
-        </div>
-
+          <dd class="govuk-summary-list__actions"><a href="live-less-than-12-months">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
         
+        </div>
+        </div>
+
+
+
+        {% if data['terminal-illness']=="Yes" %}
+ 
+
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Do you have another pension or annuity you currently receive?</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension-another'] }}</dd>
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Has your doctor, consultant or specialist nurse completed an SR1 form?</dt>
+          <dd class="govuk-summary-list__value">{{ data['ds1500'] }}</dd>
           
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension-add-another">Change<span class="govuk-visually-hidden"> pension inherited</span></a></dd>
-        </div>
-
-
-
-
-
-
-
-
-
-
-        {% if data['pension-another']=="Yes" %}
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">What is the name of your pension or annuity provider?</dt>
-          <dd class="govuk-summary-list__value">{{ data['another-pension-name'] }}</dd>
-          
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-name">Change<span class="govuk-visually-hidden"> pension name</span></a></dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">What is the address of your pension or annuity provider?</dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['pension2-line-1'] }}
-            {{ data['pension2-line-2'] }} <br>
-            {{ data['pension2-town'] }} <br>
-            {{ data['pension2-postcode'] }}
-          </dd>
-          
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-address">Change<span class="govuk-visually-hidden"> pension address</span></a></dd>
-        </div>
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">How often is your pension or annuity paid?</dt>
-          <dd class="govuk-summary-list__value">{{ data['current-pension2-paid'] }}</dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-amount">Change<span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">What is your gross pension or annuity?</dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['current-pension2-paid']=="Weekly" %}
-              £{{ data['current-pension2-paid-weekly-amount'] }}
-            {% endif %}
-            {% if data['current-pension2-paid']=="Every 2 weeks" %}
-              £{{ data['current-pension2-paid-fortnightly-amount'] }}
-            {% endif %}
-            {% if data['current-pension2-paid']=="Every 4 weeks" %}
-              £{{ data['current-pension2-paid-4weeks-amount'] }}
-            {% endif %}
-            {% if data['current-pension2-paid']=="Every month" %}
-              £{{ data['current-pension2-paid-monthly-amount'] }}
-            {% endif %}
-            {% if data['current-pension2-paid']=="Every 3 months" %}
-              £{{ data['current-pension2-paid-3monthly-amount'] }}
-            {% endif %}
-            {% if data['current-pension2-paid']=="Twice a year" %}
-              £{{ data['current-pension2-paid-twiceyearly-amount'] }}
-            {% endif %}
-            {% if data['current-pension2-paid']=="Once a year" %}
-              £{{ data['current-pension2-paid-yearly-amount'] }}
-            {% endif %}
-          </dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-amount"><span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-
-
-        {% if data['pension2-reference']=="No" %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Do you know the policy or reference number of your pension or annuity?</dt>
-          <dd class="govuk-summary-list__value">No</dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-reference">Change<span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-        {% endif %}
-
-        {% if data['pension2-reference']=="Yes" %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Do you know the policy or reference number of your pension or annuity?</dt>
-          <dd class="govuk-summary-list__value">Yes</dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-reference">Change<span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Policy or reference number</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension2-reference-details'] }}</dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-reference"><span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-        {% endif %}
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Is this pension or annuity inherited?</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension2-inherited'] }}</dd>
-          
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-inherited">Change<span class="govuk-visually-hidden"> pension inherited</span></a></dd>
-        </div>
-
+          <dd class="govuk-summary-list__actions"><a href="sr1-report">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
         
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Do you have another pension or annuity you currently receive?</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension2-another'] }}</dd>
-          
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-another">Change<span class="govuk-visually-hidden"> pension inherited</span></a></dd>
         </div>
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Do you want to claim from <span class="suggested-claim-date" data-year="{{ data['ssp-year'] }}" data-month="{{ data['ssp-month'] }}" data-day="{{ data['ssp-day'] }}"></span>?</dt>
+        <dd class="govuk-summary-list__value">{{ data['claim-date-statutory-pay-srel'] }}</dd>
+        
+        <dd class="govuk-summary-list__actions"><a href="claim-start-date-if-srel">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+      
+      </div>
+    </div>
+
+
+    {% if data['claim-date-statutory-pay-srel']=="No" %}
+    <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">What date do you want to claim Employment Support Allowance from?</dt>
+      <dd class="govuk-summary-list__value">{{data['claim-day']}} {{data['claim-month'] | toMonth }} {{data['claim-year']}}</dd>
+      
+      <dd class="govuk-summary-list__actions"><a href="claimdate-new">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+    
+      </div>
+    </div>
+    {% endif %}
+
+
+
+    <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Have you worked abroad in the last 5 years?</dt>
+      <dd class="govuk-summary-list__value">{{data['work-overseas']}}</dd>
+      
+      <dd class="govuk-summary-list__actions"><a href="claimdate-new">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+    
+    </div>
+  </div>
+
+
+
+
+ {% endif %}
 
 
 
@@ -300,7 +113,90 @@
 
 
 
-        {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ {% if data['terminal-illness']=="No" %}
+ 
+
+
+<div class="govuk-summary-list__row">
+ <div class="govuk-summary-list__row">
+ <dt class="govuk-summary-list__key">Do you want to claim from <span class="suggested-claim-date" data-year="{{ data['ssp-year'] }}" data-month="{{ data['ssp-month'] }}" data-day="{{ data['ssp-day'] }}"></span>?</dt>
+ <dd class="govuk-summary-list__value">{{ data['claim-date-statutory-pay'] }}</dd>
+ 
+ <dd class="govuk-summary-list__actions"><a href="claim-start-date-if-statutory-sick-pay">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+
+</div>
+</div>
+
+
+{% if data['claim-date-statutory-pay']=="no" %}
+<div class="govuk-summary-list__row">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">What date do you want to claim Employment Support Allowance from?</dt>
+<dd class="govuk-summary-list__value">{{data['claim-day']}} {{data['claim-month'] | toMonth }} {{data['claim-year']}}</dd>
+
+<dd class="govuk-summary-list__actions"><a href="claimdate-new">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+
+</div>
+</div>
+{% endif %}
+
+
+<div class="govuk-summary-list__row">
+  <div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">Do you know the date you want to claim until?</dt>
+  <dd class="govuk-summary-list__value">{{data['claim-end']}}</dd>
+  
+  <dd class="govuk-summary-list__actions"><a href="claim-end-date">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+  
+  </div>
+</div>
+
+{% if data['claim-end']=="yes" %}
+
+<div class="govuk-summary-list__row">
+  <div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">Claim end date</dt>
+  <dd class="govuk-summary-list__value">{{data['claim-end-day']}} {{data['claim-end-month'] | toMonth }} {{data['claim-end-year']}}</dd>
+  
+  <dd class="govuk-summary-list__actions"><a href="claim-end-date">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+  
+  </div>
+</div>
+
+{% endif %}
+
+
+
+
+
+<div class="govuk-summary-list__row">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">Have you worked abroad in the last 5 years?</dt>
+<dd class="govuk-summary-list__value">{{data['work-overseas']}}</dd>
+
+<dd class="govuk-summary-list__actions"><a href="claimdate-new">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+
+</div>
+</div>
+
+
+
+
+{% endif %}
 
 
 
@@ -324,9 +220,10 @@
 
 
 
-        {% endif %}
+     
         
       </dl>
+
 
 
 

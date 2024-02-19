@@ -1175,10 +1175,10 @@ router.route('/prototype-srel/claim-start-date-if-srel')
 .post((req, res, next) => {
   let redirectUrl;
   switch (req.body['claim-date-statutory-pay-srel']) {
-    case 'yes':      
+    case 'Yes':      
       redirectUrl = '/prototype-srel/work-overseas';
       break;
-    case 'no':
+    case 'No':
       redirectUrl = '/prototype-srel/claimdate-new';
       break;
     default:
