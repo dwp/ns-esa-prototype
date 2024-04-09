@@ -30,25 +30,8 @@
           Check your answers before sending your application
         </h1>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </br>
-    </br>
-
         <h2 class="govuk-heading-m">
-          Personal information
+          Personal details
         </h2>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -66,7 +49,6 @@
             </dd>
           </div>
 
-
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Date of birth
@@ -80,8 +62,6 @@
               </a>
             </dd>
           </div>
-          
-          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               National Insurance number
@@ -95,8 +75,13 @@
               </a>
             </dd>
           </div>
-          
+          </dl>
 
+          <h2 class="govuk-heading-m">
+            Contact details
+          </h2>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Home address
@@ -113,7 +98,6 @@
               </a>
             </dd>
           </div>
-
 
           {% if (data['send-letters'] == "no") %}
 
@@ -135,10 +119,8 @@
           </div>
           {% endif %}
 
-
           {% if (data['address-postcode'] == "wales") %}
          
-
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Writing
@@ -152,8 +134,6 @@
               </a>
             </dd>
           </div>
-
-
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Speaking
@@ -167,14 +147,9 @@
               </a>
             </dd>
           </div>
-
-
           {% endif %}
         
-
           {% if (data['mobile-phone'] == "yes") %}
-
-
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Mobile phone number
@@ -188,14 +163,8 @@
               </a>
             </dd>
           </div>
-
-
-          {% endif %}
-
-
-          {% if (data['mobile-phone'] == "no") %}
-
-
+        {% endif %}
+        {% if (data['mobile-phone'] == "no") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Mobile phone number
@@ -209,15 +178,10 @@
               </a>
             </dd>
           </div>
-
-
         {% endif %}
 
-
         {% if (data['other-phone'] == "yes") %}
-
-
-        <div class="govuk-summary-list__row">
+          <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Telephone number
             </dt>
@@ -230,14 +194,8 @@
               </a>
             </dd>
           </div>
-
-
-          {% endif %}
-
-
-          {% if (data['other-phone'] == "no") %}
-
-
+        {% endif %}
+        {% if (data['other-phone'] == "no") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Telephone number
@@ -251,14 +209,8 @@
               </a>
             </dd>
           </div>
-
-
-          {% endif %}
-
-
-          {% if (data['contact'] == "email") %}
-
-
+        {% endif %}
+        {% if (data['contact'] == "email") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Email address
@@ -272,14 +224,8 @@
               </a>
             </dd>
           </div>
-
-
-          {% endif %}
-
-
-          {% if (data['contact'] == "noEmail") %}
-
-
+        {% endif %}
+        {% if (data['contact'] == "noEmail") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Email address
@@ -295,7 +241,7 @@
           </div>
         {% endif %}
 
-    </dl>
+        </dl>
 
       
 
@@ -319,13 +265,11 @@
 
 
 
-        </br>
-        </br>
+
+
         <h2 class="govuk-heading-m">
-          Health conditions
+          Health details
         </h2>
-
-
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
           <!-- Show health condition if:
@@ -336,8 +280,6 @@
 
           {% else %}
           
-
-
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Health condition
@@ -357,8 +299,6 @@
             </ul>
             </dd>
           </div>
-
-
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Health condition
@@ -377,8 +317,6 @@
               </ul>
               </dd>
             </div>
-
-
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Any other health conditions
@@ -414,8 +352,6 @@
               </a>
             </dd>
           </div>
-
-
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Doctor said you might have less than 12 months to live
@@ -429,11 +365,7 @@
               </a>
             </dd>
           </div>
-          
-          
           {% if (data['terminal-illness'] == "Yes") %}
-          
-          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
              SR1 form completed
@@ -447,10 +379,9 @@
               </a>
             </dd>
           </div>
-
-
           {% endif %}
           
+
           
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -465,8 +396,6 @@
               </a>
             </dd>
           </div>
-
-
           {% if (data['hospital'] == "Yes") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -485,8 +414,6 @@
             </dd>
           </div>
           {% endif %}
-          
-          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Pregnant
@@ -500,8 +427,6 @@
               </a>
             </dd>
           </div>
-
-
           {% if (data['pregnancy'] == "Yes") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -518,7 +443,6 @@
           </div>
           {% endif %}
 
-
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Doctor can share details with DWP
@@ -534,41 +458,15 @@
           </div>
         </dl>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </br>
-    </br>
-
         <h2 class="govuk-heading-m">
-          Voluntary and paid work
-        </h2>
-
-      </br>
-        <h2 class="govuk-heading-s">
           Voluntary work
         </h2>
-
 
 
 
         {% if (data['voluntary'] == "yes") %}
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-3">
-          
-          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               <h3 class="govuk-heading-m">Your role at {{ data['volunteer-details-1'] | default("Oxfam")}}</h3>
@@ -579,8 +477,9 @@
               </a>
             </dd>
           </div>
-       
+        </dl>
 
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Voluntary work details
@@ -598,8 +497,6 @@
               </a>
             </dd>
           </div>
-          
-          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Type of voluntary work
@@ -613,8 +510,6 @@
               </a>
             </dd>
           </div>
-          
-          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Hours of voluntary work each week
@@ -635,8 +530,6 @@
             </dd>
           </div>
         </dl>
-
-
         <h4 class="govuk-heading-m">Other voluntary work</h4>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
@@ -654,9 +547,6 @@
           </div>
         </dl>
         {% else %}
-
-
-
          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -674,13 +564,9 @@
           </dl>
         {% endif %}
 
-
-
-      </br>
-        <h2 class="govuk-heading-s">
+        <h2 class="govuk-heading-m">
           Paid work
         </h2>
-
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
@@ -700,7 +586,6 @@
 
         {% if (data['work'] == "yes") %}
 
-
         <dl class="govuk-summary-list govuk-!-margin-bottom-3">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -712,8 +597,8 @@
               </a>
             </dd>
           </div>
-        
-
+        </dl>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Employment status
@@ -727,8 +612,6 @@
               </a>
             </dd>
           </div>
-         
-         
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Employment details
@@ -748,8 +631,6 @@
               </a>
             </dd>
           </div>
-         
-         
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Off sick from this work
@@ -763,8 +644,6 @@
               </a>
             </dd>
           </div>
-        
-        
           {% if (data['offSick'] == "yes") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -781,7 +660,6 @@
           </div>
           {% endif %}
           
-        
           {% if (data['offSick'] == "no") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -796,8 +674,6 @@
               </a>
             </dd>
           </div>
-       
-       
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Earnings
@@ -811,8 +687,6 @@
               </a>
             </dd>
           </div>
-        
-        
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Professional support worker
@@ -826,8 +700,6 @@
               </a>
             </dd>
           </div>
-        
-        
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Expenses
@@ -841,8 +713,6 @@
               </a>
             </dd>
           </div>
-        
-        
           {% if (data['expenses'] == "yes") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -859,9 +729,10 @@
           </div>
           {% endif %}
           {% endif %}
-        
+        </dl>
 
-
+        <h4 class="govuk-heading-m">Other paid work</h4>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Any other jobs
@@ -875,57 +746,12 @@
               </a>
             </dd>
           </div>
-        
-        
         </dl> 
 
         {% endif %}
 
-
-
-
-
-
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Worked abroad in the last 5 years
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['work-overseas'] | default("No")}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="work-overseas">
-                Change<span class="govuk-visually-hidden"> contact details</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Lived abroad with family member in the armed forces in the last 12 weeks
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['military-overseas'] | default("No")}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="military-overseas">
-                Change<span class="govuk-visually-hidden"> contact details</span>
-              </a>
-            </dd>
-          </div>
-        </dl>
-
-
-
-
-
-
-
-
-
-      </br></br>
         <h2 class="govuk-heading-m">
-          Benefits and statutory payments
+          Statutory pay
         </h2>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -1013,7 +839,11 @@
               </a>
             </dd>
           </div>
-        
+        </dl>
+
+        <h2 class="govuk-heading-m">Claim date</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           {% if (data['statutory-pay'] == "yes") or (data['statutory-pay-recent'] == "yes") %}
            <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -1074,474 +904,146 @@
             </dd>
           </div>
           {% endif %}
-
-
-
-          
-
-
-
         </dl>
-       
-       
-       
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
-      </br></br>
+        <h2 class="govuk-heading-m">Working and living abroad</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Worked abroad in the last 5 years
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['work-overseas'] | default("No")}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="work-overseas">
+                Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Lived abroad with family member in the armed forces in the last 12 weeks
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['military-overseas'] | default("No")}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="military-overseas">
+                Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
         <h2 class="govuk-heading-m">
-          Pensions and annuities
+          Pensions
         </h2>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          
-          
-          
-
-
-        {% if data['pension']=="No" %}
-        <div class="govuk-summary-list__row">
+          <div class="govuk-summary-list__row">
+            {% if (data['pension'] == "notsure") %}
             <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Are you getting regular payments from a pension or annuity?</dt>
-            <dd class="govuk-summary-list__value">{{ data['pension'] }}</dd>
-            
-            <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
-          </div>
-
-        {% endif %}
-
-        {% if data['pension']=="I am not sure" %}
-        <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Getting money from a pension or annuity
+              </dt>
+              <dd class="govuk-summary-list__value">
+                I'm not sure
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="pension">
+                  Change
+                </a>
+              </dd>
+            </div>
+            {% else %}
             <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Are you getting regular payments from a pension or annuity?</dt>
-            <dd class="govuk-summary-list__value">{{ data['pension'] }}</dd>
-            
-            <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
-          </div>
-
-        {% endif %}
-
-
-
-
-
-
-
-
-
-
-
-
-        {% if data['pension']=="Yes" %}
-
-        
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Are you getting regular payments from a pension or annuity?</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension'] }}</dd>
-          
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">What is the name of your pension or annuity provider?</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension-name'] }}</dd>
-          
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension-name">Change<span class="govuk-visually-hidden"> pension name</span></a></dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">What is the address of your pension or annuity provider?</dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['pension-line-1'] }}
-            {{ data['pension-line-2'] }} <br>
-            {{ data['pension-town'] }} <br>
-            {{ data['pension-postcode'] }}
-          </dd>
-          
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension-address">Change<span class="govuk-visually-hidden"> pension address</span></a></dd>
-        </div>
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">How often is your pension or annuity paid?</dt>
-          <dd class="govuk-summary-list__value">{{ data['current-pension-paid'] }}</dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension-amount">Change<span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">What is your gross pension or annuity?</dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['current-pension-paid']=="Weekly" %}
-              £{{ data['current-pension-paid-weekly-amount'] }}
+              <dt class="govuk-summary-list__key">
+                Getting money from a pension or annuity
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['pension'] | default("No")}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="pension">
+                  Change
+                </a>
+              </dd>
+            </div>
             {% endif %}
-            {% if data['current-pension-paid']=="Every 2 weeks" %}
-              £{{ data['current-pension-paid-fortnightly-amount'] }}
+            {% if (data['pension'] == "Yes") %}
+
+            {% if (data['pension-inherit'] == "notsure") %}
+              <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Getting pension or annuity payments that you’ve inherited from someone who died
+              </dt>
+              <dd class="govuk-summary-list__value">
+                I'm not sure
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="pension-inherit">
+                  Change
+                </a>
+              </dd>
+            </div>
+            {% else %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Getting pension or annuity payments that you’ve inherited from someone who died
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['pension-inherit'] | default("No")}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="pension-inherit">
+                  Change
+                </a>
+              </dd>
+            </div>
             {% endif %}
-            {% if data['current-pension-paid']=="Every 4 weeks" %}
-              £{{ data['current-pension-paid-4weeks-amount'] }}
+
             {% endif %}
-            {% if data['current-pension-paid']=="Every month" %}
-              £{{ data['current-pension-paid-monthly-amount'] }}
-            {% endif %}
-            {% if data['current-pension-paid']=="Every 3 months" %}
-              £{{ data['current-pension-paid-3monthly-amount'] }}
-            {% endif %}
-            {% if data['current-pension-paid']=="Twice a year" %}
-              £{{ data['current-pension-paid-twiceyearly-amount'] }}
-            {% endif %}
-            {% if data['current-pension-paid']=="Once a year" %}
-              £{{ data['current-pension-paid-yearly-amount'] }}
-            {% endif %}
-          </dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension-amount"><span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-
-
-        {% if data['pension-reference']=="No" %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Do you know the policy or reference number of your pension or annuity?</dt>
-          <dd class="govuk-summary-list__value">No</dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension-reference">Change<span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-        {% endif %}
-
-        {% if data['pension-reference']=="Yes" %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Do you know the policy or reference number of your pension or annuity?</dt>
-          <dd class="govuk-summary-list__value">Yes</dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension-reference">Change<span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Policy or reference number</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension-reference-details'] }}</dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension-reference"><span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-        {% endif %}
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Is this pension or annuity inherited?</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension-inherited'] }}</dd>
-          
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension-inherited">Change<span class="govuk-visually-hidden"> pension inherited</span></a></dd>
-        </div>
-
-        
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Do you have another pension or annuity you currently receive?</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension-another'] }}</dd>
-          
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension/pension-add-another">Change<span class="govuk-visually-hidden"> pension inherited</span></a></dd>
-        </div>
-
-
-
-
-
-
-
-
-
-
-        {% if data['pension-another']=="Yes" %}
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">What is the name of your pension or annuity provider?</dt>
-          <dd class="govuk-summary-list__value">{{ data['another-pension-name'] }}</dd>
-          
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-name">Change<span class="govuk-visually-hidden"> pension name</span></a></dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">What is the address of your pension or annuity provider?</dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['pension2-line-1'] }}
-            {{ data['pension2-line-2'] }} <br>
-            {{ data['pension2-town'] }} <br>
-            {{ data['pension2-postcode'] }}
-          </dd>
-          
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-address">Change<span class="govuk-visually-hidden"> pension address</span></a></dd>
-        </div>
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">How often is your pension or annuity paid?</dt>
-          <dd class="govuk-summary-list__value">{{ data['current-pension2-paid'] }}</dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-amount">Change<span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">What is your gross pension or annuity?</dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['current-pension2-paid']=="Weekly" %}
-              £{{ data['current-pension2-paid-weekly-amount'] }}
-            {% endif %}
-            {% if data['current-pension2-paid']=="Every 2 weeks" %}
-              £{{ data['current-pension2-paid-fortnightly-amount'] }}
-            {% endif %}
-            {% if data['current-pension2-paid']=="Every 4 weeks" %}
-              £{{ data['current-pension2-paid-4weeks-amount'] }}
-            {% endif %}
-            {% if data['current-pension2-paid']=="Every month" %}
-              £{{ data['current-pension2-paid-monthly-amount'] }}
-            {% endif %}
-            {% if data['current-pension2-paid']=="Every 3 months" %}
-              £{{ data['current-pension2-paid-3monthly-amount'] }}
-            {% endif %}
-            {% if data['current-pension2-paid']=="Twice a year" %}
-              £{{ data['current-pension2-paid-twiceyearly-amount'] }}
-            {% endif %}
-            {% if data['current-pension2-paid']=="Once a year" %}
-              £{{ data['current-pension2-paid-yearly-amount'] }}
-            {% endif %}
-          </dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-amount"><span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-
-
-        {% if data['pension2-reference']=="No" %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Do you know the policy or reference number of your pension or annuity?</dt>
-          <dd class="govuk-summary-list__value">No</dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-reference">Change<span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-        {% endif %}
-
-        {% if data['pension2-reference']=="Yes" %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Do you know the policy or reference number of your pension or annuity?</dt>
-          <dd class="govuk-summary-list__value">Yes</dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-reference">Change<span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Policy or reference number</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension2-reference-details'] }}</dd>
-
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-reference"><span class="govuk-visually-hidden"> pension amount</span></a></dd>
-        </div>
-        {% endif %}
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Is this pension or annuity inherited?</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension2-inherited'] }}</dd>
-          
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-inherited">Change<span class="govuk-visually-hidden"> pension inherited</span></a></dd>
-        </div>
-
-        
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Do you have another pension or annuity you currently receive?</dt>
-          <dd class="govuk-summary-list__value">{{ data['pension2-another'] }}</dd>
-          
-          <dd class="govuk-summary-list__actions"><a href="/prototype-experimental/pension-2/pension/pension-another">Change<span class="govuk-visually-hidden"> pension inherited</span></a></dd>
-        </div>
-
-
-
-
-
-        {% endif %}
-
-
-
-        {% endif %}
-
-
-      </br>
-      {% if (data['insurance'] == "notsure") %}
-      <div class="govuk-summary-list__row">
-       <dt class="govuk-summary-list__key">
-         Permanent health insurance
-       </dt>
-       <dd class="govuk-summary-list__value">
-         I'm not sure
-       </dd>
-       <dd class="govuk-summary-list__actions">
-         <a href="insurance">
-           Change
-         </a>
-       </dd>
-     </div>
-     {% else %}
-     <div class="govuk-summary-list__row">
-       <dt class="govuk-summary-list__key">
-         Permanent health insurance
-       </dt>
-       <dd class="govuk-summary-list__value">
-         {{data['insurance'] | default("No")}}
-       </dd>
-       <dd class="govuk-summary-list__actions">
-         <a href="insurance">
-           Change
-         </a>
-       </dd>
-     </div>
-     {% endif %}
-
-
-
-
-        
-      </dl>
-
-
-
-
-          
-          
-          
-         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-      
-      </br></br>
-        <h2 class="govuk-heading-m">
-          Bank details
-        </h2>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-         
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Acount holder
-            </dt>
-            <dd class="govuk-summary-list__value">
-              John Smith
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="bank">
-                Change<span class="govuk-visually-hidden"> contact details</span>
-              </a>
-            </dd>
-          </div>
-
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Bank or building society
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Royal Bank of Scoatland
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="bank">
-                Change<span class="govuk-visually-hidden"> contact details</span>
-              </a>
-            </dd>
-          </div>
-
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Sort code
-            </dt>
-            <dd class="govuk-summary-list__value">
-              12 34 56
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="bank">
-                Change<span class="govuk-visually-hidden"> contact details</span>
-              </a>
-            </dd>
-          </div>
-
-
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Account number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              98765432
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="bank">
-                Change<span class="govuk-visually-hidden"> contact details</span>
-              </a>
-            </dd>
-          </div>
-
         </dl>
 
 
 
+        <h2 class="govuk-heading-m">
+          Permanent health insurance
+        </h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          {% if (data['insurance'] == "notsure") %}
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Permanent health insurance
+            </dt>
+            <dd class="govuk-summary-list__value">
+              I'm not sure
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="insurance">
+                Change
+              </a>
+            </dd>
+          </div>
+          {% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Permanent health insurance
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['insurance'] | default("No")}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="insurance">
+                Change
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+        </dl>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </br>
+        <h2 class="govuk-heading-m">
+          Sharing the decision with your doctor
+        </h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
