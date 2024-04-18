@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
- Off sick from work - {{ data['employer-details'] | split(',') | last | default("Asda")}} - Apply for New Style Employment and Support Allowance - GOV.UK
+ Voluntary work - Apply for New Style Employment and Support Allowance - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,22 +23,22 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="/apply/v22/worksick">
+    <form id="form" method="post" action="/prototype-experimental/work/voluntary-work">
 
     <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
-      Are you off sick from your job at {{ data['employer-details-1'] | split(',') | last | default("Asda")}}?
+      Are you currently doing any voluntary work?
     </h1>
 
     <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-1" name="offSick" type="radio" value='Yes'>
+          <input class="govuk-radios__input" id="work-1" name="voluntary" type="radio" value="Yes">
           <label class="govuk-label govuk-radios__label" for="work-1">
             Yes
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-3" name="offSick" type="radio" value='No' aria-controls="no-reveal">
+          <input class="govuk-radios__input" id="work-3" name="voluntary" type="radio" value="No" aria-controls="no-reveal">
           <label class="govuk-label govuk-radios__label" for="work-3">
             No
           </label>

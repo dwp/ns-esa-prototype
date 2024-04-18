@@ -24,7 +24,7 @@
   <div class="govuk-grid-column-two-thirds">
    
 
-    <form id="form" method="post" action="/apply/v22/universal-credit">
+    <form id="form" method="post" action="/prototype-experimental/benefits/statutory-pay-recent">
 
    <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -33,7 +33,7 @@
             Do you get or have you applied for Universal Credit?</h1>
         </legend>
 
-      {% if (data['statutory-pay'] == "yes") or (data['statutory-pay-recent'] == "yes") %}
+
 
       <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
@@ -52,28 +52,7 @@
         </fieldset>
       </div>
   
-      {% else %}
   
-      <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="universal-credit-1" name="universal-credit" type="radio" value="yes" data-aria-controls="yes-cond">
-              <label class="govuk-label govuk-radios__label" for="universal-credit-1">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="universal-credit-2" name="universal-credit" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="universal-credit-2">
-                No
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-      
-  
-      {% endif %}
-
     <input type="submit" class="govuk-button" value="Continue" id="submit">
 
     </form>

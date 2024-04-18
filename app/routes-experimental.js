@@ -983,54 +983,24 @@ router.route('/apply/v22/universal-credit')
 
 
 
-// New Routes
 
 
-// Section - Pension or annuity
 
-// Pension - Are you getting regular payments from a pension or annuity?
 
-router.post('/apply/v22/pension/pension', function (req, res) {
-  var answer = req.session.data['pension'];
-  if (answer === 'Yes') {
-    res.redirect(`/apply/v22/pension/pension-name`);
-  } 
-  else {
-    res.redirect(`/apply/v22/pension/pension-cya`);
-  }
-});
 
 
 
-// Pension - Do you have another pension or annuity you currently receive?
 
 
 
 
 
 
-router.route('/apply/v22/pension/pension-add-another')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['pension-another']) {
-    case 'Yes':
-      redirectUrl = '/apply/v22/pension/pension-name';
-      break;
-    case 'No':
-      redirectUrl = '/apply/v22/pension/insurance';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
 
 
 
 
 
-// Pension - Is this pension or annuity inherited?
 
 
 
@@ -1117,142 +1087,14 @@ router.route('/apply/v22/pension/pension-add-another')
 
 
 
-// Routes 
-// Experimental Prototype
 
-// Section - Eligibility
 
-// Routes
-router.route('/prototype-experimental/eligibility/who-is-applying')
-.post((req, res, next) => {
-  req.session.destroy();
-  let redirectUrl;
-  switch (req.body['apply']) {
-    case 'apply-myself':
-      redirectUrl = '/prototype-experimental/eligibility/eligibility-start';
-      break;
-    case 'apply-someone':
-      redirectUrl = '/prototype-experimental/eligibility/cannot-apply-online';
-      break;
-    case 'apply-help':
-      redirectUrl = '/prototype-experimental/eligibility/helping-someone-apply';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
 
-// Routes you to state-pension or may-not-be-eligible at the first radio button screen
-router.route('/prototype-experimental/eligibility/disability-or-health-condition')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['disability']) {
-    case 'yes~/prototype-experimental/eligibility/state-pension':
-      redirectUrl = '/prototype-experimental/eligibility/state-pension';
-      break;
-    case 'no~/prototype-experimental/eligibility/may-not-be-eligible':
-      redirectUrl = '/prototype-experimental/eligibility/may-not-be-eligible';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
 
-router.route('/prototype-experimental/eligibility/disability-or-health-condition')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['disability']) {
-    case 'yes~/prototype-experimental/eligibility/state-pension':
-      redirectUrl = '/prototype-experimental/eligibility/state-pension';
-      break;
-    case 'no~/prototype-experimental/eligibility/may-not-be-eligible':
-      redirectUrl = '/prototype-experimental/eligibility/may-not-be-eligible';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
 
-// Routes
-router.route('/prototype-experimental/eligibility/state-pension')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['state-pension']) {
-    case 'yes~/prototype-experimental/eligibility/national-insurance':
-      redirectUrl = '/prototype-experimental/eligibility/national-insurance';
-      break;
-    case 'no~/prototype-experimental/eligibility/may-not-be-eligible-state-pension':
-      redirectUrl = '/prototype-experimental/eligibility/may-not-be-eligible-state-pension';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
 
-// Routes
-router.route('/prototype-experimental/eligibility/national-insurance')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['severe-disability']) {
-    case 'yes~/prototype-experimental/eligibility/statutory-pay':
-      redirectUrl = '/prototype-experimental/eligibility/statutory-pay';
-      break;
-    case 'no~/prototype-experimental/eligibility/may-not-be-eligible-national-insurance':
-      redirectUrl = '/prototype-experimental/eligibility/may-not-be-eligible-national-insurance';
-      break;
-    case 'notsure~/prototype-experimental/eligibility/statutory-pay':
-      redirectUrl = '/prototype-experimental/eligibility/statutory-pay';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
 
-// Routes
-router.route('/prototype-experimental/eligibility/statutory-pay')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['statutory-pay']) {
-    case 'Yes':
-      redirectUrl = '/prototype-experimental/eligibility/statutory-pay-date';
-      break;
-    case 'No':
-      redirectUrl = '/prototype-experimental/eligibility/why-no-ssp';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
 
-// Routes
-router.route('/prototype-experimental/eligibility/statutory-pay-date')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['statutory-pay-end']) {
-    case 'yes~/prototype-experimental/eligibility/may-be-eligible':
-      redirectUrl = '/prototype-experimental/eligibility/may-be-eligible';
-      break;
-    case 'no~/prototype-experimental/eligibility/may-not-be-eligible-statutory-pay':
-      redirectUrl = '/prototype-experimental/eligibility/may-not-be-eligible-statutory-pay';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
 
 
 
@@ -1265,140 +1107,6 @@ router.route('/prototype-experimental/eligibility/statutory-pay-date')
 
 
 
-
-
-
-
-
-// Section - Personal details
-
-
-
-router.route('/prototype-experimental/personal/address-letters')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['send-letters']) {
-    case 'yes~/prototype-experimental/personal/telephone':
-      redirectUrl = '/prototype-experimental/personal/telephone';
-      break;
-    case 'no~/prototype-experimental/personal/address-letters-another':
-      redirectUrl = '/prototype-experimental/personal/address-letters-another';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
-
-router.route('/prototype-experimental/personal/telephone')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['mobile-phone']) {
-    case 'yes~/prototype-experimental/personal/email':
-      redirectUrl = '/prototype-experimental/personal/email';
-      break;
-    case 'no~/prototype-experimental/personal/landline':
-      redirectUrl = '/prototype-experimental/personal/landline';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
-
-
-router.route('/prototype-experimental/personal/landline')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['other-phone']) {
-    case 'yes~/prototype-experimental/personal/email':
-      redirectUrl = '/prototype-experimental/personal/email';
-      break;
-    case 'no~/prototype-experimental/personal/email':
-      redirectUrl = '/prototype-experimental/personal/email';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
-
-
-
-
-// Section - Medical condition 
-
-router.route('/prototype-experimental/medical/condition-another')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['condition-another']) {
-    case 'yes':
-      redirectUrl = '/prototype-experimental/medical/condition';
-      break;
-    case 'no':
-      redirectUrl = '/prototype-experimental/medical/gpsurgery';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
-
-// Routes
-router.route('/prototype-experimental/medical/live-less-than-12-months')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['terminal-illness']) {
-    case 'Yes':
-      redirectUrl = '/prototype-experimental/medical/sr1-report';
-      break;
-    case 'No':
-      redirectUrl = '/prototype-experimental/medical/hospital';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
-
-router.route('/prototype-experimental/medical/hospital')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['hospital']) {
-    case 'Yes':
-      redirectUrl = '/prototype-experimental/medical/hospital-details';
-      break;
-    case 'No':
-      redirectUrl = '/prototype-experimental/medical/pregnant';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
-
-router.route('/prototype-experimental/medical/pregnant')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['pregnancy']) {
-    case 'Yes':
-      redirectUrl = '/prototype-experimental/medical/pregnant-due-date';
-      break;
-    case 'No':
-      redirectUrl = '/prototype-experimental/medical/consent';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
 
 
 
@@ -1427,9 +1135,6 @@ router.route('/prototype-srel/live-less-than-12-months')
   }
   res.redirect(redirectUrl);
 });
-
-
-
 
 
 
@@ -1472,255 +1177,6 @@ router.route('/prototype-srel/claim-start-date-if-srel')
 
 
 
-// Section - Work
-
-router.route('/prototype-experimental/work/voluntary-work')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['voluntary']) {
-    case 'Yes':
-      redirectUrl = '/prototype-experimental/work/voluntary-details';
-      break;
-    case 'No':
-      redirectUrl = '/prototype-experimental/work/work';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
-
-// Routes
-router.route('/prototype-experimental/work/voluntary-work-another')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['voluntary-another']) {
-    case 'Yes':
-      redirectUrl = '/prototype-experimental/work/voluntary-details';
-      break;
-    case 'No':
-      redirectUrl = '/prototype-experimental/work/work';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
-
-
-
-
-
-
-router.route('/prototype-experimental/work/work')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['work']) {
-    case 'Yes':
-      redirectUrl = '/prototype-experimental/work/employment-status';
-      break;
-    case 'No':
-      redirectUrl = '/prototype-experimental/work/work-overseas';
-      break;
-    case 'No':
-      redirectUrl = '/prototype-experimental/work/work-overseas';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
-
-// Routes
-router.route('/prototype-experimental/work/worksick')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['offSick']) {
-    case 'Yes':
-      redirectUrl = '/prototype-experimental/work/last-work';
-      break;
-    case 'No':
-      redirectUrl = '/prototype-experimental/work/work-hours';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
-
-// Routes
-router.route('/prototype-experimental/work/work-another')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['work-another']) {
-    case 'Yes~/prototype-experimental/work/employment-status':
-      redirectUrl = '/prototype-experimental/work/employment-status';
-      break;
-    case 'No~/prototype-experimental/work/work-overseas':
-      redirectUrl = '/prototype-experimental/work/work-overseas';
-      break;
-    case 'no~/prototype-experimental/work/work-overseas':
-      redirectUrl = '/prototype-experimental/work/work-overseas';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
-
-// Routes
-router.route('/prototype-experimental/work/work-hours')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['work-hours']) {
-    case 'yes~/prototype-experimental/work/pay-frequency':
-      redirectUrl = '/prototype-experimental/work/pay-frequency';
-      break;
-    case 'no~/prototype-experimental/work/pay-frequency':
-      redirectUrl = '/prototype-experimental/work/pay-frequency';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
-
-// Routes
-router.route('/prototype-experimental/work/work-supported')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['work-supported']) {
-    case 'Yes':
-      redirectUrl = '/prototype-experimental/work/expenses';
-      break;
-    case 'No':
-      redirectUrl = '/prototype-experimental/work/expenses';
-      break;
-    case 'I’m not sure':
-      redirectUrl = '/prototype-experimental/work/expenses';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
-
-// Routes
-router.route('/prototype-experimental/work/expenses')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['expenses']) {
-    case 'yes~/prototype-experimental/work/expenses-details':
-      redirectUrl = '/prototype-experimental/work/expenses-details';
-      break;
-    case 'no~/prototype-experimental/work/work-another':
-      redirectUrl = '/prototype-experimental/work/work-another';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Section - Benefits
-
-
-router.route('/prototype-experimental/benefits/statutory-pay-recent')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['statutory-pay-recent']) {
-    case 'yes~/prototype-experimental/benefits/statutory-pay-end':
-      redirectUrl = '/prototype-experimental/benefits/statutory-pay-end';
-      break;
-    case 'no~/prototype-experimental/benefits/claimdate-new':
-      redirectUrl = '/prototype-experimental/benefits/claimdate-new';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
-
-
-router.route('/prototype-experimental/benefits/claim-start-date-if-statutory-sick-pay')
-.post((req, res, next) => {
-  let redirectUrl;
-  switch (req.body['claim-date-statutory-pay']) {
-    case 'yes':
-      redirectUrl = '/prototype-experimental/benefits/claim-end-date';
-      break;
-    case 'no':
-      redirectUrl = '/prototype-experimental/benefits/claimdate-new';
-      break;
-    default:
-      redirectUrl = req.path;
-      break;
-  }
-  res.redirect(redirectUrl);
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Section - Pension or annuity
 
@@ -1732,7 +1188,7 @@ router.post('/prototype-experimental/pension/pension', function (req, res) {
     res.redirect(`/prototype-experimental/pension/pension-name`);
   } 
   else {
-    res.redirect(`/prototype-experimental/pension/insurance`);
+    res.redirect(`/prototype-experimental/pension/pension-cya`);
   }
 });
 
@@ -1747,7 +1203,7 @@ router.route('/prototype-experimental/pension/pension-add-another')
       redirectUrl = '/prototype-experimental/pension/pension-2/pension-name';
       break;
     case 'No':
-      redirectUrl = '/prototype-experimental/pension/insurance';
+      redirectUrl = '/prototype-experimental/pension/pension-cya';
       break;
     default:
       redirectUrl = req.path;
