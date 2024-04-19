@@ -1698,7 +1698,22 @@ router.route('/prototype-experimental/benefits/claim-start-date-if-statutory-sic
 });
 
 
-
+router.route('/prototype-experimental/benefits/claim-end-date')
+.post((req, res, next) => {
+  let redirectUrl;
+  switch (req.body['claim-end']) {
+    case 'yes':
+      redirectUrl = '/prototype-experimental/pension/pension';
+      break;
+    case 'no':
+      redirectUrl = '/prototype-experimental/pension/pension';
+      break;
+    default:
+      redirectUrl = req.path;
+      break;
+  }
+  res.redirect(redirectUrl);
+});
 
 
 
