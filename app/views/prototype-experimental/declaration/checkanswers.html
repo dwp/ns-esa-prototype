@@ -563,21 +563,27 @@
 
 
 
-        {% if (data['voluntary'] == "yes") %}
+        {% if (data['voluntary'] == "Yes") %}
 
-        <dl class="govuk-summary-list govuk-!-margin-bottom-3">
-          
-          
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              <h3 class="govuk-heading-m">Your role at {{ data['volunteer-details-1'] | default("Oxfam")}}</h3>
+              Doing voluntary work
             </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['voluntary'] }}
+            </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="remove-voluntary-work">
-                Remove
+              <a href="voluntary-work">
+                Change<span class="govuk-visually-hidden"> voluntary work details</span>
               </a>
             </dd>
           </div>
+        
+          
+          
+        
        
 
           <div class="govuk-summary-list__row">
@@ -633,11 +639,7 @@
               </a>
             </dd>
           </div>
-        </dl>
-
-
-        <h4 class="govuk-heading-m">Other voluntary work</h4>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+       
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Doing other voluntary work
@@ -652,9 +654,9 @@
             </dd>
           </div>
         </dl>
+
+
         {% else %}
-
-
 
          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
@@ -662,7 +664,7 @@
               Doing voluntary work
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['voluntary'] | default("No")}}
+              {{ data['voluntary'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="voluntary-work">
