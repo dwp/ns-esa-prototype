@@ -10,7 +10,7 @@
     "accessible-autocomplete": "^2.0.4",
     "govuk-country-and-territory-autocomplete": "^1.0.2",
     "govuk-frontend": "4.6.0",
-    "govuk-prototype-kit": "13.9.0",
+    "govuk-prototype-kit": "13.16.2",
     "jquery": "3.7.0",
     "moment": "^2.29.4",
     "notifications-node-client": "5.2.3"
