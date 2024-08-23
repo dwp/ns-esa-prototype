@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   What size font do you need? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        What size font do you need?
+      </h1>
+      <p>Our standard letter is in size 12 font.</p>
+      <p>Select one of the following font sizes to replace this.</p>
+      <form action="large-print" method="get">
+
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% set otherHtml %}
+            {{ govukInput({
+                  id: "other",
+                  name: "other",
+                  type: "other",
+                  spellcheck: false,
+                  classes: "govuk-!-width-one-third"
+                }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "print-size",
+          name: "Print size",
+          fieldset: {
+            legend: {
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+
+          items: [
+
+            {
+              value: "size-16",
+              text: "Size 16"
+            },
+            {
+              value: "size-18",
+              text: "Size 18"
+            },
+            {
+              value: "size-24",
+              text: "Size 24"
+            },
+            {
+              value: "other",
+              text: "Other",
+              conditional: {
+                html: otherHtml
+              }
+            }
+          ]
+        }) }}
+
+          {{ govukButton({
+                text: "Continue",
+                href: "phone-contact-preference"
+            }) }}
+
+      </form>
+    </div>
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What do you need instead of a standard letter? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukErrorSummary({
+  titleText: "@Alex",
+  errorList: [
+    {
+      text: "Pre-populate email address!",
+      href: "#"
+    }
+  ]
+}) }}
+      <h1 class="govuk-heading-l">What do you need instead of a standard letter?</h1>
+      <p>You will be able to give us more specific information on the format 
+          you select on the next page.</p>
+      <p>If you do not need one of these alternative formats for letters, you 
+          can select ‘DWP can contact you by standard letter’.</p>
+      <form class="form" action="letters-contact-preference" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set emailHtml %}
+            {{ govukInput({
+                  id: "contact-by-email",
+                  name: "contact-by-email",
+                  type: "email",
+                  autocomplete: "email",
+                  spellcheck: false,
+                  classes: "govuk-input--width-20",
+                  label: {
+                    text: "Enter your email address"
+                  },
+                  hint: {
+                    text: "For example, name@example.com"
+                  }
+                }) }}
+                {% endset -%}
+
+          {{ govukRadios({
+          idPrefix: "letters-contact-preference",
+          name: "lettersContactPreference",
+          fieldset: {
+            legend: {
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+
+          items: [
+
+          {
+            value: "largePrint",
+            text: "Large print"
+          },
+          {
+            value: "colouredPaper",
+            text: "Coloured paper"
+          },
+          {
+            value: "colouredPaperLargePrint",
+            text: "Coloured paper and large print"
+          },
+          {
+            value: "braille",
+            text: "Braille"
+          },
+
+            {
+              value: "audio",
+              text: "Audio"
+            },
+
+
+
+
+
+            {
+              value: "email",
+              text: "Email as a reasonable adjustment",
+              conditional: {
+                html: emailHtml
+              }
+              },
+
+
+
+            {
+              divider: "or"
+            },
+            {
+              value: "none",
+              text: "DWP can contact you by standard letter",
+              behaviour: "exclusive"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+              text: "Continue"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}

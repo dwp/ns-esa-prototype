@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   What type of audio do you need? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        What type of audio do you need?
+      </h1>
+
+      <form class="form" action="audio" method="post" >
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "audio",
+          name: "audio",
+          fieldset: {
+            legend: {
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+
+          items: [
+
+            {
+              value: "cd",
+              text: "CD"
+            },
+            {
+              value: "mp3",
+              text: "MP3"
+            },
+            {
+              value: "cassette",
+              text: "Cassette Tape"
+            },
+            {
+              value: "dvd",
+              text: "DVD"
+            }
+          ]
+        }) }}
+{#
+      {% if 'braille' in data['lettersContactPreference'] %}
+        {{ govukButton({
+              text: "Continue",
+              href: "braille"
+          }) }}
+      {% elif 'colouredPaper' in data['lettersContactPreference'] %}
+        {{ govukButton({
+              text: "Continue",
+              href: "coloured-paper"
+          }) }}
+          {% elif 'largePrint' in data['lettersContactPreference'] %}
+            {{ govukButton({
+                  text: "Continue",
+                  href: "large-print"
+              }) }}
+
+      {% else %}
+#}
+        {{ govukButton({
+              text: "Continue",
+              href: "phone-contact-preference"
+          }) }}
+     {#{% endif %}#}
+
+      </form>
+    </div>
+  </div>
+
+
+{% endblock %}
