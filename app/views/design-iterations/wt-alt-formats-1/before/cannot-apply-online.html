@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   You cannot apply online for someone else – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <h1 class="govuk-fieldset__heading">
+      You cannot apply online for someone else</h1>
+  </legend>
+  <p>Apply by telephone if you’re a registered appointee, deputy, power of attorney or belong to a corporate acting body.</p>
+
+  <p>Call the Universal Credit helpline to apply for New Style ESA.</p>
+  <p class="govuk-body">Telephone: 0800 055 6688 (choose option 3)</p>
+  <p class="govuk-body">Textphone: 0800 328 1344 (choose option 3)</p>
+  <p class="govuk-body"><a href="https://www.relayuk.bt.com/">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 055 6688</p>
+  <p class="govuk-body"><a href="https://dwpesaclaim.signvideo.net/">Video relay service</a> for British Sign Language (BSL) users. <a href="https://www.youtube.com/watch?v=Osx7FFxFpNY" class="govuk-link" rel="noreferrer noopener" target="_blank">Check you can use the video relay service (opens in new tab)</a>.</p>
+  <p class="govuk-body">Welsh language telephone: 0800 328 1744</p>
+  <p class="govuk-body">Monday to Friday, 8am to 6pm</p>
+  <p class="govuk-body"><a href="https://www.gov.uk/call-charges" class="govuk-link" rel="noreferrer noopener" target="_blank">Find out about call charges (opens in new tab)</a>.</p>	
+
+
+  </div>
+
+
+
+    </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

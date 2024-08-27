@@ -206,7 +206,18 @@ router.get('/*/clear-v9', function (req, res) {
   res.render('apply/v9/application-cancelled')
 })
 
+///////////////////////////////////////////////////////////////////////////////
+//                                                                           //
+//  PAGE ROUTING                                                             //
+//                                                                           //
+///////////////////////////////////////////////////////////////////////////////
 
+////// Alternative formats v1 //////
+// This moves routing for 'wt-alt-formats-1' to alt-formats directory
+router.use(
+  "/design-iterations/wt-alt-formats-1/",
+  require("./views/design-iterations/wt-alt-formats-1/_routes")
+);
 
 // Page routing
 router.get('*', function (req, res, next) {

@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Are you getting Statutory Sick Pay? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+  
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+ <form action="statutory-pay" method="post" novalidate>
+   <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="statutory-pay-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+           Are you getting Statutory Sick Pay?</h1>
+        </legend>
+         <div id="statutory-pay-hint" class="govuk-body">
+          <p class="govuk-body">Statutory Sick Pay (SSP) is paid by your employer in the same way as your wages. 
+        </p>
+
+        <p class="govuk-body">If you’re not sure, check our information on <a href="https://www.gov.uk/statutory-sick-pay" rel="noreferrer noopener" target="_blank">SSP and eligibility (opens in a new tab).</a></p>
+        <p class="govuk-body">You can apply for New Style ESA if you do not get Statutory Sick Pay or it ends in the next 3 months.</p>
+         </div>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="statutory-pay-1" name="statutory-pay" type="radio" value='yes-statutory-pay'>
+            <label class="govuk-label govuk-radios__label" for="statutory-pay-1">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="statutory-pay-2" name="statutory-pay" type="radio" value='no-statutory-pay'>
+            <label class="govuk-label govuk-radios__label" for="statutory-pay-2">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+{{ govukButton({
+          text: "Continue"
+        }) }}
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+
+
+{% endblock %}
+

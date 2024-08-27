@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+You are not eligible for New Style ESA – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+  
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+        Based on your answers,  you&rsquo;re not eligible for New Style ESA.</h1>
+
+  <p class="govuk-body">If you&rsquo;re receiving Statutory Sick Pay, you can apply for Universal Credit. <a class="govuk-link" href="https://www.gov.uk/universal-credit/eligibility">Check if you&rsquo;re eligible for Universal Credit</a>.</p>
+
+  <p class="govuk-body">Or you can apply for New Style ESA once you enter your last 3 months of Statutory Sick Pay.</p>
+
+
+
+    </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
