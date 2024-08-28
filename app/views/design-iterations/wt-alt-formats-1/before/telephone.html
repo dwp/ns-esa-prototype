@@ -1,21 +1,22 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
- Mobile phone number - Apply for New Style Employment and Support Allowance - GOV.UK
+Do you have a mobile number? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        beta
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
-{% include "includes/back-link.html" %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+  
 {% endblock %}
 
 {% block content %}
@@ -23,7 +24,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post">
+   
+    <form id="form" method="post" action="telephone">
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -33,6 +35,7 @@
         id: "mobile-number",
         name: "mobile-number",
         type: "tel",
+        autocomplete: "tel",
         classes: "govuk-!-width-one-third",
         label: {
           text: "Mobile number"
@@ -41,39 +44,6 @@
       {% endset -%}
 
 
-      {# If claiming because of coronavirus, ask reason #}
-      {% if (data['coronavirus'] == "yes") %}
-      
-      {{ govukRadios({
-        idPrefix: "how-contacted-conditional",
-        name: "mobile-phone",
-        fieldset: {
-          legend: {
-            text: "Do you have a mobile number?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        hint: {
-          text: "We’ll use this number to contact you about your claim."
-        },
-        items: [
-          {
-            value: "yes~/apply/v22/email",
-            text: "Yes",
-            conditional: {
-              html: phoneHtml
-            }
-          },
-          {
-            value: "no~/apply/v22/landline",
-            text: "No"
-          }
-        ]
-      }) }}
-
-      {# If not claiming because of coronavirus, don't ask reason #}
-      {% else %}
 
       {{ govukRadios({
         idPrefix: "how-contacted-conditional",
@@ -90,20 +60,18 @@
         },
         items: [
           {
-            value: "yes~/apply/v22/email",
+            value: "yes-mobile",
             text: "Yes",
             conditional: {
               html: phoneHtml
             }
           },
           {
-            value: "no~/apply/v22/landline",
+            value: "no-mobile",
             text: "No"
           }
         ]
       }) }}
-
-      {% endif %}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 

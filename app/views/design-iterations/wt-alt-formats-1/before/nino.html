@@ -1,21 +1,22 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
- National Insurance number - Apply for New Style Employment and Support Allowance - GOV.UK
+What is your National Insurance number? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        beta
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
-{% include "includes/back-link.html" %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+  
 {% endblock %}
 
 {% block content %}
@@ -23,20 +24,21 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="address">
-
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
-      What is your National Insurance number?
-    </h1>
-
+    <form action="/design-iterations/wt-alt-formats-1/before/address" method="post" novalidate>
     <div class="govuk-form-group">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--l" for="enational-insurance-number">
+          What is your National Insurance number?
+        </label>
+      </h1>
       <div id="national-insurance-number-hint" class="govuk-hint">
         It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’.
       </div>
       <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="national-insurance-number" name="national-insurance-number" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint">
     </div>
-
-    <input type="submit" class="govuk-button" value="Continue" id="submit">
+    {{ govukButton({
+			text: "Continue"
+		  }) }}
 
     </form>
 

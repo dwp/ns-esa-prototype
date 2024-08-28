@@ -5,6 +5,12 @@
 {% endblock %}
 
 {% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -48,16 +54,16 @@
             text: "Cream"
           },
           {
-            value: "pastel-blue",
-            text: "Pastel blue"
+            value: "light-blue",
+            text: "Light blue"
           },
           {
             value: "pastel-yellow",
             text: "Pastel yellow"
           },
           {
-            value: "pastel-yellow",
-            text: "Pale pink"
+            value: "pastel-pink",
+            text: "Pastel pink"
           },
           {
             value: "other",
@@ -68,7 +74,7 @@
           }
         ]
       }) }}
-      {#
+      
       {% if 'largePrint' in data['lettersContactPreference'] %}
         {{ govukButton({
               text: "Continue",
@@ -81,13 +87,13 @@
                   href: "large-print"
               }) }}
       {% else %}
-      #}
+      
         {{ govukButton({
               text: "Continue",
               href: "phone-contact-preference"
           }) }}
           
-      {#{% endif %}#}
+      {% endif %}
 
     </form>
   </div>

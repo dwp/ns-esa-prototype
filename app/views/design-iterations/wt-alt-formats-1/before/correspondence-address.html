@@ -1,21 +1,22 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Where can we send letters about your claim? - Apply for New Style Employment and Support Allowance - GOV.UK
+Where can we send letters about your claim? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        beta
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
-{% include "includes/back-link.html" %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+  
 {% endblock %}
 
 {% block content %}
@@ -25,7 +26,7 @@ Where can we send letters about your claim? - Apply for New Style Employment and
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="/welsh-or-not-18">
+    <form id="form" method="post" action="/design-iterations/wt-alt-formats-1/before/telephone">
 
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -39,21 +40,21 @@ Where can we send letters about your claim? - Apply for New Style Employment and
             Building and street
             <span class="govuk-visually-hidden">line 1 of 2</span>
           </label>
-          <input class="govuk-input" id="address-line-1" name="alt-address-line-1" type="text">
+          <input class="govuk-input" id="address-line-1" name="alt-address-line-1" type="text" autocomplete="address-line1">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-line-2">
             <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
           </label>
-          <input class="govuk-input" id="address-line-2" name="alt-address-line-2" type="text">
+          <input class="govuk-input" id="address-line-2" name="alt-address-line-2" type="text" autocomplete="address-line2">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-town">
             Town or city
           </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="alt-address-town" type="text">
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="alt-address-town" type="text" autocomplete="address-level2">
         </div>
 
         
@@ -62,15 +63,9 @@ Where can we send letters about your claim? - Apply for New Style Employment and
           <label class="govuk-label" for="address-postcode">
             Postcode
           </label>
-          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="alt-address-postcode" type="text">
+          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="alt-address-postcode" type="text" autocomplete="postal-code">
         </div>
       </fieldset>
-
-      
-
-          </div>
-        </fieldset>
-      </div>
 
       <input type="submit" class="govuk-button" value="Continue" id="submit">
 

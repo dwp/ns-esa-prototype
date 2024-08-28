@@ -1,31 +1,37 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   What health condition, illness, disability or injury do you have? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
 
 {% block beforeContent %}
-{% include "includes/back-link.html" %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}
-
-
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-        <form id="form" method="post" action="condition-another">
-            <h1 class="govuk-heading-l govuk-!-margin-bottom-4" for="condition-details">
-                What health condition, illness, disability or injury do you have?
-            </h1>
-            <div id="event-name-hint" class="govuk-hint">
-              You will be able to tell us more about your condition and how it affects you at the next stage of the claim process.
-            </div>
-            <div id="event-name-hint" class="govuk-hint">If you have more than one condition, you can add others later. You can add up to 12 conditions, in any order.
-          </div>
+     <h1 class="govuk-heading-l">What health condition, illness, disability or injury do you have?</h1>
+      <p class="govuk-hint">You will be able to tell us more about your condition and how it affects you at the next stage of the claim process.</p>
+      <p class="govuk-hint">If you have more than one condition, you can add others later. You can add up to 12 conditions, in any order.</p>
+      <form method="post" action="#" novalidate>
             <input type="hidden" value="" name="condition-details" id="condition-details-hidden"/>
-
+            
             <div class="govuk-form-group">
-              <label class="govuk-label--s" for="condition-name-1">
+              <label class="govuk-label govuk-label--s" for="condition-name-1">
                 Name of condition
               </label>
-              <input class="govuk-input" id="condition-name-1" name="condition-name-1" type="text"></div>
+              <input class="govuk-input" id="condition-name-1" name="condition-name-1" type="text">
+            </div>
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="conditions-0-started-hint" role="group">
@@ -90,6 +96,7 @@
 </div><!-- govuk-grid-row -->
 {% endblock %}
 
+{#
 {% block pageScripts %}
 <!--
   Using jQuery to branch the page flow based on which radio buttons are checked.
@@ -122,3 +129,4 @@
 </script>
 
 {% endblock %}
+#}

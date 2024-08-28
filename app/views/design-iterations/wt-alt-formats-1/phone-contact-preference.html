@@ -5,6 +5,12 @@
 {% endblock %}
 
 {% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -15,15 +21,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    {{ govukErrorSummary({
-  titleText: "@Alex",
-  errorList: [
-    {
-      text: "Pre-populate email address!",
-      href: "#"
-    }
-  ]
-}) }}
+    
     <h1 class="govuk-heading-l">What do you need instead of a phone call?</h1>
 
     <p>We usually call you if we have any questions about your application. </p>
@@ -34,23 +32,7 @@ you can still select ‘DWP can contact you by phone’. </p>
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
-      {% set emailHtml %}
-          {{ govukInput({
-                id: "contact-by-email",
-                name: "contact-by-email",
-                type: "email",
-                autocomplete: "email",
-                spellcheck: false,
-                classes: "govuk-input--width-20",
-                label: {
-                  text: "Enter your email address"
-                },
-                hint: {
-                  text: "For example, name@example.com"
-                }
-              }) }}
-              {% endset -%}
-
+      
         {{ govukRadios({
         idPrefix: "phone-contact-preference",
         name: "phoneContactPreference",
@@ -73,11 +55,8 @@ you can still select ‘DWP can contact you by phone’. </p>
             text: "Textphone"
           },
           {
-            value: "email",
-            text: "Email as a reasonable adjustment",
-            conditional: {
-              html: emailHtml
-            }
+            value: "email-af",
+            text: "Email as a reasonable adjustment"
           },
 
 

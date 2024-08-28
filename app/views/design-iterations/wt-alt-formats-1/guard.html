@@ -5,6 +5,12 @@
 {% endblock %}
 
 {% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -20,7 +26,7 @@
         Do you need us to contact you in an alternative format?
       </h1>
 
-      <form class="form" action="/path/of/next/page" method="post">
+      <form class="form" action="guard" method="post">
 
         <p>
           We will sometimes need to write to you or speak with you. 
@@ -47,11 +53,11 @@ tell us below.</p>
           },
           items: [
             {
-              value: "yes",
+              value: "yes-alt-formats",
               text: "Yes"
             },
             {
-              value: "no",
+              value: "no-alt-formats",
               text: "No"
             }
           ]

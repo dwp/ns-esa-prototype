@@ -5,6 +5,12 @@ What is your Textphone number? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -15,7 +21,7 @@ What is your Textphone number? – {{ serviceName }} – GOV.UK Prototype Kit
 
    <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="condition" method="post">
+      <form action="other-af" method="post">
        {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({

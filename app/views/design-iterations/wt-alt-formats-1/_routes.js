@@ -9,9 +9,9 @@ const NEXT_PATH = '/design-iterations/wt-alt-formats-1';
 router.post('/before/who-is-applying', function (req, res) {
   var answer = req.session.data['apply'];
   if (answer === 'apply-someone') {
-    res.redirect(`${ABS_BASE_PATH}/before/helping-someone-apply`);
-  } else if (answer === 'apply-help') {
     res.redirect(`${ABS_BASE_PATH}/before/cannot-apply-online`);
+  } else if (answer === 'apply-help') {
+    res.redirect(`${ABS_BASE_PATH}/before/helping-someone-apply`);
   }else {
     res.redirect(`${ABS_BASE_PATH}/before/eligibility-start`);
   }
@@ -92,28 +92,67 @@ router.post('/before/statutory-pay-date', function (req, res) {
   }
 });
 
-router.post('/alternate-format', function (req, res) {
-  const answer = req.body.AlternateFormat;
+// What is your address? // Can we send letters about your claim to this address?
+router.post('/before/address', function (req, res) {
+  var answer = req.session.data['send-letters'];
+  if (answer === 'no-letters') {
+    res.redirect(`${ABS_BASE_PATH}/before/correspondence-address`);
+  } else {
+    res.redirect(`${ABS_BASE_PATH}/before/telephone`);
+  }
+});
 
-  if (answer === 'alternateFormatYes') {
+// Do you have a mobile number?
+router.post('/before/telephone', function (req, res) {
+  var answer = req.session.data['mobile-phone'];
+  if (answer === 'no-mobile') {
+    res.redirect(`${ABS_BASE_PATH}/before/landline`);
+  } else {
+    res.redirect(`${ABS_BASE_PATH}/before/email`);
+  }
+});
+
+// Do you need an alternative format?
+router.post('/guard', function (req, res) {
+  const answer = req.body.altFormatNeeds;
+
+  if (answer === 'yes-alt-formats') {
     res.redirect(`${ABS_BASE_PATH}/letters-contact-preference`);
   } else {
     res.redirect(`${ABS_BASE_PATH}/after/condition`);
   }
 });
 
-router.post('/bank-account', function (req, res) {
+/*
+router.post('/after/condition', function (req, res) {
   const answer = req.body.lettersContactPreference;
 
   if (answer === 'Relay UK') {
     res.redirect(`${ABS_BASE_PATH}/contact-phone-af-relay`);
   } else if (answer === 'Textphone') {
     res.redirect(`${ABS_BASE_PATH}/contact-phone-af-relay`);
-  } else {
-    res.redirect(`${ABS_BASE_PATH}/bank-account`);
+  } else if (answer === 'email-af') {
+    res.redirect(`${ABS_BASE_PATH}/email-af`);
+  }else {
+    res.redirect(`${ABS_BASE_PATH}/after/condition`);
+  }
+});
+*/
+router.post('/phone-contact-preference', function (req, res) {
+  const answer = req.body.phoneContactPreference;
+
+  if (answer === 'Relay UK') {
+    res.redirect(`${ABS_BASE_PATH}/contact-phone-af-relay`);
+  } else if (answer === 'Textphone') {
+    res.redirect(`${ABS_BASE_PATH}/contact-phone-af-relay`);
+  } else if (answer === 'email-af') {
+    res.redirect(`${ABS_BASE_PATH}/email-af`);
+  }else {
+    res.redirect(`${ABS_BASE_PATH}/other-af`);
   }
 });
 
+/*
 router.post('/alternate-format-contact-preference', function (req, res) {
   let data = req.session.data;
   let answer;
@@ -136,9 +175,10 @@ router.post('/alternate-format-contact-preference', function (req, res) {
   }
 
 });
+*/
 
 
-
+// What do you need instead of a standard letter?
 router.post('/letters-contact-preference', function (req, res) {
   let data = req.session.data;
   let answer;
@@ -160,9 +200,8 @@ router.post('/letters-contact-preference', function (req, res) {
     res.redirect(`${ABS_BASE_PATH}/coloured-paper`);
   } else if (answer.includes('colouredPaperLargePrint')) {
     res.redirect(`${ABS_BASE_PATH}/coloured-paper`);
-  } else if (answer.includes('email')) {
-    res.redirect(`${ABS_BASE_PATH}/email`);
-    // add more here
+  } else if (answer.includes('email-af')) {
+    res.redirect(`${ABS_BASE_PATH}/email-af`);
   } else if (answer.includes('largePrint')) {
     res.redirect(`${ABS_BASE_PATH}/large-print`);
   } else {

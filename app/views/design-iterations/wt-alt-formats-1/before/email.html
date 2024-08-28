@@ -1,21 +1,22 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
- Email address - Apply for New Style Employment and Support Allowance - GOV.UK
+Do you have an email address? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        beta
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
-{% include "includes/back-link.html" %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+  
 {% endblock %}
 
 {% block content %}
@@ -23,11 +24,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% if (data['coronavirus'] == "yes") %}
-    <form id="form" method="post" action="coronavirus-reason">
-    {% else %}
-    <form id="form" method="post" action="condition">
-    {% endif %}
+    
+    <form id="form" method="post" action="email">
         
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -80,7 +78,8 @@
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-        text: "Continue"
+        text: "Continue",
+        href: "/design-iterations/wt-alt-formats-1/guard"
       }) }}
 
 </form>
