@@ -138,6 +138,8 @@ router.post('/after/condition', function (req, res) {
   }
 });
 */
+
+// What do you need instead of a phone call?
 router.post('/phone-contact-preference', function (req, res) {
   const answer = req.body.phoneContactPreference;
 
@@ -145,10 +147,10 @@ router.post('/phone-contact-preference', function (req, res) {
     res.redirect(`${ABS_BASE_PATH}/contact-phone-af-relay`);
   } else if (answer === 'Textphone') {
     res.redirect(`${ABS_BASE_PATH}/contact-phone-af-relay`);
-  } else if (answer === 'email-af') {
-    res.redirect(`${ABS_BASE_PATH}/email-af`);
+  } else if (answer === 'email-af-phone') {
+    res.redirect(`${ABS_BASE_PATH}/email-af-phone`);
   }else {
-    res.redirect(`${ABS_BASE_PATH}/other-af`);
+    res.redirect(`${ABS_BASE_PATH}/after/condition`);
   }
 });
 
@@ -196,18 +198,27 @@ router.post('/letters-contact-preference', function (req, res) {
     res.redirect(`${ABS_BASE_PATH}/audio`);
   } else if (answer.includes('braille')) {
     res.redirect(`${ABS_BASE_PATH}/braille`);
-  } else if (answer.includes('colouredPaper')) {
+  } else if (answer.includes('coloured-paper')) {
     res.redirect(`${ABS_BASE_PATH}/coloured-paper`);
-  } else if (answer.includes('colouredPaperLargePrint')) {
+  } else if (answer.includes('coloured-paper-large-print')) {
     res.redirect(`${ABS_BASE_PATH}/coloured-paper`);
   } else if (answer.includes('email-af')) {
     res.redirect(`${ABS_BASE_PATH}/email-af`);
-  } else if (answer.includes('largePrint')) {
+  } else if (answer.includes('large-print')) {
     res.redirect(`${ABS_BASE_PATH}/large-print`);
   } else {
     res.redirect(`${ABS_BASE_PATH}/phone-contact-preference`);
   }
 
+});
+
+// What is your email address? Reasonable ajdustment email
+router.post('/before/email', function (req, res) {
+  const emailAddress = req.session.data['emailaddress'];
+ 
+  console.log('emailAddress: ' + emailAddress);
+ 
+  res.locals.emailAddress = emailAddress;
 });
 
 module.exports = router;

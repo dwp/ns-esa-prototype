@@ -8,9 +8,9 @@ What is your email address? – {{ serviceName }} – GOV.UK Prototype Kit
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {{ govukPhaseBanner({
   tag: {
-    text: "Beta"
+     text: "Prototype"
   },
-  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+  html: 'This is a prototype. No data is saved or stored.'
 }) }}
 {{ govukBackLink({
   text: "Back",
@@ -32,11 +32,12 @@ What is your email address? – {{ serviceName }} – GOV.UK Prototype Kit
         id: "email-af",
         name: "email-af",
         type: "email",
+        value: emailaddress,
         autocomplete: "email",
         spellcheck: false
       }) }}
 
-
+{#
 
       {% if 'email-af' in data['lettersContactPreference'] %}
         {{ govukButton({
@@ -49,19 +50,26 @@ What is your email address? – {{ serviceName }} – GOV.UK Prototype Kit
                   text: "Continue",
                   href: "other-af"
               }) }}
+          {% elif 'email-af' in data['lettersContactPreference'] and data['phoneContactPreference'] %}
+      {{ govukButton({
+            text: "Continue",
+            href: "other-af"
+        }) }}
       {% else %}
       {{ govukButton({
               text: "Continue",
               href: "other-af"
           }) }}
-      {#
+      {% endif %}
+      #}
         
       {{ govukButton({
-        text: "Continue"
+        text: "Continue",
+        href: "email-type"
       }) }}
-      #}
+      
           
-      {% endif %}
+      
     </form>
   </div>
 </div>

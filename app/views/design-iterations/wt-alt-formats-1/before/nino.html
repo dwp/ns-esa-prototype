@@ -8,9 +8,9 @@ What is your National Insurance number? – {{ serviceName }} – GOV.UK Prototy
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {{ govukPhaseBanner({
   tag: {
-    text: "Beta"
+     text: "Prototype"
   },
-  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+  html: 'This is a prototype. No data is saved or stored.'
 }) }}
 {{ govukBackLink({
   text: "Back",
@@ -27,7 +27,7 @@ What is your National Insurance number? – {{ serviceName }} – GOV.UK Prototy
     <form action="/design-iterations/wt-alt-formats-1/before/address" method="post" novalidate>
     <div class="govuk-form-group">
       <h1 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--l" for="enational-insurance-number">
+        <label class="govuk-label govuk-label--l" for="national-insurance-number">
           What is your National Insurance number?
         </label>
       </h1>

@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-What other help do you need when we contact you? – {{ serviceName }} – GOV.UK Prototype Kit
+What is your email address? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,22 +23,24 @@ What other help do you need when we contact you? – {{ serviceName }} – GOV.U
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="/design-iterations/wt-alt-formats-1/after/condition" method="post" novalidate>
-      <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--l" for="more-detail">
-            What other help do you need when we contact you? (optional)
-          </label>
-        </h1>
-        <div id="more-detail-hint" class="govuk-hint">
-          Hint text placeholder
-        </div>
-        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
-      </div>
-
+      {{ govukInput({
+        label: {
+          text: "What is your email address?",
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        id: "email-af-phone",
+        name: "email-af-phone",
+        type: "email",
+        autocomplete: "email",
+        spellcheck: false
+      }) }}
 
       {{ govukButton({
-        text: "Continue"
-      }) }}
+              text: "Continue"
+          }) }}
+
+     
     </form>
   </div>
 </div>

@@ -7,9 +7,9 @@
 {% block beforeContent %}
 {{ govukPhaseBanner({
   tag: {
-    text: "Beta"
+     text: "Prototype"
   },
-  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+  html: 'This is a prototype. No data is saved or stored.'
 }) }}
   {{ govukBackLink({
   text: "Back",
@@ -55,7 +55,7 @@ you can still select ‘DWP can contact you by phone’. </p>
             text: "Textphone"
           },
           {
-            value: "email-af",
+            value: "email-af-phone",
             text: "Email as a reasonable adjustment"
           },
 
@@ -65,8 +65,7 @@ you can still select ‘DWP can contact you by phone’. </p>
           },
           {
             value: "none",
-            text: "DWP can contact you by phone",
-            behaviour: "exclusive"
+            text: "DWP can contact you by phone"
           }
 
         ]
