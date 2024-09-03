@@ -21,50 +21,53 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+   <form action="coloured-paper" method="get">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="colouredPaper-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            What colour paper do you need?
+          </h1>
+        </legend>
+        <div id="colouredPaper-hint" class="govuk-hint">
+          <p class="govuk-body">We normally print letters on white paper.</p>
+          <p class="govuk-body">If you need a different colour paper, you can select one of the colours listed, or ask to be contacted by DWP to discuss your needs.</p>
+        </div>
 
-    <h1 class="govuk-heading-l">
-      What colour paper do you need?
-    </h1>
-     <p class="govuk-body">We normally print letters on white paper. </p>
-      <p class="govuk-body">If you need a different colour paper, you can select one of the colours listed, or ask to be contacted by DWP to discuss your needs.</p>
-    <form action="coloured-paper" method="get">
-
-
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-      {{ govukRadios({
-        idPrefix: "coloured-paper",
-        name: "Coloured paper",
-        fieldset: {
-          legend: {
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-
-        items: [
-          {
-            value: "cream",
-            text: "Cream"
-          },
-          {
-            value: "light-blue",
-            text: "Light blue"
-          },
-          {
-            value: "pastel-yellow",
-            text: "Pastel yellow"
-          },
-          {
-            value: "pastel-pink",
-            text: "Pastel pink"
-          },
-          {
-            value: "other",
-            text: "You need a different colour and DWP will contact you to discuss this"
-          }
-        ]
-      }) }}
+        <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="cream" name="coloured-paper" type="radio" value="cream">
+                <label class="govuk-label govuk-radios__label" for="cream">
+                  Cream
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="light-blue" name="coloured-paper" type="radio" value="light-blue">
+                <label class="govuk-label govuk-radios__label" for="light-blue">
+                  Light blue
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="pastel-yellow" name="coloured-paper" type="radio" value="pastel-yellow">
+                <label class="govuk-label govuk-radios__label" for="pastel-yellow">
+                  Pastel yellow
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="pastel-pink" name="coloured-paper" type="radio" value="pastel-pink">
+                <label class="govuk-label govuk-radios__label" for="pastel-pink">
+                  Pastel pink
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="other" name="coloured-paper" type="radio" value="other-colour">
+                <label class="govuk-label govuk-radios__label" for="other">
+                  You need a different colour and DWP will contact you to discuss this
+                </label>
+              </div>
+            </div>
+          </fieldset>
+       </div>
       
       {% if 'large-print' in data['lettersContactPreference'] %}
         {{ govukButton({

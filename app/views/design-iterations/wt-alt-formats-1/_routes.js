@@ -93,7 +93,7 @@ router.post('/before/statutory-pay-date', function (req, res) {
 });
 
 // What is your address? // Can we send letters about your claim to this address?
-router.post('/before/address', function (req, res) {
+router.post('/before/postal-address', function (req, res) {
   var answer = req.session.data['send-letters'];
   if (answer === 'no-letters') {
     res.redirect(`${ABS_BASE_PATH}/before/correspondence-address`);
@@ -146,7 +146,7 @@ router.post('/phone-contact-preference', function (req, res) {
   if (answer === 'Relay UK') {
     res.redirect(`${ABS_BASE_PATH}/contact-phone-af-relay`);
   } else if (answer === 'Textphone') {
-    res.redirect(`${ABS_BASE_PATH}/contact-phone-af-relay`);
+    res.redirect(`${ABS_BASE_PATH}/contact-phone-af-textphone`);
   } else if (answer === 'email-af-phone') {
     res.redirect(`${ABS_BASE_PATH}/email-af-phone`);
   }else {
@@ -212,6 +212,7 @@ router.post('/letters-contact-preference', function (req, res) {
 
 });
 
+/*
 // What is your email address? Reasonable ajdustment email
 router.post('/before/email', function (req, res) {
   const emailAddress = req.session.data['emailaddress'];
@@ -220,5 +221,6 @@ router.post('/before/email', function (req, res) {
  
   res.locals.emailAddress = emailAddress;
 });
+*/
 
 module.exports = router;
