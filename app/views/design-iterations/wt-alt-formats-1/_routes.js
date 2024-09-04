@@ -97,8 +97,10 @@ router.post('/before/postal-address', function (req, res) {
   var answer = req.session.data['send-letters'];
   if (answer === 'no-letters') {
     res.redirect(`${ABS_BASE_PATH}/before/correspondence-address`);
-  } else {
+  } else if (answer ==='yes-letters'){
     res.redirect(`${ABS_BASE_PATH}/before/telephone`);
+  } else {
+    res.redirect(`${ABS_BASE_PATH}/before/postal-address`);
   }
 });
 
@@ -107,8 +109,11 @@ router.post('/before/telephone', function (req, res) {
   var answer = req.session.data['mobile-phone'];
   if (answer === 'no-mobile') {
     res.redirect(`${ABS_BASE_PATH}/before/landline`);
-  } else {
+  } else if (answer ==='yes-mobile') {
     res.redirect(`${ABS_BASE_PATH}/before/email`);
+  }  else {
+      res.redirect(`${ABS_BASE_PATH}/before/telephone`);
+    
   }
 });
 
@@ -143,9 +148,9 @@ router.post('/after/condition', function (req, res) {
 router.post('/phone-contact-preference', function (req, res) {
   const answer = req.body.phoneContactPreference;
 
-  if (answer === 'Relay UK') {
+  if (answer === 'relay-uk') {
     res.redirect(`${ABS_BASE_PATH}/contact-phone-af-relay`);
-  } else if (answer === 'Textphone') {
+  } else if (answer === 'textphone') {
     res.redirect(`${ABS_BASE_PATH}/contact-phone-af-textphone`);
   } else if (answer === 'email-af-phone') {
     res.redirect(`${ABS_BASE_PATH}/email-af-phone`);
