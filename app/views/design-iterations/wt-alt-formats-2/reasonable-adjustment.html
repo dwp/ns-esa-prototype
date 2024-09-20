@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Do you need us to contact you in an alternative format? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+     text: "Prototype"
+  },
+  html: 'This is a prototype. No data is saved or stored.'
+}) }}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Reasonable adjustments
+      </h1>
+
+      <form class="form" action="/design-iterations/wt-alt-formats-2/after/condition" method="post">
+
+        <p class="govuk-body">
+          [Explanation text what we mean by reasonable adjustments.] 
+        </p>
+        <p class="govuk-body">This can be:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>a quiet room</li>
+            <li>a ramp</li>
+            <li>a certain tone of voice</li>
+          </ul>
+        <p class="govuk-body">DWP will contact you to discuss this.</p>
+
+        {{ govukRadios({
+          name: "adjustments",
+          fieldset: {
+            legend: {
+              text: "Do you have any reasonable adjustment needs?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes-adjustments",
+              text: "Yes and DWP will contact you to discuss this"
+            },
+            {
+              value: "no-adjustments",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
