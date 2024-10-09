@@ -212,6 +212,13 @@ router.get('/*/clear-v9', function (req, res) {
 //                                                                           //
 ///////////////////////////////////////////////////////////////////////////////
 
+////// Alternative formats v3 //////
+// This moves routing for 'wt-alt-formats-3' to alt-formats directory
+router.use(
+  "/design-iterations/wt-alt-formats-3/",
+  require("./views/design-iterations/wt-alt-formats-3/_routes")
+);
+
 ////// Alternative formats v2 //////
 // This moves routing for 'wt-alt-formats-2' to alt-formats directory
 router.use(

@@ -1,0 +1,132 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   What health condition, illness, disability or injury do you have? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+     text: "Prototype"
+  },
+  html: 'This is a prototype. No data is saved or stored.'
+}) }}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     <h1 class="govuk-heading-l">What health condition, illness, disability or injury do you have?</h1>
+      <p class="govuk-hint">You will be able to tell us more about your condition and how it affects you at the next stage of the claim process.</p>
+      <p class="govuk-hint">If you have more than one condition, you can add others later. You can add up to 12 conditions, in any order.</p>
+      <form method="post" action="#" novalidate>
+            <input type="hidden" value="" name="condition-details" id="condition-details-hidden"/>
+            
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="condition-name-1">
+                Name of condition
+              </label>
+              <input class="govuk-input" id="condition-name-1" name="condition-name-1" type="text">
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="conditions-0-started-hint" role="group">
+  
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <p class="govuk-fieldset__heading">When it first started</p>
+                </legend>
+                <p>If you don’t know the exact date, you can give an estimate.</p>
+                <div id="conditions-0-started-hint" class="govuk-hint">For example, 30 3 1997</div>
+                <div class="govuk-date-input" id="conditions-{{ i }}-started">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="medical-condition-1-started-day">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="medical-condition-1-started-day" name="medical-condition-1-started-day" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="medical-condition-1-started-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="medical-condition-1-started-month" name="medical-condition-1-started-month" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="medical-condition-1-started-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="medical-condition-1-started-year" name="medical-condition-1-started-year" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+                </div>
+                </fieldset>
+
+
+
+
+
+
+
+
+              </div><!-- govuk-form-group -->
+
+
+
+
+
+
+            
+
+
+
+
+
+
+            <input type="submit" class="govuk-button" value="Continue" id="formbutton">
+        </form>
+    </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+
+{#
+{% block pageScripts %}
+<!--
+  Using jQuery to branch the page flow based on which radio buttons are checked.
+-->
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    // grab the existing data from the session (if it is there)
+    var session_data = "{{ data['condition-details'] }}" ;
+    // put it in log
+    console.log(session_data);
+
+
+    // when button is clicked
+    $('#formbutton').on('click',function(e){
+
+      // don't submit the form
+      e.preventDefault();
+      // grab what was typed into the name box.
+      var name = $('#condition-name').val();
+      // add that to the existing session data
+      var new_session_data = (session_data) ? session_data + ',' + name : name;
+      // put this new data back into the form (hidden)
+      $('#condition-details-hidden').val(new_session_data);
+      console.log(new_session_data);
+      // submit the form as usual
+      $("#form").submit();
+    })
+  });
+</script>
+
+{% endblock %}
+#}

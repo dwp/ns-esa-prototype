@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Version 3: Alternative formats – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Version 3: Alternative formats</h1>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Changes in this version
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Asking for phone call alt-formats first, then letter alt-formats</li>
+            <li>Email address questions removed (duplication + inconsistency risk)</li>
+            <li>Email attachment question removed (agent always calls to determine)</li>
+            <li>Email radio options changed to show DWP will call</li>
+            <li>Wording changed from 'alternative' to 'accessible' format</li>
+            <li>Further small content updates</li>
+          </ul>
+        </div>
+      </details>
+
+         <h2 class="govuk-heading-m">User journey:</h2>
+         <p class="govuk-body">
+          <a href="/design-iterations/wt-alt-formats-3/guard">Alternative formats journey</a>
+        </p>
+      
+      <h2 class="govuk-heading-m">Sample Check your answers pages:</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="/design-iterations/wt-alt-formats-3/af-check-answers">Check your answers: Alt-formats needed</a></li>
+        <li><a href="/design-iterations/wt-alt-formats-3/af-check-answers-2">Check your answers: No alt-formats needed</a></li>
+        <li><a href="/design-iterations/wt-alt-formats-3/af-check-answers-3">Check your answers: Alt-formats needed but none selected</a></li>
+      </ul>
+
+
+    </div>
+  </div>
+
+{% endblock %}

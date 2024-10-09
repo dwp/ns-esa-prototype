@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Do you need us to contact you in an accessible format? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+     text: "Prototype"
+  },
+  html: 'This is a prototype. No data is saved or stored.'
+}) }}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Do you need us to contact you in an accessible format?
+      </h1>
+
+      <form class="form" action="guard" method="post">
+
+        <p class="govuk-body">
+          We will sometimes need to write to you or speak with you. 
+        </p>
+        <p class="govuk-body">This will be by:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>telephone</li>
+          <li>letter, written in size 12 font on white paper</li>
+          
+        </ul>
+        <p class="govuk-body">You might need our communications with you to be in an accessible format instead, such as braille, large print, audio CD or something else.</p>
+        
+
+        {{ govukRadios({
+          name: "altFormatNeeds",
+          fieldset: {
+            legend: {
+              text: "Do you need an alternative format?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes-alt-formats",
+              text: "Yes"
+            },
+            {
+              value: "no-alt-formats",
+              text: "No"
+            }
+          ]
+        }) }}
+        <p class="govuk-body govuk-!-margin-bottom-7">We will ask for more details in the next few pages.</p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
