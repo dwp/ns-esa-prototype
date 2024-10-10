@@ -143,12 +143,13 @@
         ]
       }) }}
 
-      <h2 class="govuk-heading-m govuk-!-padding-top-6">Alternative formats</h2>
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Accessible formats</h2>
+      {% if data['alt-formats']=="yes" %}
       {{ govukSummaryList({
         rows: [
           {
             key: {
-              text: "Alternative format needs"
+              text: "Accessible format needs"
             },
             value: {
               html: "Yes"
@@ -158,42 +159,7 @@
                 {
                   href: "#",
                   text: "Change",
-                  visuallyHiddenText: "alternative format needs"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Instead of a standard letter"
-            },
-            value: {
-              text: "Large print"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "standard letter needs"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Font size"
-            },
-            value: {
-              text: "16"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "font size"
+                  visuallyHiddenText: "accessible format needs"
                 }
               ]
             }
@@ -232,9 +198,145 @@
                 }
               ]
             }
+          },
+          {
+            key: {
+              text: "Instead of a standard letter"
+            },
+            value: {
+              text: "Coloured paper and large print"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "standard letter needs"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Coloured paper"
+            },
+            value: {
+              text: "Cream"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "font size"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Font size"
+            },
+            value: {
+              text: "16"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "font size"
+                }
+              ]
+            }
           }
         ]
       }) }}
+
+      {% elif data['alt-formats']== "no" %}
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Accessible format needs"
+            },
+            value: {
+              html: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "accessible format needs"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {% elif data['alt-formats']== "yesno" %}
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Accessible format needs"
+            },
+            value: {
+              html: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "accessible format needs"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Instead of a standard phone call"
+            },
+            value: {
+              text: "DWP can contact you by phone"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "phone call needs"
+                }
+              ]
+            }
+          },
+          
+          {
+            key: {
+              text: "Instead of a standard letter"
+            },
+            value: {
+              text: "DWP can contact you by standard letter"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "standard letter needs"
+                }
+              ]
+            }
+          }
+         
+        ]
+      }) }}
+      
+      {% endif %}
 
       <h2 class="govuk-heading-m govuk-!-padding-top-6">Health details</h2>
       {{ govukSummaryList({
@@ -632,6 +734,58 @@
                   href: "#",
                   text: "Change",
                   visuallyHiddenText: "DWP can share decision with your doctor"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Bank details</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Bank or building society details"
+            },
+            value: {
+              html: "<strong>Account holder:</strong> Ian Johson <br>
+                     <strong>Sort code:</strong> 80 26 50<br>
+            <strong>Account number:</strong> 10014069"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Bank or building society details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+       <h2 class="govuk-heading-m govuk-!-padding-top-6">Bank or building society details</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              html: "<strong>Account holder:</strong> <br>
+                     <strong>Sort code:</strong><br>
+                     <strong>Account number:</strong>"
+            },
+            value: {
+              html: "Ian Johson <br>
+                      80 26 50<br>
+                       10014069"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Bank or building society details"
                 }
               ]
             }
