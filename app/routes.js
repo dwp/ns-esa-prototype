@@ -212,6 +212,13 @@ router.get('/*/clear-v9', function (req, res) {
 //                                                                           //
 ///////////////////////////////////////////////////////////////////////////////
 
+////// Armed forces V1 //////
+// This moves routing for 'wt-5377-armed-forces' to alt-formats directory
+router.use(
+  "/design-iterations/wt-5377-armed-forces/",
+  require("./views/design-iterations/wt-5377-armed-forces/_routes")
+);
+
 ////// Alternative formats v3 //////
 // This moves routing for 'wt-alt-formats-3' to alt-formats directory
 router.use(

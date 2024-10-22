@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Overseas posting with the armed forces – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+     text: "Prototype"
+  },
+  html: 'This is a prototype. No data is saved or stored.'
+}) }}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Overseas posting with the armed forces
+      </h1>
+
+        <p class="govuk-body">
+          You may have been awarded National Insurance credits through the Ministry of Defence if your partner was posted overseas by the armed forces.
+        </p>
+        <p class="govuk-body">You must have:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>gone with them on their overseas posting</li>
+          <li>been their spouse or civil partner at the time</li>
+          <li>lived there with them for at least a week</li>
+        </ul>
+        <p class="govuk-body">National Insurance credits can help you qualify for New Style Employment and Support Allowance.</p>
+      
+
+
+
+      <form action="/design-iterations/wt-5377-armed-forces/armed-forces-check-answers" method="post" novalidate>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Have you lived abroad with your partner due to their overseas posting with the armed forces?
+              </legend>
+              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios" >
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="armedForcesSpouse" name="armedForcesSpouse" type="radio" value="yes" {{ checked('armedForcesSpouse','yes') }}>
+                  <label class="govuk-label govuk-radios__label" for="armedForcesSpouse">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="armedForcesSpouse-2" name="armedForcesSpouse" type="radio" value="no" {{ checked('armedForcesSpouse','no') }}>
+                  <label class="govuk-label govuk-radios__label" for="armedForcesSpouse-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+    </div>
+  </div>
+  {{ data | log }} 
+
+{% endblock %}
