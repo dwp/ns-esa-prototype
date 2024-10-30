@@ -22,28 +22,23 @@ What is your Textphone number? – {{ serviceName }} – GOV.UK Prototype Kit
    <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="contact-phone-af-textphone" method="post">
-       {% from "govuk/components/input/macro.njk" import govukInput %}
-
-        {{ govukInput({
-          label: {
-            text: "What is your Textphone number?",
-                  isPageHeading: true,
-                  classes: "govuk-label--l"
-          },
-          id: "textphone-number",
-          name: "textphoneNumber",
-          type: "tel",
-          autocomplete: "tel",
-          classes: "govuk-input--width-20"
-        }) }}
-
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="textphone-number">
+              What is your textphone number?
+            </label>
+          </h1>
+           <div id="textphone-hint" class="govuk-hint">
+              <p class="govuk-body">Enter the full textphone number that DWP should call you on.</p>
+              <p class="govuk-body">If DWP need to use a prefix such as 18001, include it at the beginning of your textphone number.</p>
+            </div>
+          <input class="govuk-input govuk-input--width-20" id="textphone-number" name="textphoneNumber" type="tel" autocomplete="tel" aria-describedby="textphone-hint">
+        </div>
          {{ govukButton({
           text: "Continue",
           href: "letters-contact-preference"
         }) }}
-
       </form>
-
   </div>
 
 {% endblock %}
