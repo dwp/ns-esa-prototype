@@ -547,7 +547,64 @@
       }) }}
 
       {% if data['roll-number']=="yes" %}
-       <h2 class="govuk-heading-m govuk-!-padding-top-6">Bank details</h2>
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Bank details</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Bank or building society details"
+            },
+            value: {
+              classes: "govuk-!-display-inline",
+              html: '<p class="govuk-body"><strong>Account holder</strong><br>Ian Johnson</p>
+                     <p class="govuk-body"><strong>Bank or building society</strong><br>Test bank</p>
+                     <p class="govuk-body"><strong>Sort code</strong><br>80 26 50</p>
+                     <p class="govuk-body"><strong>Account number</strong><br>10014069</p>
+                     <p class="govuk-body"><strong>Building society roll number</strong><br>12345678</p>'
+                     
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Bank or building society details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+    {% else %}
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Bank details</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Bank or building society details"
+            },
+            value: {
+              classes: "govuk-!-display-inline",
+              html: '<p class="govuk-body"><strong>Account holder</strong><br>Ian Johnson</p>
+                     <p class="govuk-body"><strong>Bank or building society</strong><br>Test bank</p>
+                     <p class="govuk-body"><strong>Sort code</strong><br>80 26 50</p>
+                     <p class="govuk-body"><strong>Account number</strong><br>10014069</p>'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Bank or building society details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+    {% endif %}
+{# BANK DETAILS option 2 formatting
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Bank details</h2>
       {{ govukSummaryList({
         rows: [
           {
@@ -560,7 +617,7 @@
                     <strong>Bank or building society:</strong> Test bank <br>
                      <strong>Sort code:</strong> 80 26 50<br>
                     <strong>Account number:</strong> 10014069<br>
-                    <strong>Building society roll number:</strong> 12345678"
+                    <strong>Roll number:</strong> 12345678"
             },
             actions: {
               items: [
@@ -573,9 +630,10 @@
             }
           }
         ]
-      }) }}
-{% else %}
-      <h2 class="govuk-heading-m govuk-!-padding-top-6">Bank details</h2>
+      }) }}     
+#}
+{# BANK DETAILS option 3 formatting
+<h2 class="govuk-heading-m govuk-!-padding-top-6">Bank details</h2>
       {{ govukSummaryList({
         rows: [
           {
@@ -583,10 +641,12 @@
               text: "Bank or building society details"
             },
             value: {
-              html: "<strong>Account holder:</strong> Ian Johnson <br>
-                    <strong>Bank or building society:</strong> Test bank <br>
-                     <strong>Sort code:</strong> 80 26 50<br>
-                    <strong>Account number:</strong> 10014069"
+              classes: "govuk-!-display-inline",
+              html: "Name: Ian Johnson <br>
+                    Bank or building society: Test bank <br>
+                    Sort code: 80 26 50<br>
+                    Account number: 10014069<br>
+                    Roll number: 12345678"
             },
             actions: {
               items: [
@@ -599,21 +659,25 @@
             }
           }
         ]
-      }) }}
-  {% endif %}
-{# BANK DETAILS option 2 formatting
+      }) }}      
+#}
+{# BANK DETAILS option 4 formatting
        <h2 class="govuk-heading-m govuk-!-padding-top-6">Bank or building society details</h2>
       {{ govukSummaryList({
         rows: [
           {
             key: {
               html: "<strong>Account holder:</strong> <br>
+                    <strong> Bank or building society</strong><br>
                      <strong>Sort code:</strong><br>
-                     <strong>Account number:</strong>"
+                     <strong>Account number:</strong><br>
+                     <strong>Building society roll number:</strong>"
             },
             value: {
               html: "Ian Johnson <br>
+                     Test bank<br>
                       80 26 50<br>
+                       10014069<br>
                        10014069"
             },
             actions: {
