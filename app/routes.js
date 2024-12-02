@@ -212,6 +212,13 @@ router.get('/*/clear-v9', function (req, res) {
 //                                                                           //
 ///////////////////////////////////////////////////////////////////////////////
 
+////// Reasonable adjustments v1 //////
+// This moves routing for 'wt-5682-ra' to reasonable adjustments directory
+router.use(
+  "/design-iterations/wt-5682-ra/",
+  require("./views/design-iterations/wt-5682-ra/_routes")
+);
+
 ////// Armed forces V1 //////
 // This moves routing for 'wt-5377-armed-forces' to alt-formats directory
 router.use(

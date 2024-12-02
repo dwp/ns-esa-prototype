@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is your National Insurance number? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+     text: "Prototype"
+  },
+  html: 'This is a prototype. No data is saved or stored.'
+}) }}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+  
+{% endblock %}
+
+{% block content %}
+{{ data | log }}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/design-iterations/wt-alt-formats-3/before/postal-address" method="post" novalidate>
+    <div class="govuk-form-group">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--l" for="national-insurance-number2">
+          What is your National Insurance number?
+        </label>
+      </h1>
+      <div id="national-insurance-number-hint" class="govuk-hint">
+        It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’.
+      </div>
+      <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="national-insurance-number2" name="national-insurance-number2" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint">
+    </div>
+    {{ govukButton({
+			text: "Continue"
+		  }) }}
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

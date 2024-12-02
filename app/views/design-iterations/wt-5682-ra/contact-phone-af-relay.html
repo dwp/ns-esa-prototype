@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   What is your Relay UK number? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+     text: "Prototype"
+  },
+  html: 'This is a prototype. No data is saved or stored.'
+}) }}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+   <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="contact-phone-af-relay" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="relay-number">
+              What is your Relay UK number?
+            </label>
+          </h1>
+           <div id="relay-hint" class="govuk-hint">
+              <p class="govuk-body">Enter the full Relay UK number that DWP should call you on.</p>
+              <p class="govuk-body">If DWP need to use a 18002 prefix, include that in your Relay UK number.</p>
+            </div>
+          <input class="govuk-input govuk-input--width-20" id="relay-number" name="relayNumber" type="tel" autocomplete="tel" aria-describedby="relay-hint">
+        </div>
+        {{ govukButton({
+          text: "Continue",
+          href: "letters-contact-preference"
+        }) }}
+      </form>
+  </div>
+
+{% endblock %}

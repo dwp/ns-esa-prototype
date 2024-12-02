@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   What type of braille do you need? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+     text: "Prototype"
+  },
+  html: 'This is a prototype. No data is saved or stored.'
+}) }}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="braille" method="post">
+
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          name: "braille",
+          fieldset: {
+            legend: {
+              text: "What type of braille do you need?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+
+          items: [
+            {
+              value: "uncontracted-braille-grade-1",
+              text: "Uncontracted braille (grade 1)"
+            },
+            {
+              value: "contracted-braille-grade-2",
+              text: "Contracted braille (grade 2)"
+            }
+          ]
+        }) }}
+        
+          {{ govukButton({
+                text: "Continue",
+                href: "reasonable-adjustment"
+            }) }}
+
+
+      </form>
+    </div>
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   What size font do you need? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+     text: "Prototype"
+  },
+  html: 'This is a prototype. No data is saved or stored.'
+}) }}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="large-print" method="get">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="largePrint-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What size font do you need?
+              </h1>
+            </legend>
+            <div id="largePrint-hint" class="govuk-hint">
+              <p class="govuk-body">Our standard letter is in size 12 font.</p>
+              <p class="govuk-body">If you need a different one for your letters, you can select one of the sizes listed, or ask to be contacted by DWP to discuss your needs.</p>
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="size-16" name="print-size" type="radio" value="size-16">
+                <label class="govuk-label govuk-radios__label" for="size-16">
+                  Size 16
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="size-20" name="print-size" type="radio" value="size-20">
+                <label class="govuk-label govuk-radios__label" for="size-20">
+                  Size 20
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="size-24" name="print-size" type="radio" value="size-24">
+                <label class="govuk-label govuk-radios__label" for="size-24">
+                  Size 24
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="other" name="print-size" type="radio" value="other">
+                <label class="govuk-label govuk-radios__label" for="other">
+                  You need a different font size and DWP will contact you to discuss this
+                </label>
+              </div>
+            </div>
+          </fieldset>
+       </div>
+      {{ govukButton({
+        text: "Continue",
+        href: "reasonable-adjustment"
+      }) }}     
+  </form>
+ </div>
+</div>
+
+
+{% endblock %}
