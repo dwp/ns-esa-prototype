@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Reasonable adjustments – {{ serviceName }} – GOV.UK Prototype Kit
+Other accessibility needs – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,35 +23,40 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Reasonable adjustments
+        Other accessibility needs
       </h1>
 
+      {% if data['checkanswers']=="visited" %}
+      <form class="form" action="/design-iterations/wt-5682-ra/af-check-answers" method="post">
+      {% else %}
       <form class="form" action="/design-iterations/wt-5682-ra/after/condition" method="post">
+      {% endif %}
 
         <p class="govuk-body">
-          [Explanation text what we mean by reasonable adjustments.] 
+          We can meet other accessibility needs for you. 
         </p>
-        <p class="govuk-body">This can be:</p>
+        <p class="govuk-body">For example, you might need:</p>
           <ul class="govuk-list govuk-list--bullet">
-            <li>a quiet room</li>
-            <li>a ramp</li>
-            <li>a certain tone of voice</li>
+            <li>sign language in meetings</li>
+            <li>step-free access to a jobcentre</li>
+            <li>a quiet room for face-to-face interactions</li>
           </ul>
-        <p class="govuk-body">DWP will contact you to discuss this.</p>
+        <p class="govuk-body">If your claim is accepted, we will contact you to find out more about your accessibility needs.</p>
 
         {{ govukRadios({
           name: "adjustments",
+          value: data['adjustments'],
           fieldset: {
             legend: {
-              text: "Do you have any reasonable adjustment needs?",
+              text: "Do you have any other accessibility needs?",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
           },
           items: [
             {
-              value: "Yes and DWP will contact you to discuss this",
-              text: "Yes and DWP will contact you to discuss this"
+              value: "yes",
+              text: "Yes"
             },
             {
               value: "no",

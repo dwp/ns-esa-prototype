@@ -3,6 +3,7 @@
 {% block pageTitle %}
   Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
+{% set checkanswers = data['visited'] %}
 
 {% block beforeContent %}
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
@@ -253,12 +254,12 @@
         ]
       }) }}
 
-       <h2 class="govuk-heading-m govuk-!-padding-top-6">Reasonable adjustments</h2>
+       <h2 class="govuk-heading-m govuk-!-padding-top-6">Accessibility needs</h2>
       {{ govukSummaryList({
         rows: [
           {
             key: {
-              text: "Reasonable adjustment needs"
+              text: "Other accessibility needs"
             },
             value: {
               text: data['adjustments'] | capitalize
@@ -267,9 +268,9 @@
             actions: {
               items: [
                 {
-                  href: "reasonable-adjustment",
+                  href: "reasonable-adjustment?checkanswers=visited",
                   text: "Change",
-                  visuallyHiddenText: "reasonable adjustment needs"
+                  visuallyHiddenText: "other accessibility needs"
                 }
               ]
             }

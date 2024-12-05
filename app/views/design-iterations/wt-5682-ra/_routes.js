@@ -168,11 +168,11 @@ router.post('/letters-contact-preference', function (req, res) {
   } else if (answer.includes('coloured-paper-large-print')) {
     res.redirect(`${ABS_BASE_PATH}/coloured-paper`);
   } else if (answer.includes('email-af')) {
-    res.redirect(`${ABS_BASE_PATH}/reasonable-adjustment`);
+    res.redirect(`${ABS_BASE_PATH}/reasonable-adjustment?checkanswers`);
   } else if (answer.includes('large-print')) {
     res.redirect(`${ABS_BASE_PATH}/large-print`);
   } else {
-    res.redirect(`${ABS_BASE_PATH}/reasonable-adjustment`);
+    res.redirect(`${ABS_BASE_PATH}/reasonable-adjustment?checkanswers`);
   }
 
 });
