@@ -419,6 +419,34 @@ router.use(
   require("./views/apply/v20/alt-formats-5/_routes")
 );
 
+///////////////////////////////////////////////////////////////////////////////
+//                                                                           //
+//  ROUTING FOR VERSION 23                                                   //
+//                                                                           //
+///////////////////////////////////////////////////////////////////////////////
+
+// This moves V3 routing routing to v3 directory
+router.use(
+  "/apply/v23/",
+  require("./views/apply/v23/_routes")
+);
+// This moves eligibility routing to eligibility directory
+router.use(
+  "/v23/1-eligibility/",
+  require("./views/apply/v23/1-eligibility/_routes")
+);
+
+
+// {END OF ROUTING FOR VERSION 23} ///////////////////////////////////////////
+
+
+
+///////////////////////////////
+////// VERSION 22 ROUTES //////
+///////////////////////////////
+
+
+//Do you have a disability or health condition that affects how much you can work?
 // Routes you to state-pension or may-not-be-eligible at the first radio button screen
 router.route('/apply/v22/disability-or-health-condition')
 .post((req, res, next) => {
@@ -437,7 +465,7 @@ router.route('/apply/v22/disability-or-health-condition')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Are you under State Pension age?
 router.route('/apply/v22/state-pension')
 .post((req, res, next) => {
   let redirectUrl;
@@ -455,7 +483,7 @@ router.route('/apply/v22/state-pension')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Have you been employed and paid National Insurance over the last 2 to 3 years?
 router.route('/apply/v22/national-insurance')
 .post((req, res, next) => {
   let redirectUrl;
@@ -476,7 +504,7 @@ router.route('/apply/v22/national-insurance')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Are you getting Statutory Sick Pay?
 router.route('/apply/v22/statutory-pay')
 .post((req, res, next) => {
   let redirectUrl;
@@ -494,7 +522,7 @@ router.route('/apply/v22/statutory-pay')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Does your Statutory Sick Pay end in the next 3 months?
 router.route('/apply/v22/statutory-pay-date')
 .post((req, res, next) => {
   let redirectUrl;
@@ -512,7 +540,7 @@ router.route('/apply/v22/statutory-pay-date')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// What is your address?
 router.route('/apply/v22/address')
 .post((req, res, next) => {
   let redirectUrl;
@@ -530,7 +558,7 @@ router.route('/apply/v22/address')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Do you have a mobile number?
 router.route('/apply/v22/telephone')
 .post((req, res, next) => {
   let redirectUrl;
@@ -548,7 +576,7 @@ router.route('/apply/v22/telephone')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Do you have another health condition, illness, disability or injury?
 router.route('/apply/v22/condition-another')
 .post((req, res, next) => {
   let redirectUrl;
@@ -566,7 +594,7 @@ router.route('/apply/v22/condition-another')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Has your doctor said you might have less than 12 months to live due to any of your conditions?
 router.route('/apply/v22/live-less-than-12-months')
 .post((req, res, next) => {
   let redirectUrl;
@@ -584,7 +612,7 @@ router.route('/apply/v22/live-less-than-12-months')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Are you currently staying in hospital as an inpatient?
 router.route('/apply/v22/hospital')
 .post((req, res, next) => {
   let redirectUrl;
@@ -602,7 +630,7 @@ router.route('/apply/v22/hospital')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Are you pregnant?
 router.route('/apply/v22/pregnant')
 .post((req, res, next) => {
   let redirectUrl;
@@ -620,7 +648,7 @@ router.route('/apply/v22/pregnant')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Are you currently doing any voluntary work?
 router.route('/apply/v22/voluntary-work')
 .post((req, res, next) => {
   let redirectUrl;
@@ -638,7 +666,7 @@ router.route('/apply/v22/voluntary-work')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Do you do any other voluntary work?
 router.route('/apply/v22/voluntary-work-another')
 .post((req, res, next) => {
   let redirectUrl;
@@ -656,7 +684,7 @@ router.route('/apply/v22/voluntary-work-another')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Are you currently employed or self-employed, even if you’re unable to work at the moment?
 router.route('/apply/v22/work')
 .post((req, res, next) => {
   let redirectUrl;
@@ -677,7 +705,7 @@ router.route('/apply/v22/work')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Are you off sick from your job at <employer name>?
 router.route('/apply/v22/worksick')
 .post((req, res, next) => {
   let redirectUrl;
@@ -695,7 +723,7 @@ router.route('/apply/v22/worksick')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Do you have another job?
 router.route('/apply/v22/work-another')
 .post((req, res, next) => {
   let redirectUrl;
@@ -716,7 +744,7 @@ router.route('/apply/v22/work-another')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Do you work the same number of hours each week at data['employer-details-1']?
 router.route('/apply/v22/work-hours')
 .post((req, res, next) => {
   let redirectUrl;
@@ -734,7 +762,7 @@ router.route('/apply/v22/work-hours')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Do you get help from a professional support worker at data['employer-details-1']?
 router.route('/apply/v22/work-supported')
 .post((req, res, next) => {
   let redirectUrl;
@@ -755,7 +783,7 @@ router.route('/apply/v22/work-supported')
   res.redirect(redirectUrl);
 });
 
-// Routes
+//  Does data['employer-details-1']pay you any expenses?
 router.route('/apply/v22/expenses')
 .post((req, res, next) => {
   let redirectUrl;
@@ -773,7 +801,7 @@ router.route('/apply/v22/expenses')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// What is your Statutory Sick Pay end date?
 router.route('/apply/v22/statutory-pay-end')
 .post((req, res, next) => {
   let redirectUrl;
@@ -791,7 +819,7 @@ router.route('/apply/v22/statutory-pay-end')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Are you getting any of the following payments?
 router.route('/apply/v22/statutory-pay-other')
 .post((req, res, next) => {
   let redirectUrl;
@@ -819,7 +847,7 @@ router.route('/apply/v22/statutory-pay-other')
 });
 
 
-// Routes
+// Are you getting regular payments from a pension or annuity?
 router.route('/apply/v22/pension')
 .post((req, res, next) => {
   let redirectUrl;
@@ -849,7 +877,7 @@ router.route('/apply/v22/pension')
 
 
 
-// Routes
+// Tell us why you are not getting Statutory Sick Pay
 router.route('/apply/v22/why-no-ssp')
 .post((req, res, next) => {
   let redirectUrl;
@@ -882,7 +910,7 @@ router.route('/apply/v22/why-no-ssp')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Based on your answers, you may not be eligible for New Style ESA
 router.route('/apply/v22/may-not-be-eligible')
 .post((req, res, next) => {
   let redirectUrl;
@@ -903,7 +931,7 @@ router.route('/apply/v22/may-not-be-eligible')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Is there another number you can be contacted on?
 router.route('/apply/v22/landline')
 .post((req, res, next) => {
   let redirectUrl;
@@ -921,7 +949,7 @@ router.route('/apply/v22/landline')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// NINO: Based on your answers, you may not be eligible for New Style ESA payments
 router.route('/apply/v22/may-not-be-eligible-national-insurance')
 .post((req, res, next) => {
   let redirectUrl;
@@ -939,7 +967,7 @@ router.route('/apply/v22/may-not-be-eligible-national-insurance')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Are you getting any money from permanent health insurance set up by an employer?
 router.route('/apply/v22/insurance')
 .post((req, res, next) => {
   let redirectUrl;
@@ -960,7 +988,7 @@ router.route('/apply/v22/insurance')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Who is applying?
 router.route('/apply/v22/who-is-applying')
 .post((req, res, next) => {
   req.session.destroy();
@@ -982,7 +1010,7 @@ router.route('/apply/v22/who-is-applying')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Do you want to claim from [date]?
 router.route('/apply/v22/claim-start-date-if-statutory-sick-pay')
 .post((req, res, next) => {
   let redirectUrl;
@@ -1000,7 +1028,7 @@ router.route('/apply/v22/claim-start-date-if-statutory-sick-pay')
   res.redirect(redirectUrl);
 });
 
-// Routes
+// Do you get or have you applied for Universal Credit?
 router.route('/apply/v22/universal-credit')
 .post((req, res, next) => {
   let redirectUrl;
@@ -1020,17 +1048,10 @@ router.route('/apply/v22/universal-credit')
   res.redirect(redirectUrl);
 });
 
-
-
-
-
 // New Routes
-
-
 // Section - Pension or annuity
 
 // Pension - Are you getting regular payments from a pension or annuity?
-
 router.post('/apply/v22/pension/pension', function (req, res) {
   var answer = req.session.data['pension'];
   if (answer === 'Yes') {
@@ -1041,15 +1062,7 @@ router.post('/apply/v22/pension/pension', function (req, res) {
   }
 });
 
-
-
 // Pension - Do you have another pension or annuity you currently receive?
-
-
-
-
-
-
 router.route('/apply/v22/pension/pension-add-another')
 .post((req, res, next) => {
   let redirectUrl;
@@ -1067,95 +1080,10 @@ router.route('/apply/v22/pension/pension-add-another')
   res.redirect(redirectUrl);
 });
 
-
-
-
-
 // Pension - Is this pension or annuity inherited?
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// {END OF ROUTING FOR VERSION 22} ///////////////////////////////////////////
 
 
 // Routes 
