@@ -5,7 +5,7 @@ const BASE_PATH = 'apply/v23/1-eligibility';
 const ABS_BASE_PATH = `/${BASE_PATH}`;
 const NEXT_PATH = '/apply/v23/2-personal-details';
 
-/* Who is applying?
+//Who is applying?
 router.route('/who-is-applying')
 .post((req, res, next) => {
   req.session.destroy();
@@ -26,8 +26,8 @@ router.route('/who-is-applying')
   }
   res.redirect(redirectUrl);
 });
-*/
 
+/* 
 // Who is applying?
 router.post('/who-is-applying', function (req, res) {
   var answer = req.session.data['apply'];
@@ -39,6 +39,7 @@ router.post('/who-is-applying', function (req, res) {
     res.redirect(`${ABS_BASE_PATH}/eligibility-start`);
   }
 });
+*/
 
 //Do you have a disability or health condition that affects how much you can work?
 router.route('/disability-or-health-condition')

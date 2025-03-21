@@ -432,7 +432,7 @@ router.use(
 );
 // This moves eligibility routing to eligibility directory
 router.use(
-  "/v23/1-eligibility/",
+  "/apply/v23/1-eligibility/",
   require("./views/apply/v23/1-eligibility/_routes")
 );
 

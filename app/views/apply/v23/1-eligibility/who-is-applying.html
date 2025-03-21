@@ -23,6 +23,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+
     <form id="form" method="post" action="who-is-applying">
   
     <div class="govuk-form-group">
@@ -64,6 +65,49 @@
     <input type="submit" class="govuk-button" value="Continue" id="submit">
 
   </form>
+  
+{#
+        <form action="who-is-applying" method="post">
+
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+          name: "apply",
+          fieldset: {
+            legend: {
+              text: "Who is applying?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "apply-myself",
+              text: "I'm applying for myself"
+            },
+            {
+              value: "apply-someone",
+              text: "I’m applying for someone else",
+      hint: {
+        text: "I’m a registered appointee, deputy, power of attorney or belong to a Corporate Acting Body (CAB)."
+      }
+            },
+            {
+              value: "apply-help",
+              text: "I’m helping someone apply",
+      hint: {
+        text: "The applicant is giving me the answers and I’m supporting them with their application."
+      }
+            }
+          ]
+        }) }}
+          {{ govukButton({
+                text: "Continue"
+            }) }}
+
+
+      </form>#}
 
   </div>
 
