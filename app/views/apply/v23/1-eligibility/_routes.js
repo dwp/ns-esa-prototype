@@ -47,10 +47,10 @@ router.route('/disability-or-health-condition')
   let redirectUrl;
   switch (req.body['disability']) {
     case 'yes~/apply/v23/1-eligibility/state-pension':
-      redirectUrl = '/state-pension';
+      redirectUrl = '/apply/v23/1-eligibility/state-pension';
       break;
     case 'no~/apply/v23/1-eligibility/may-not-be-eligible':
-      redirectUrl = '/may-not-be-eligible';
+      redirectUrl = '/apply/v23/1-eligibility/may-not-be-eligible';
       break;
     default:
       redirectUrl = req.path;
@@ -66,10 +66,10 @@ router.route('/state-pension')
   let redirectUrl;
   switch (req.body['state-pension']) {
     case 'yes~/apply/v23/1-eligibility/national-insurance':
-      redirectUrl = '/apply/v22/national-insurance';
+      redirectUrl = '/apply/v23/1-eligibility/national-insurance';
       break;
     case 'no~/apply/v23/1-eligibility/may-not-be-eligible-state-pension':
-      redirectUrl = '/may-not-be-eligible-state-pension';
+      redirectUrl = '/apply/v23/1-eligibility/may-not-be-eligible-state-pension';
       break;
     default:
       redirectUrl = req.path;
@@ -84,13 +84,13 @@ router.route('/national-insurance')
   let redirectUrl;
   switch (req.body['severe-disability']) {
     case 'yes~/apply/v23/1-eligibility/statutory-pay':
-      redirectUrl = '/statutory-pay';
+      redirectUrl = '/apply/v23/1-eligibility/statutory-pay';
       break;
     case 'no~/apply/v23/1-eligibility/may-not-be-eligible-national-insurance':
-      redirectUrl = '/may-not-be-eligible-national-insurance';
+      redirectUrl = '/apply/v23/1-eligibility/may-not-be-eligible-national-insurance';
       break;
     case 'notsure~/apply/v23/1-eligibility/statutory-pay':
-      redirectUrl = '/statutory-pay';
+      redirectUrl = '/apply/v23/1-eligibility/statutory-pay';
       break;
     default:
       redirectUrl = req.path;
@@ -108,7 +108,7 @@ router.route('/statutory-pay')
       redirectUrl = '/apply/v23/1-eligibility/statutory-pay-date';
       break;
     case 'No':
-      redirectUrl = '/why-no-ssp';
+      redirectUrl = '/apply/v23/1-eligibility/why-no-ssp';
       break;
     default:
       redirectUrl = req.path;
@@ -123,10 +123,10 @@ router.route('/statutory-pay-date')
   let redirectUrl;
   switch (req.body['statutory-pay-end']) {
     case 'yes~/apply/v23/1-eligibility/may-be-eligible':
-      redirectUrl = '/may-be-eligible';
+      redirectUrl = '/apply/v23/1-eligibility/may-be-eligible';
       break;
     case 'no~/apply/v23/1-eligibility/may-not-be-eligible-statutory-pay':
-      redirectUrl = '/may-not-be-eligible-statutory-pay';
+      redirectUrl = '/apply/v23/1-eligibility/may-not-be-eligible-statutory-pay';
       break;
     default:
       redirectUrl = req.path;

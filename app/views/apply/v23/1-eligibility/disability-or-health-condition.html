@@ -1,20 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
- Disability or health condition - Apply for New Style Employment and Support Allowance - GOV.UK
+Do you have a disability or health condition that affects how much you can work? - Apply for New Style Employment and Support Allowance - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        beta
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
+{{ super() }}
 {% include "includes/back-link.html" %}
 {% endblock %}
 
@@ -23,7 +14,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="/apply/v23/1-eligibility/disability-or-health-condition">
+    <form id="form" method="post" action="disability-or-health-condition">
       
    <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">

@@ -1,20 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
- Statutory payments - Apply for New Style Employment and Support Allowance - GOV.UK
+ Are you getting Statutory Sick Pay? - Apply for New Style Employment and Support Allowance - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        beta
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
+{{ super() }}
 {% include "includes/back-link.html" %}
 {% endblock %}
 
@@ -37,7 +28,7 @@
         <p>Statutory Sick Pay (SSP) is paid by your employer in the same way as your wages. 
         </p>
 
-        <p>If you’re not sure, check our information on <a href="https://www.gov.uk/statutory-sick-pay">SSP and eligibility (opens in a new tab).</a></p>
+        <p>If you’re not sure, check our information on <a href="https://www.gov.uk/statutory-sick-pay" class="govuk-link" rel="noreferrer noopener" target="_blank">SSP and eligibility (opens in a new tab).</a></p>
         <p>You can apply for New Style ESA if you do not get Statutory Sick Pay or it ends in the next 3 months.</p>
 
         <div class="govuk-radios">
