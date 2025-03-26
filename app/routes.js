@@ -436,6 +436,18 @@ router.use(
   require("./views/apply/v23/1-eligibility/_routes")
 );
 
+// This moves personal details routing to personal details directory
+router.use(
+  "/apply/v23/2-personal-details/",
+  require("./views/apply/v23/2-personal-details/_routes")
+);
+
+// This moves contact details routing to contact details directory
+router.use(
+  "/apply/v23/3-contact-details/",
+  require("./views/apply/v23/3-contact-details/_routes")
+);
+
 
 // {END OF ROUTING FOR VERSION 23} ///////////////////////////////////////////
 

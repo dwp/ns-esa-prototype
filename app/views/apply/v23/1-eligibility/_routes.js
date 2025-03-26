@@ -27,19 +27,6 @@ router.route('/who-is-applying')
   res.redirect(redirectUrl);
 });
 
-/* 
-// Who is applying?
-router.post('/who-is-applying', function (req, res) {
-  var answer = req.session.data['apply'];
-  if (answer === 'apply-someone') {
-    res.redirect(`${ABS_BASE_PATH}/cannot-apply-online`);
-  } else if (answer === 'apply-help') {
-    res.redirect(`${ABS_BASE_PATH}/helping-someone-apply`);
-  }else {
-    res.redirect(`${ABS_BASE_PATH}/eligibility-start`);
-  }
-});
-*/
 
 //Do you have a disability or health condition that affects how much you can work?
 router.route('/disability-or-health-condition')
@@ -127,6 +114,45 @@ router.route('/statutory-pay-date')
       break;
     case 'no~/apply/v23/1-eligibility/may-not-be-eligible-statutory-pay':
       redirectUrl = '/apply/v23/1-eligibility/may-not-be-eligible-statutory-pay';
+      break;
+    default:
+      redirectUrl = req.path;
+      break;
+  }
+  res.redirect(redirectUrl);
+});
+
+// Based on your answers, you may not be eligible for New Style ESA
+router.route('/may-not-be-eligible')
+.post((req, res, next) => {
+  let redirectUrl;
+  switch (req.body['no-health-condition']) {
+    case 'uc~https://www.gov.uk/universal-credit':
+      redirectUrl = 'https://www.gov.uk/universal-credit';
+      break;
+    case 'nsjsa~https://www.gov.uk/jobseekers-allowance/':
+      redirectUrl = 'https://www.gov.uk/jobseekers-allowance';
+      break;
+    case 'nsesa~/apply/v23/1-eligibility/state-pension':
+      redirectUrl = '/apply/v23/1-eligibility/state-pension';
+      break;
+    default:
+      redirectUrl = req.path;
+      break;
+  }
+  res.redirect(redirectUrl);
+});
+
+// NINO: Based on your answers, you may not be eligible for New Style ESA payments
+router.route('/may-not-be-eligible-national-insurance')
+.post((req, res, next) => {
+  let redirectUrl;
+  switch (req.body['apply-for-uc']) {
+    case 'no~/apply/v23/1-eligibility/statutory-pay':
+      redirectUrl = '/apply/v23/1-eligibility/statutory-pay';
+      break;
+    case 'yes~https://www.gov.uk/universal-credit':
+      redirectUrl = 'https://www.gov.uk/universal-credit';
       break;
     default:
       redirectUrl = req.path;

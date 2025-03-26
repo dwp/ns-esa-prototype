@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Mobile phone number - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ super() }}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      
+      {% set phoneHtml %}
+      {{ govukInput({
+        id: "mobile-number",
+        name: "mobile-number",
+        type: "tel",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Mobile number"
+        }
+      }) }}
+      {% endset -%}
+
+
+      {{ govukRadios({
+        idPrefix: "how-contacted-conditional",
+        name: "mobile-phone",
+        fieldset: {
+          legend: {
+            text: "Do you have a mobile number?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "We’ll use this number to contact you about your claim."
+        },
+        items: [
+          {
+            value: "yes~/apply/v23/3-contact-details/email",
+            text: "Yes",
+            conditional: {
+              html: phoneHtml
+            }
+          },
+          {
+            value: "no~/apply/v23/3-contact-details/landline",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+</form>
+</div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+
+

@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Other contact number - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ super() }}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      
+      {% set landlineHtml %}
+      {{ govukInput({
+        id: "other-number",
+        name: "other-number",
+        type: "tel",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Telephone number"
+        }
+      }) }}
+      {% endset -%}
+      
+      {{ govukRadios({
+        idPrefix: "how-contacted-conditional",
+        name: "other-phone",
+        fieldset: {
+          legend: {
+            text: "Is there another number you can be contacted on?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "We’ll use this number to contact you about your claim."
+        },
+        items: [
+          {
+            value: "yes~/apply/v23/3-contact-details/email",
+            text: "Yes",
+            conditional: {
+              html: landlineHtml
+            }
+          },
+          {
+            value: "no~/apply/v23/3-contact-details/email",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+</form>
+</div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+
+
+{% endblock %}

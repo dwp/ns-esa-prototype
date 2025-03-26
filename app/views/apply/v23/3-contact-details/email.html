@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Email address - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ super() }}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  
+    <form id="form" method="post" action="/apply/v23/4-accessible-formats/guard">
+ 
+        
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        
+        {% set emailHtml %}
+        {{ govukInput({
+            label: {
+              text: "Email address"
+            },
+            id: "emailaddress",
+            name: "emailaddress",
+            type: "email",
+            autocomplete: "email",
+            spellcheck: false
+          }) }}
+        {% endset -%}
+        
+        {{ govukRadios({
+          idPrefix: "contact",
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "Do you have an email address?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "We’ll use this to send details of appointments."
+          },
+          items: [
+            {
+              value: "email",
+              text: "Yes",
+              conditional: {
+                html: emailHtml
+              }
+            },
+            {
+              value: "noEmail",
+              text: "No",
+              conditional: {
+                html: phoneHtml
+              }
+            }
+          ]
+        }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+</form>
+</div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+
+
