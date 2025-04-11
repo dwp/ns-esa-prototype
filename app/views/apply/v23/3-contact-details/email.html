@@ -15,7 +15,7 @@
   <div class="govuk-grid-column-two-thirds">
 
   
-    <form id="form" method="post" action="/apply/v23/4-accessible-formats/guard">
+    <form action="email" method="post">
  
         
 
@@ -68,13 +68,16 @@
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
-      {{ govukButton({
-        text: "Continue"
-      }) }}
-
+          {{ govukButton({
+                text: "Continue",
+                href: "/apply/v23/4-accessible-formats/guard"
+            }) }}
 </form>
+{{ data | log }} 
 </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
 {% endblock %}
+
+
 
 

@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+   What colour paper do you need? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ super() }}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+   <form action="coloured-paper" method="get">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="colouredPaper-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            What colour paper do you need?
+          </h1>
+        </legend>
+        <div id="colouredPaper-hint" class="govuk-hint">
+          <p class="govuk-body">We normally print letters on white paper.</p>
+          <p class="govuk-body">If you need a different colour paper, you can select one of the colours listed, or ask to be contacted by DWP to discuss your needs.</p>
+        </div>
+
+        <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="cream" name="coloured-paper" type="radio" value="cream">
+                <label class="govuk-label govuk-radios__label" for="cream">
+                  Cream
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="light-blue" name="coloured-paper" type="radio" value="light-blue">
+                <label class="govuk-label govuk-radios__label" for="light-blue">
+                  Light blue
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="pastel-yellow" name="coloured-paper" type="radio" value="pastel-yellow">
+                <label class="govuk-label govuk-radios__label" for="pastel-yellow">
+                  Pastel yellow
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="pastel-pink" name="coloured-paper" type="radio" value="pastel-pink">
+                <label class="govuk-label govuk-radios__label" for="pastel-pink">
+                  Pastel pink
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="other" name="coloured-paper" type="radio" value="other-colour">
+                <label class="govuk-label govuk-radios__label" for="other">
+                  You need a different colour and DWP will contact you to discuss this
+                </label>
+              </div>
+            </div>
+          </fieldset>
+       </div>
+      
+      {% if 'large-print' in data['lettersContactPreference'] %}
+        {{ govukButton({
+              text: "Continue",
+              href: "large-print"
+          }) }}
+
+          {% elif 'coloured-paper-large-print' in data['lettersContactPreference'] %}
+            {{ govukButton({
+                  text: "Continue",
+                  href: "large-print"
+              }) }}
+      {% else %}
+      
+        {{ govukButton({
+              text: "Continue",
+              href: "/apply/v23/5-accessibility-needs/reasonable-adjustment"
+          }) }}
+          
+      {% endif %}
+
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}

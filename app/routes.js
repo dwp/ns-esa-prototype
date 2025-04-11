@@ -448,6 +448,24 @@ router.use(
   require("./views/apply/v23/3-contact-details/_routes")
 );
 
+// This moves accessible formats routing to accessible formats directory
+router.use(
+  "/apply/v23/4-accessible-formats/",
+  require("./views/apply/v23/4-accessible-formats/_routes")
+);
+
+// This moves health details routing to health details directory
+router.use(
+  "/apply/v23/6-health-details/",
+  require("./views/apply/v23/6-health-details/_routes")
+);
+
+// This moves voluntary work routing to voluntary work directory
+router.use(
+  "/apply/v23/7-voluntary-work/",
+  require("./views/apply/v23/7-voluntary-work/_routes")
+);
+
 
 // {END OF ROUTING FOR VERSION 23} ///////////////////////////////////////////
 

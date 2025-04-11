@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Has your doctor, consultant or specialist nurse completed an SR1 form? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ super() }}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="sr1-report">
+
+      <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" >
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Has your doctor, consultant or specialist nurse completed an SR1 form?
+        </h1>
+      </legend>
+      <div id="how-contacted-conditional-hint" class="govuk-hint">
+        An SR1 is a form that gives the Department for Work and Pensions evidence about your illness.
+      </div>
+
+      <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="how-contacted-conditional-1" name="ds1500" type="radio" value='Yes' data-aria-controls="conditional-how-contacted-conditional-1">
+          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+            Yes
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="how-contacted-conditional-2" name="ds1500" type="radio" value="No" data-aria-controls="conditional-how-contacted-conditional-2">
+          <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+            No
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="do-not-know" name="ds1500" type="radio" value="I'm not sure" data-aria-controls="conditional-how-contacted-conditional-3">
+          <label class="govuk-label govuk-radios__label" for="do-not-know">
+          I&rsquo;m not sure
+          </label>
+        </div>
+
+      </div>
+    </fieldset>
+  </div>
+
+  {{ govukButton({
+    text: "Continue",
+    href: "hospital"
+}) }}
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

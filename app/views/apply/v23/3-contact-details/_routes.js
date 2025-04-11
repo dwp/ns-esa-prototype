@@ -45,8 +45,6 @@ router.post('/welsh-or-not', function (req, res) {
     }
   });
 
-  
-
 
 // Do you have a mobile number?
 router.route('/telephone')

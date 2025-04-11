@@ -16,7 +16,7 @@ Where can we send letters about your claim? - Apply for New Style Employment and
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="/telephone">
+    <form action="correspondence-address" method="post">
 
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -63,7 +63,10 @@ Where can we send letters about your claim? - Apply for New Style Employment and
         </fieldset>
       </div>
 
-      <input type="submit" class="govuk-button" value="Continue" id="submit">
+      {{ govukButton({
+        text: "Continue",
+        href: "/apply/v23/3-contact-details/telephone"
+    }) }}
 
     </form>
 

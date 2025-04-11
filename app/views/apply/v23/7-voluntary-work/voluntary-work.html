@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Are you currently doing any voluntary work? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ super() }}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="voluntary-work">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+      Are you currently doing any voluntary work?
+    </h1>
+
+    <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="work-1" name="voluntary" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="work-1">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="work-3" name="voluntary" type="radio" value="No" aria-controls="no-reveal">
+          <label class="govuk-label govuk-radios__label" for="work-3">
+            No
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+
+

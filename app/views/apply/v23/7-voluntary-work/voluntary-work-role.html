@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What do you do at {{ data['volunteer-details-1'] | split(',') | last | default("Oxfam")}}? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ super() }}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <form id="form" method="post" action="voluntary-hours">
+
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+            What do you do at {{ data['volunteer-details-1'] | split(',') | last | default("Oxfam")}}?
+            </h1>
+            </legend>
+
+            <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
+              <div class="govuk-form-group">
+              
+                
+                <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+              </div>
+
+              <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+                You can enter up to 500 characters
+              </div>
+
+            </div>
+
+           
+            <input type="submit" class="govuk-button" value="Continue" id="submit">
+        </div> <!-- form-group -->
+
+      </form>
+
+    </div> <!-- form-group -->
+  </div> <!-- column-two-thirds -->
+
+  <div class="govuk-grid-column-one-thrid">
+    
+  </div> <!-- column-one-third -->
+
+</div> <!-- grid-row -->
+
+
+{% endblock %}
