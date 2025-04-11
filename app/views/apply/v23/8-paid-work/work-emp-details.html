@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Tell us about your job – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ super() }}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post" action="work-emp-details">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+        {% if (data['employment-status'] == "Self-employed") %}
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+          Tell us about your self-employment
+        </h1>
+      {% else %}
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+        Tell us about your job
+        </h1>
+      {% endif %}
+   
+      <p id="special-rules-hint" class="govuk-hint">
+        If you have more than one job, we will ask about your other jobs later.
+      </p>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="job-title">
+        Job title
+        </label>
+        <input class="govuk-input govuk-!-width-one-half" id="job-title" name="job-title" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        {% if (data['employment-status'] == "Self-employed") %}
+        <label class="govuk-label" for="employer-details-name">
+       Name of business (optional)
+        </label>
+        {% else %}
+        <label class="govuk-label" for="employer-details-name">
+        Name of employer
+        </label>
+        {% endif %}
+        <input class="govuk-input govuk-!-width-one-half" id="employer-details-name" name="employer-details" type="text">
+      </div>
+
+     
+
+      <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+ 
+      </legend>
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+        {% if (data['employment-status'] == "Self-employed") %}  
+          <h2 class="govuk-fieldset__heading">
+            Business address
+          </h2>
+        {% else %}
+          <h2 class="govuk-fieldset__heading">
+            Employer address
+          </h2>
+        {% endif %}
+        </legend>
+      
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-line-1">
+          Address line 1
+          <span class="govuk-visually-hidden">line 1 of 2</span>
+        </label>
+        <input class="govuk-input" id="employer-address-line-1" name="employer-address-line-1" type="text">
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-line-2">
+          Address line 2 (optional)
+          <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+        </label>
+        <input class="govuk-input" id="employer-address-line-2" name="employer-address-line-2" type="text">
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-town">
+          Town or city
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="employer-address-town" name="employer-address-town" type="text">
+      </div>
+
+      
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-postcode">
+          Postcode
+        </label>
+        <input class="govuk-input govuk-!-width-one-third" id="employer-address-postcode" name="employer-address-postcode" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="telephone">
+        Phone number
+        </label>
+        <input class="govuk-input govuk-!-width-one-half" id="telephone" name="employer-telephone" type="text">
+      </div>
+
+  </fieldset>
+
+    {{ govukButton({
+      text: "Continue",
+      href: "worksick"
+  }) }}
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+
+
+

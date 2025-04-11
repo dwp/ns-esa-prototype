@@ -466,6 +466,14 @@ router.use(
   require("./views/apply/v23/7-voluntary-work/_routes")
 );
 
+// This moves paid work routing to paid work directory
+router.use(
+  "/apply/v23/8-paid-work/",
+  require("./views/apply/v23/8-paid-work/_routes")
+);
+
+
+
 
 // {END OF ROUTING FOR VERSION 23} ///////////////////////////////////////////
 

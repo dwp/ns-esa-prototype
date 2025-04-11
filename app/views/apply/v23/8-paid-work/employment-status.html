@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What is your employment status? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ super() }}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="work-emp-details">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "employment-status",
+  fieldset: {
+    legend: {
+      text: "What is your employment status?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    html: "<p>If you have more than one job, you will be asked about your other jobs later in this form.</p>
+    <p>Select all that apply.</p>"
+  },
+  items: [
+    {
+      value: "Employee",
+      text: "Employee"
+    },
+    {
+      value: "Self-employed",
+      text: "Self-employed"
+    },
+    {
+      value: "Sub-contractor",
+      text: "Sub-contractor"
+    },
+    {
+      value: "Company director",
+      text: "Company director"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+    text: "Continue"
+}) }}
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
