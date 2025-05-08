@@ -2,28 +2,17 @@
 
 {% block content %}
 
-
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">
       <span class="govuk-caption-l">Prototype</span>
-      New Style Employment and Support Allowance
+      Citizen UI - New Style Employment and Support Allowance
     </h1>
-<br><br>
-   
+   <!-- LATEST PROTOTYPE VERSION -->
+    <span class="govuk-tag govuk-!-margin-bottom-2">Live version</span>
 
-
-
-
-
-
-
-
-
-<span class="govuk-tag govuk-!-margin-bottom-2">Latest version</span>
-    <h2 class="govuk-heading-l">Current citizen journey</h2>
-
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-1">Current citizen journey</h2>
+    <p class="govuk-body">excluding accessible formats and accessibility needs</p>
     {{ govukButton({
       text: "Start prototype",
       href: "/apply/v22/who-is-applying",
@@ -38,27 +27,26 @@
 
     {{ govukDetails({
       summaryText: "Version change details",
-      html: '
-   
-      <p>This prototype is retrived from the team Falcon in December 2023. This prototype is same as live sevice.</p>
-      <p><a href="https://www.gov.uk/guidance/new-style-employment-and-support-allowance" target="_blank">Click here to view live service.</a></p>
-   
-    
-
-      '
-      }) }}
-
-      
+      html: ' <p>This prototype is retrived from the team Falcon in December 2023. This prototype is same as live sevice.</p>
+      <p><a href="https://www.gov.uk/guidance/new-style-employment-and-support-allowance" target="_blank">Click here to view live service.</a></p>'
+      }) }}      
   </div>
   
 
 
-
-
-</br></br>
     <div class="govuk-grid-column-one-quarter govuk-!-padding-0 govuk-!-margin-right-4" style="border-top: 4px solid #1d71b8; float: right;">
+        <!-- MANAGE PROTOTYPE -->
+        <h3 class="govuk-heading-s govuk-!-margin-top-2">
+          Manage prototype
+        </h3>
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="/manage-prototype">Start page</a>
+          </li>
+        </ul>
+        <!-- QUICK LINKS -->
       <h3 class="govuk-heading-s govuk-!-margin-top-2">
-        Quick links
+        Live version quick links
       </h3>
         <ul class="govuk-list govuk-!-font-size-16">
           <li><a href="/apply/v22/eligibility-start">Eligibility</a></li>
@@ -70,74 +58,16 @@
           <li><a href="/apply/v22/pension">Pension or annuity</a></li>
           <li><a href="/apply/v22/bank">Bank details</a></li>
           <li><a href="/apply/v22/consent-outcome">Sharing the outcome consent</a></li>
-
-
         </ul>
+
+      <!-- PREVIOUS VERSIONS links to be added below-->
     </div>
   </div>
 
   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-
-</br>
-  <!-- <span class="govuk-tag govuk-!-margin-bottom-2">Latest version</span> -->
-  <h2 class="govuk-heading-m">Experimental prototype</h2>
-  <p>View complete prototype with new designs and content. This prototype also has new user flow with updated sections and questions.</p>
-
-  {{ govukButton({
-    text: "Start prototype",
-    href: "/prototype-experimental/eligibility/who-is-applying",
-    isStartButton: false
-     }) }}
-
-  <p><strong>Created on</strong> April 2024<br>
-    <strong>Created by</strong> Maulik Jani<br>
-      <strong>Last updated:</strong> 18 April 2024 <br>
-      <strong>Version:</strong> 1
-  </p>
-
-  {{ govukDetails({
-    summaryText: "Version change details",
-    html: '
- 
-    <p>.</p>
-    <p><a href="https://www.gov.uk/guidance/new-style-employment-and-support-allowance" target="_blank">Click here to view live service.</a></p>
- 
-  
-
-    '
-    }) }}
-
-    
-</div>
-</br>
-  <div class="govuk-grid-column-one-quarter govuk-!-padding-0 govuk-!-margin-right-4" style="border-top: 4px solid #1d71b8; float: right;">
-    <h3 class="govuk-heading-s govuk-!-margin-top-2">
-      Sections
-    </h3>
-      <ul class="govuk-list govuk-!-font-size-16">
-        <li><a href="/prototype-experimental/eligibility/who-is-applying">Eligibility</a></li>
-        <li><a href="/prototype-experimental/personal/name">Personal information</a></li>
-        <li><a href="/prototype-experimental/medical/condition">Health conditions</a></li>
-        <li><a href="/prototype-experimental/work/voluntary-work">Voluntary and paid work</a></li>
-    
-        <li><a href="/prototype-experimental/benefits/statutory-pay-other">Benefits and statutory payments</a></li>
-        <li><a href="/prototype-experimental/pension/pension">Pensions and annuities</a></li>
-        <li><a href="/prototype-experimental/declaration/bank">Bank details</a></li>
-        <li><a href="/prototype-experimental/declaration/consent-outcome">Declarations and check answers</a></li>
-
-
-      </ul>
-  </div>
-
-</div>
-
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-  <h2 class="govuk-heading-l">New features and iterations</h2>
+<!-- LATEST PROTOTYPE ITERATIONS -->
+  <h2 class="govuk-heading-l">Latest prototype iterations</h2>
 
 
   <div class="govuk-tabs" data-module="govuk-tabs">
@@ -170,6 +100,101 @@
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
+            Bank details CYA
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--s">Versions</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Links</th>
+                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Description</th>
+                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Status</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="border: 0;"><a href="design-iterations/wt-5492-bank-details/screens.html">V1.1: Bank details CYA</a></th>
+                <td class="govuk-table__cell" style="border: 0;">
+                  Design for displaying the bank details on the ‘Check your answers’ page.
+                </td>
+                <td class="govuk-table__cell" style="border: 0;">
+                  <span class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2" style="white-space:nowrap">Not tested</span>
+                  <span class="govuk-tag govuk-tag--yellow" style="white-space:nowrap">On hold</span>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="3" style="border: 0;">
+                  <strong>Design documentation:</strong> tbc <a href="#"></a>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="3" style="border: 0;">
+                  <strong>Team:</strong> Alexandra Aggelidis, Mark Smith
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="3">
+                  <strong>Date:</strong> November 2024
+                </td>
+              </tr>  
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+<!-- IN DEVELOPMENT TAB-->
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="in-dev">
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Accessibility statement
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--s">Versions</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Links</th>
+                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Description</th>
+                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Status</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="border: 0;"><a href="design-iterations/wt-6333-a11y/accessibility-statement.html">Updated accessibility statement</a></th>
+                <td class="govuk-table__cell" style="border: 0;">
+                  WCAG 2.2 accessibility statement for NSESA citizen service
+                </td>
+                <td class="govuk-table__cell" style="border: 0;">
+                  <span class="govuk-tag govuk-tag govuk-tag--green" style="white-space:nowrap">In Dev</span>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="3" style="border: 0;">
+                  <strong>Content record:</strong> <a href="https://dwpdigital.atlassian.net/wiki/spaces/WATG/pages/133887885471/WCAG+2.2+accessibility+statement+for+NSESA+citizen+service+-+content+record" class="govuk-link" rel="noreferrer noopener" target="_blank">Accessibility statement (Opens in a new tab)</a>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="3" style="border: 0;">
+                  <strong>Team:</strong> Alice Roman, Mark Smith
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="3">
+                  <strong>Date:</strong> April 2025
+                </td>
+              </tr>  
+            </tbody>
+          </table>
+        </div>
+      </details>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
             Reasonable adjustments
           </span>
         </summary>
@@ -190,7 +215,8 @@
                   Asking users whether they need a reasonable adjustment
                 </td>
                 <td class="govuk-table__cell" style="border: 0;">
-                  <span class="govuk-tag govuk-tag" style="white-space:nowrap">Not tested</span>
+                  <span class="govuk-tag govuk-tag govuk-!-margin-bottom-2" style="white-space:nowrap">Not tested</span>
+                  <span class="govuk-tag govuk-tag govuk-tag--green" style="white-space:nowrap">Live</span>
                 </td>
               </tr>
               <tr class="govuk-table__row">
@@ -212,6 +238,200 @@
           </table>
         </div>
       </details>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Alternative formats
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--s">Versions</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Links</th>
+                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Description</th>
+                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Status</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="border: 0;"><a href="design-iterations/wt-alt-formats-3/screens.html">V1.3: Alternative formats</a></th>
+                <td class="govuk-table__cell" style="border: 0;">
+                  Amended screens following UR playback
+                </td>
+                <td class="govuk-table__cell" style="border: 0;">
+                  <span class="govuk-tag govuk-tag--green" style="white-space:nowrap">Live</span>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="3" style="border: 0;">
+                  <strong>Design documentation:</strong> <a href="https://dwpdigital.atlassian.net/wiki/spaces/WATG/pages/133764448803/Iteration+2+NSESA+Alt-formats" class="govuk-link" rel="noreferrer noopener" target="_blank">Iteration 2: NSESA Alt-formats (Opens in a new tab)</a>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="3" style="border: 0;">
+                  <strong>Team:</strong> Alexandra Aggelidis, Mark Smith, Lauren Spencer, Katy Kirkland
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="3">
+                  <strong>Date:</strong> October 2024
+                </td>
+              </tr>  
+      
+             
+              
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="border: 0;"><a href="design-iterations/wt-alt-formats-2/screens.html">V1.2: Alternative formats and reasonable adjustments</a></th>
+                <td class="govuk-table__cell" style="border: 0;">
+                  Iteration of V1.1: Alternative formats.
+                  <br> Content changes and added a screen about reasonable adjustments after stakeholder discussion who see this as a legal requirement.
+                </td>
+                <td class="govuk-table__cell" style="border: 0;">
+                  <span class="govuk-tag govuk-tag--yellow" style="white-space:nowrap">On hold</span>
+                </td>
+              </tr>
+              
+              
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="3" style="border: 0;">
+                  <strong>Team:</strong> Alexandra Aggelidis, Mark Smith, Lauren Spencer, Katy Kirkland
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="3">
+                  <strong>Date:</strong> September 2024
+                </td>
+              </tr>   
+              
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="border: 0;"><a href="design-iterations/wt-alt-formats-1/screens.html">V1.1: Alternative formats</a></th>
+                <td class="govuk-table__cell" style="border: 0;">
+                  Asking users for their communication needs in alternative formats.
+                  <br> Design based on <a href="https://newstylejsa.herokuapp.com/design-ideas/574-af-option-9/start-date">Option 9 of NSJSA alternative formats</a>.
+                </td>
+                <td class="govuk-table__cell" style="border: 0;">
+                  <span class="govuk-tag" style="white-space:nowrap">Tested</span>
+                </td>
+              </tr>
+              
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="3" style="border: 0;">
+                  <strong>Design documentation:</strong> <a href="https://dwpdigital.atlassian.net/wiki/spaces/WATG/pages/133748752594/Iteration+1+NSESA+Alt-formats" class="govuk-link" rel="noreferrer noopener" target="_blank">Iteration 1: NSESA Alt-formats (Opens in a new tab)</a>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="3" style="border: 0;">
+                  <strong>Team:</strong> Alexandra Aggelidis, Mark Smith, Lauren Spencer, Katy Kirkland
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="3">
+                  <strong>Date:</strong> August 2024
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </details>
+      
+      
+    </div>
+
+<!-- ARCHIVE TAB-->
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="archive">
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Armed forces
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--s">Versions</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Links</th>
+                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Description</th>
+                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Status</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="border: 0;"><a href="design-iterations/wt-5377-armed-forces/screens.html">V1.1: Armed forces spouses and civil partners</a></th>
+                <td class="govuk-table__cell" style="border: 0;">
+                  Updated content for whether NSESA claimants have been living abroad as a partner of a member of the armed forces on an overseas posting.
+                </td>
+                <td class="govuk-table__cell" style="border: 0;">
+                  <span class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2" style="white-space:nowrap">Not tested</span>
+                  <span class="govuk-tag govuk-tag--green" style="white-space:nowrap">Live</span>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="3" style="border: 0;">
+                  <strong>Design documentation:</strong> <a href="https://dwpdigital.atlassian.net/wiki/spaces/WATG/pages/133757436844/WT-4163+Spouses+and+Civil+Partners+of+Armed+Forces+-+NSESA" class="govuk-link" rel="noreferrer noopener" target="_blank">WT-4163: Spouses and Civil Partners of Armed Forces (Opens in a new tab)</a>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="3" style="border: 0;">
+                  <strong>Team:</strong> Alexandra Aggelidis, Mark Smith
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" colspan="3">
+                  <strong>Date:</strong> October 2024
+                </td>
+              </tr>  
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Prototype Experimental
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Links</th>
+                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Description</th>
+                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Sections</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="border: 0;"><a href="prototype-experimental/eligibility/who-is-applying.html" >Prototype Experimental</a></th>
+                  <td class="govuk-table__cell" style="border: 0;">
+                    View complete prototype with new designs and content. This prototype also has new user flow with updated sections and questions.
+                    <p class="govuk-body-s" style="color: grey;">Created: March 2024 <br>Last updated:</strong> 18 April 2024</p>
+                  </td>
+                <td class="govuk-table__cell" colspan="3" style="border: 0;">
+                  <ul class="govuk-list govuk-!-font-size-16">
+                    <li><a href="/prototype-experimental/eligibility/who-is-applying">Eligibility</a></li>
+                    <li><a href="/prototype-experimental/personal/name">Personal information</a></li>
+                    <li><a href="/prototype-experimental/medical/condition">Health conditions</a></li>
+                    <li><a href="/prototype-experimental/work/voluntary-work">Voluntary and paid work</a></li>
+                
+                    <li><a href="/prototype-experimental/benefits/statutory-pay-other">Benefits and statutory payments</a></li>
+                    <li><a href="/prototype-experimental/pension/pension">Pensions and annuities</a></li>
+                    <li><a href="/prototype-experimental/declaration/bank">Bank details</a></li>
+                    <li><a href="/prototype-experimental/declaration/consent-outcome">Declarations and check answers</a></li>
+            
+            
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -437,232 +657,6 @@
           </table>
         </div>
       </details>
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Prototype Experimental
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <table class="govuk-table">
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Links</th>
-                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Description</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="border: 0;"><a href="prototype-experimental/eligibility/who-is-applying.html" target="_blank">Prototype Experimental</a></th>
-                  <td class="govuk-table__cell" style="border: 0;">
-                    End to end journey for the experimental prototype.
-                    <p class="govuk-body-s" style="color: grey;">Created: March 2024 <br>Last updated:</strong> 5 March 2024</p>
-                  </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </details>
-    </div>
-
-<!-- IN DEVELOPMENT TAB-->
-    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="in-dev">
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Alternative formats
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <table class="govuk-table">
-            <caption class="govuk-table__caption govuk-table__caption--s">Versions</caption>
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Links</th>
-                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Description</th>
-                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Status</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="border: 0;"><a href="design-iterations/wt-alt-formats-3/screens.html">V1.3: Alternative formats</a></th>
-                <td class="govuk-table__cell" style="border: 0;">
-                  Amended screens following UR playback
-                </td>
-                <td class="govuk-table__cell" style="border: 0;">
-                  <span class="govuk-tag govuk-tag--green" style="white-space:nowrap">In Dev</span>
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell" colspan="3" style="border: 0;">
-                  <strong>Design documentation:</strong> <a href="https://dwpdigital.atlassian.net/wiki/spaces/WATG/pages/133764448803/Iteration+2+NSESA+Alt-formats" class="govuk-link" rel="noreferrer noopener" target="_blank">Iteration 2: NSESA Alt-formats (Opens in a new tab)</a>
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell" colspan="3" style="border: 0;">
-                  <strong>Team:</strong> Alexandra Aggelidis, Mark Smith, Lauren Spencer, Katy Kirkland
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell" colspan="3">
-                  <strong>Date:</strong> October 2024
-                </td>
-              </tr>  
-      
-             
-              
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="border: 0;"><a href="design-iterations/wt-alt-formats-2/screens.html">V1.2: Alternative formats and reasonable adjustments</a></th>
-                <td class="govuk-table__cell" style="border: 0;">
-                  Iteration of V1.1: Alternative formats.
-                  <br> Content changes and added a screen about reasonable adjustments after stakeholder discussion who see this as a legal requirement.
-                </td>
-                <td class="govuk-table__cell" style="border: 0;">
-                  <span class="govuk-tag govuk-tag--yellow" style="white-space:nowrap">On hold</span>
-                </td>
-              </tr>
-              
-              
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell" colspan="3" style="border: 0;">
-                  <strong>Team:</strong> Alexandra Aggelidis, Mark Smith, Lauren Spencer, Katy Kirkland
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell" colspan="3">
-                  <strong>Date:</strong> September 2024
-                </td>
-              </tr>   
-              
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="border: 0;"><a href="design-iterations/wt-alt-formats-1/screens.html">V1.1: Alternative formats</a></th>
-                <td class="govuk-table__cell" style="border: 0;">
-                  Asking users for their communication needs in alternative formats.
-                  <br> Design based on <a href="https://newstylejsa.herokuapp.com/design-ideas/574-af-option-9/start-date">Option 9 of NSJSA alternative formats</a>.
-                </td>
-                <td class="govuk-table__cell" style="border: 0;">
-                  <span class="govuk-tag" style="white-space:nowrap">Tested</span>
-                </td>
-              </tr>
-              
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell" colspan="3" style="border: 0;">
-                  <strong>Design documentation:</strong> <a href="https://dwpdigital.atlassian.net/wiki/spaces/WATG/pages/133748752594/Iteration+1+NSESA+Alt-formats" class="govuk-link" rel="noreferrer noopener" target="_blank">Iteration 1: NSESA Alt-formats (Opens in a new tab)</a>
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell" colspan="3" style="border: 0;">
-                  <strong>Team:</strong> Alexandra Aggelidis, Mark Smith, Lauren Spencer, Katy Kirkland
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell" colspan="3">
-                  <strong>Date:</strong> August 2024
-                </td>
-              </tr>
-              
-            </tbody>
-          </table>
-        </div>
-      </details>
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Bank details CYA
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <table class="govuk-table">
-            <caption class="govuk-table__caption govuk-table__caption--s">Versions</caption>
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Links</th>
-                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Description</th>
-                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Status</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="border: 0;"><a href="design-iterations/wt-5492-bank-details/screens.html">V1.1: Bank details CYA</a></th>
-                <td class="govuk-table__cell" style="border: 0;">
-                  Design for displaying the bank details on the ‘Check your answers’ page.
-                </td>
-                <td class="govuk-table__cell" style="border: 0;">
-                  <span class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2" style="white-space:nowrap">Not tested</span>
-                  <span class="govuk-tag govuk-tag--green" style="white-space:nowrap">In Dev</span>
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell" colspan="3" style="border: 0;">
-                  <strong>Design documentation:</strong> tbc <a href="#"></a>
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell" colspan="3" style="border: 0;">
-                  <strong>Team:</strong> Alexandra Aggelidis, Mark Smith
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell" colspan="3">
-                  <strong>Date:</strong> November 2024
-                </td>
-              </tr>  
-            </tbody>
-          </table>
-        </div>
-      </details>
-      
-    </div>
-
-<!-- ARCHIVE TAB-->
-    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="archive">
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Armed forces
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <table class="govuk-table">
-            <caption class="govuk-table__caption govuk-table__caption--s">Versions</caption>
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Links</th>
-                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Description</th>
-                <th scope="col" class="govuk-table__header" style="position: sticky; top: 0; background: white;">Status</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="border: 0;"><a href="design-iterations/wt-5377-armed-forces/screens.html">V1.1: Armed forces spouses and civil partners</a></th>
-                <td class="govuk-table__cell" style="border: 0;">
-                  Updated content for whether NSESA claimants have been living abroad as a partner of a member of the armed forces on an overseas posting.
-                </td>
-                <td class="govuk-table__cell" style="border: 0;">
-                  <span class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2" style="white-space:nowrap">Not tested</span>
-                  <span class="govuk-tag govuk-tag--green" style="white-space:nowrap">Live</span>
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell" colspan="3" style="border: 0;">
-                  <strong>Design documentation:</strong> <a href="https://dwpdigital.atlassian.net/wiki/spaces/WATG/pages/133757436844/WT-4163+Spouses+and+Civil+Partners+of+Armed+Forces+-+NSESA" class="govuk-link" rel="noreferrer noopener" target="_blank">WT-4163: Spouses and Civil Partners of Armed Forces (Opens in a new tab)</a>
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell" colspan="3" style="border: 0;">
-                  <strong>Team:</strong> Alexandra Aggelidis, Mark Smith
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell" colspan="3">
-                  <strong>Date:</strong> October 2024
-                </td>
-              </tr>  
-            </tbody>
-          </table>
-        </div>
-      </details>
-
       <details class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
