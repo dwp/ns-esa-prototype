@@ -5,7 +5,7 @@ $schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell
 
 version: "0.2"
 
-name: ns-esa-prototype
+name: blank-prototype-kit
 
 failFast: true
 noConfigSearch: true
