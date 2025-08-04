@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Check your answers: income protection insurance</h1>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Getting money from permanent health insurance
+         </dt>
+         <dd class="govuk-summary-list__value">
+           Yes
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="insurance">
+             Change
+           </a>
+         </dd>
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Who pays for it
+         </dt>
+         <dd class="govuk-summary-list__value">
+           Me and my employer
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="#">
+             Change
+           </a>
+         </dd>
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Permanent health insurance details
+         </dt>
+         <dd class="govuk-summary-list__value">
+           Prudential<br>
+           Reference number 245-485-198<br>
+           020 7946 0076<br>
+           72 Guild street<br>
+           London<br>
+           SE23 6FH<br>
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="#">
+             Change
+           </a>
+         </dd>
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Premiums paid in
+         </dt>
+         <dd class="govuk-summary-list__value">
+           I pay less than half the premiums myself
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="#">
+             Change
+           </a>
+         </dd>
+       </div>
+       <div class="govuk-summary-list__row">
+         <dt class="govuk-summary-list__key">
+           Payments received from health insurance
+         </dt>
+         <dd class="govuk-summary-list__value">
+           £65 a week
+         </dd>
+         <dd class="govuk-summary-list__actions">
+           <a href="#">
+             Change
+           </a>
+        </dd>
+      </div>
+    </dl>
+
+    <a href="../list?insurance=completed" class="govuk-button">Confirm and continue</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+
+{% endblock %}

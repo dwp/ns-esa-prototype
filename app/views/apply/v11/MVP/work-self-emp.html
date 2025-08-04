@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="work-hours">
+
+      <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="self-emp-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            What is your employment status at {{ data['employer-details'] | split(',') | last }}?
+          </h1>
+        </legend>
+        <span id="waste-hint" class="govuk-hint">
+          Select all that apply.
+        </span>
+        <div class="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="self-emp-1" name="employee" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="self-emp-1">
+              Employee
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="self-emp-2" name="self-employed" type="checkbox" value="mines">
+            <label class="govuk-label govuk-checkboxes__label" for="self-emp-2">
+              Self-employed
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="self-emp-3" name="sub-contract" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="self-emp-3">
+              Sub-contractor
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="self-emp-4" name="company-director" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="self-emp-4">
+              Company director
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

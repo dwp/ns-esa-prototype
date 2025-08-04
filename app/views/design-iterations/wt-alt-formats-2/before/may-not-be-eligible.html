@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+You may not be eligible for New Style ESA – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+     text: "Prototype"
+  },
+  html: 'This is a prototype. No data is saved or stored.'
+}) }}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+  
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Based on your answers, you may not be eligible for New Style ESA
+      </h1>
+
+      <p class="govuk-body">
+        New Style ESA supports you if you have a disability or health condition that affects your ability to work. If you&rsquo;re on a low income or out of work, you can apply for <a href="https://www.gov.uk/universal-credit" class="govuk-link" rel="noreferrer noopener" target="_blank">Universal Credit (opens in new tab)</a> or <a href="https://www.gov.uk/jobseekers-allowance" class="govuk-link" rel="noreferrer noopener" target="_blank">New Style Jobseeker&rsquo;s Allowance (JSA) (opens in new tab)</a> instead.
+      </p>
+
+      <p class="govuk-body">
+        Or you can continue to apply for New Style ESA if you still think you’re eligible for it.
+      </p>
+
+
+      <form action="may-not-be-eligible" method="post" novalidate>
+
+        {{ govukRadios({
+          name: "whatDoYouWantToDo",
+          fieldset: {
+            legend: {
+              text: "What do you want to do?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "apply-uc",
+              text: "Apply for Universal Credit"
+            },
+            {
+              value: "apply-nsjsa",
+              text: "Apply for New Style JSA"
+            }
+            ,
+            {
+              value: "continue-nsesa",
+              text: "Continue to apply for New Style ESA"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+
+{% endblock %}
+

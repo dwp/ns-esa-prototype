@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% block content %}
+{{ govukInput({
+  label: {
+    text: "Full name"
+  },
+  id: "full-name",
+  name: "fullName",
+  autocomplete: "name",
+  spellcheck: false
+}) }}
+{% endblock %}

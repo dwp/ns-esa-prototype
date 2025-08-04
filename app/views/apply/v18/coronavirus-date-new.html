@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Date you were affected by coronavirus - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="do-you-have-health-condition">		
+
+
+		<div class="govuk-form-group">
+
+			<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+				<div class="govuk-notification-banner__header">
+				  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+					Important
+				  </h2>
+				</div>
+				<div class="govuk-notification-banner__content">
+				  <p class="govuk-notification-banner__heading">
+					On 24 March 2022, the temporary regulations that provided eligibility to Employment and Support Allowance (ESA) if you had been affected by coronavirus will expire. 
+			  
+				  </p>
+				</div>
+			  </div>
+
+		  <fieldset class="govuk-fieldset" aria-describedby="coronavirus-hint" role="group">
+		    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+		      <h1 class="govuk-fieldset__heading">
+		        What date were you affected by coronavirus?
+		      </h1>
+				</legend>
+				<p class="govuk-body">This might be when you or your child started self-isolating.</p>
+		    <span id="coronavirus-hint" class="govuk-hint">
+		      For example, 28 2 2020
+		    </span>
+		    <div class="govuk-date-input" id="coronavirus">
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="coronavirus-day">
+		            Day
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="coronavirus-day" name="coronavirus-day" type="text" pattern="[0-9]*" maxlength="2">
+		        </div>
+		      </div>
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="coronavirus-month">
+		            Month
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="coronavirus-month" name="coronavirus-month" type="text" pattern="[0-9]*" maxlength="2">
+		        </div>
+		      </div>
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="coronavirus-year">
+		            Year
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="coronavirus-year" name="coronavirus-year" type="text" pattern="[0-9]*" maxlength="4">
+		        </div>
+		      </div>
+		    </div>
+		  </fieldset>
+		</div>
+
+		<input type="submit" class="govuk-button" value="Continue" id="submit">	
+
+ 	</form>
+
+ </div>
+</div> 	
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Pension or annuity payments - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner"><p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag">beta</strong><span class="govuk-phase-banner__text">This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.</span></p></div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  
+    <span class="govuk-caption-l">Pension or annuity</span>
+    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l">Do you know the policy or reference number of your pension or annuity?</label></h1>
+    <div class="govuk-hint">You might find this on a statement from your pension or annuity provider.</div>
+
+
+    <form method="post" action="/apply/v22/pension/pension-inherited">
+
+   
+      <div class="govuk-form-group">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="pension-reference-1" name="pension-reference" type="radio" value="Yes" data-aria-controls="conditional-pension-reference">
+            <label class="govuk-label govuk-radios__label" for="pension-reference-1">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-pension-reference">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="pension-reference-yes">
+                <strong>Policy or reference number</strong>
+              </label>
+              <div class="govuk-input__wrapper">
+                
+                <input class="govuk-input govuk-input--width-10" id="pension-reference-details" name="pension-reference-details" type="text" spellcheck="false" autocomplete="email">
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="pension-reference-2" name="pension-reference" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="pension-reference-2">
+              No
+            </label>
+          </div>
+        
+
+          
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+

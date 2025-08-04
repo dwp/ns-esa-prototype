@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Home address - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <span class="govuk-caption-l">Personal details</span>
+    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l">What is your address?</label></h1>
+
+
+
+    <form id="form" method="post" action="/prototype-experimental/personal/address-select">
+
+ 
+    
+
+       
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="postcode">
+             Postcode
+          </label>
+          <div id="postcode-hint" class="govuk-hint">
+              For example, AA3 1AB.
+          </div><input class="govuk-input govuk-!-width-two-thirds" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint">
+          </div>
+          <div class="govuk-form-group">
+          <label class="govuk-label" for="searchString">
+              Building number or name
+          </label>
+          <div id="searchString-hint" class="govuk-hint">
+              For example, 15 or Prospect Cottage.
+          </div><input class="govuk-input govuk-!-width-two-thirds" id="searchString" name="searchString" type="text" aria-describedby="searchString-hint">
+          </div><button type="submit" class="govuk-button" data-module="govuk-button">
+          Find address
+          </button>
+          <p class="govuk-body govuk-!-margin-bottom-0"><a href="/prototype-experimental/personal/address-manual" class="govuk-link">Enter address manually</a></p>
+          </div> 
+
+
+
+
+
+
+
+
+
+  
+
+     
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What do you need in an alternative format? - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  
+
+      <h1 class="govuk-heading-l">What do you need in an alternative format?</h1>
+
+      <form class="form" action="alternate-format-contact-preference" method="post">
+
+          <!-- {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            idPrefix: "contact-preference",
+            name: "contactPreference",
+            fieldset: {
+              legend: {
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "letters",
+                text: "Letters"
+              },
+              {
+                value: "phoneCall",
+                text: "Phone calls"
+              },
+              {
+                value: "lettersPhoneCall",
+                text: "Letters and phone calls"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "none",
+                text: "None of these"
+              }
+            ]
+          }) }} -->
+
+
+                  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+                  {{ govukCheckboxes({
+                    idPrefix: "alternate-format-preference",
+                    name: "alternateFormatPreference",
+                    fieldset: {
+                      legend: {
+                        classes: "govuk-fieldset__legend--l"
+                      }
+                    },
+                    hint: {
+                      text: "Select the best options for your needs."
+                    },
+                    items: [
+                      {
+                        value: "letters",
+                        text: "Letters"
+                      },
+                      {
+                        value: "phoneCalls",
+                        text: "Phone calls"
+                      },
+
+                      {
+                        divider: "or"
+                      },
+                      {
+                        value: "none",
+                        text: "Neither of these",
+                        behaviour: "exclusive"
+                      }
+                    ]
+                  }) }}
+
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

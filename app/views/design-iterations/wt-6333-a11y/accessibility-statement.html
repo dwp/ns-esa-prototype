@@ -1,0 +1,110 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Accessibility statement for – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service  – your <a class="govuk-link" href="#">feedback (opens in new tab)</a> will help us to improve it.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Accessibility statement for Apply for New Style ESA
+      </h1>
+      <p class="govuk-body">This service is part of the wider GOV.UK website. There's a separate <a href="https://www.gov.uk/help/accessibility-statement/" class="govuk-link">accessibility statement for the main GOV.UK website</a>.</p>
+      <p class="govuk-body">This accessibility statement applies to the Apply for New Style Employment and Support Allowance (ESA) website, available at  <a href="https://www.apply-new-style-employment-support-allowance.dwp.gov.uk/" class="govuk-link">https://www.apply-new-style-employment-support-allowance.dwp.gov.uk</a>.</p>
+     
+      <h2 class="govuk-heading-m">How you should be able to use this website</h2>
+      <p class="govuk-body">This website is run by the Department for Work and Pensions. We want as many people as possible to be able to use this service. For example, that means you should be able to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>change colours, contrast levels and fonts</li>
+        <li>zoom in up to 300% without the text spilling off the screen</li>
+        <li>get from the start of the application to the end using just a keyboard</li>
+        <li>get from the start of the application to the end using speech recognition software</li>
+        <li>listen to the website using a screen reader</li>
+      </ul>
+      <p class="govuk-body">We've also made the text in the service as simple as possible to understand.</p>
+      <p class="govuk-body"><a href="https://mcmw.abilitynet.org.uk/" class="govuk-link">AbilityNet</a> has advice on making your device easier to use if you have a disability.</p>
+
+      <h2 class="govuk-heading-m">How accessible this website is</h2>
+      <p class="govuk-body">	
+        We know some parts of this website are not fully accessible when using the internet browser Safari. We recommend using another internet browser, such as Chrome. If you access this service in Safari you may experience the following issues:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>When using Mac OS Voice Control, it may enter words instead of numbers on some pages. If this happens you will need to enter numbers using a keyboard.</li>
+        <li>When using VoiceOver, it may not tell you straightaway if there is an error on the page. You may have to skip to main content to find the error message.</li>
+        <li>When using Zoom, it may not automatically show you if there is an error on the page. You will have to manually move around the page to see the error message.</li>
+      </ul>   
+      <p class="govuk-body">As part of providing this service, we may need to send you messages or documents. <a href="https://www.gov.uk/contact-jobcentre-plus/existing-benefit-claims" class="govuk-link">Contact us</a> if you need them in a different format, for example large print, audio recording or braille.</p>
+
+      <h2 class="govuk-heading-m">Reporting accessibility problems with this website</h2>
+      <p class="govuk-body">We're always looking to improve the accessibility of this service. If you find any problems that are not listed on this page or think we're not meeting accessibility requirements, contact us by email at  <a href="accessibility.nsbenefits@dwp.gov.uk" class="govuk-link">accessibility.nsbenefits@dwp.gov.uk</a>.</p>
+
+      <h2 class="govuk-heading-m">Enforcement procedure</h2>
+      <p class="govuk-body">The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’). If you’re not happy with how we respond to your complaint, <a href="https://www.equalityadvisoryservice.com/" class="govuk-link">contact the Equality Advisory and Support Service (EASS)</a>.</p>
+      
+      <h2 class="govuk-heading-m">Technical information about this website’s accessibility</h2>
+      <p class="govuk-body">The Department for Work and Pensions is committed to making this service accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.</p>
+
+      <h2 class="govuk-heading-m">How we tested this website</h2>
+      <p class="govuk-body">The service was last tested on 27 January 2025 and was checked for compliance with the Web Content Accessibility Guidelines (WCAG) 2.2 AA standard. The tests were carried out by the Department for Work and Pensions. </p>
+      <p class="govuk-body">The service was tested using both automated and manual testing.</p>
+
+      <h2 class="govuk-heading-m">Compliance status</h2>
+      <p class="govuk-body">This service is fully compliant with the Web Content Accessibility Guidelines version 2.2 AA standard.</p>
+
+      <h2 class="govuk-heading-m">Preparation of this accessibility statement</h2>
+      <p class="govuk-body">This page was prepared on 21 March 2025.</p>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
+{% block footer %}
+{{ govukFooter({
+  meta: {
+    items: [
+      {
+        href: "#",
+        text: "Help"
+      },
+      {
+        href: "#",
+        text: "Accessibility statement"
+      },
+      {
+        href: "#",
+        text: "Cookies"
+      },
+      {
+        href: "#",
+        text: "Privacy"
+      },
+      {
+        href: "https://govuk-prototype-kit.herokuapp.com/",
+              text: "GOV.UK Prototype Kit " + releaseVersion
+      },
+      {
+        href: "/manage-prototype/clear-data",
+        text: "Clear data"
+      }
+    ]
+  }
+}) }}
+
+{% endblock %}

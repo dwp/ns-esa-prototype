@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block pageTitle %}
+  Cancel your application
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">Cancel your application</h1>
+
+      <p>We will delete all the information you have given us.</p>
+
+      <p>Please confirm that you want to continue.</p>
+
+      <p><a href="clear-v9" class="govuk-button">Cancel application</a></p>
+     
+      <p><a href="list">Return to list</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

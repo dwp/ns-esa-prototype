@@ -1,0 +1,260 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Pension or annuity payments - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="/apply/v22/declaration">
+
+
+      <h1 class="govuk-heading-l">
+        Check your answers before sending your application
+      </h1>
+
+   
+
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+
+
+
+        
+
+        <div class="govuk-summary-list__row">
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Has your doctor said you might have less than 12 months to live due to any of your conditions?</dt>
+          <dd class="govuk-summary-list__value">{{ data['terminal-illness'] }}</dd>
+          
+          <dd class="govuk-summary-list__actions"><a href="live-less-than-12-months">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+        
+        </div>
+        </div>
+
+
+
+        {% if data['terminal-illness']=="Yes" %}
+ 
+
+        <div class="govuk-summary-list__row">
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Has your doctor, consultant or specialist nurse completed an SR1 form?</dt>
+          <dd class="govuk-summary-list__value">{{ data['ds1500'] }}</dd>
+          
+          <dd class="govuk-summary-list__actions"><a href="sr1-report">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+        
+        </div>
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Do you want to claim from <span class="suggested-claim-date" data-year="{{ data['ssp-year'] }}" data-month="{{ data['ssp-month'] }}" data-day="{{ data['ssp-day'] }}"></span>?</dt>
+        <dd class="govuk-summary-list__value">{{ data['claim-date-statutory-pay-srel'] }}</dd>
+        
+        <dd class="govuk-summary-list__actions"><a href="claim-start-date-if-srel">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+      
+      </div>
+    </div>
+
+
+    {% if data['claim-date-statutory-pay-srel']=="No" %}
+    <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">What date do you want to claim Employment Support Allowance from?</dt>
+      <dd class="govuk-summary-list__value">{{data['claim-day']}} {{data['claim-month'] | toMonth }} {{data['claim-year']}}</dd>
+      
+      <dd class="govuk-summary-list__actions"><a href="claimdate-new">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+    
+      </div>
+    </div>
+    {% endif %}
+
+
+
+    <div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Have you worked abroad in the last 5 years?</dt>
+      <dd class="govuk-summary-list__value">{{data['work-overseas']}}</dd>
+      
+      <dd class="govuk-summary-list__actions"><a href="claimdate-new">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+    
+    </div>
+  </div>
+
+
+
+
+ {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ {% if data['terminal-illness']=="No" %}
+ 
+
+
+<div class="govuk-summary-list__row">
+ <div class="govuk-summary-list__row">
+ <dt class="govuk-summary-list__key">Do you want to claim from <span class="suggested-claim-date" data-year="{{ data['ssp-year'] }}" data-month="{{ data['ssp-month'] }}" data-day="{{ data['ssp-day'] }}"></span>?</dt>
+ <dd class="govuk-summary-list__value">{{ data['claim-date-statutory-pay'] }}</dd>
+ 
+ <dd class="govuk-summary-list__actions"><a href="claim-start-date-if-statutory-sick-pay">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+
+</div>
+</div>
+
+
+{% if data['claim-date-statutory-pay']=="no" %}
+<div class="govuk-summary-list__row">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">What date do you want to claim Employment Support Allowance from?</dt>
+<dd class="govuk-summary-list__value">{{data['claim-day']}} {{data['claim-month'] | toMonth }} {{data['claim-year']}}</dd>
+
+<dd class="govuk-summary-list__actions"><a href="claimdate-new">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+
+</div>
+</div>
+{% endif %}
+
+
+<div class="govuk-summary-list__row">
+  <div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">Do you know the date you want to claim until?</dt>
+  <dd class="govuk-summary-list__value">{{data['claim-end']}}</dd>
+  
+  <dd class="govuk-summary-list__actions"><a href="claim-end-date">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+  
+  </div>
+</div>
+
+{% if data['claim-end']=="yes" %}
+
+<div class="govuk-summary-list__row">
+  <div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">Claim end date</dt>
+  <dd class="govuk-summary-list__value">{{data['claim-end-day']}} {{data['claim-end-month'] | toMonth }} {{data['claim-end-year']}}</dd>
+  
+  <dd class="govuk-summary-list__actions"><a href="claim-end-date">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+  
+  </div>
+</div>
+
+{% endif %}
+
+
+
+
+
+<div class="govuk-summary-list__row">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">Have you worked abroad in the last 5 years?</dt>
+<dd class="govuk-summary-list__value">{{data['work-overseas']}}</dd>
+
+<dd class="govuk-summary-list__actions"><a href="claimdate-new">Change<span class="govuk-visually-hidden"> pension</span></a></dd>
+
+</div>
+</div>
+
+
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+        
+      </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+

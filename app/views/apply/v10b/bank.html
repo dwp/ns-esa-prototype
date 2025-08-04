@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="consent-outcome">
+
+      <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">How do you want to be paid?</h1>
+          </legend>
+
+          <p>We will only use this to pay you any benefit you’re entitled to. We will not share your account details with anyone else.</p>
+          <p>If you do not have your own bank account, we can use the account of a trusted family member or friend.</p>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="pay-account-holder">
+              Name of account holder
+            </label>
+            <span class="govuk-hint">
+    		      Enter the name as it appears on your bank card, cheque book or statement.
+    		    </span>
+            <input class="govuk-input govuk-input--width-20" id="pay-account-holder" name="pay-account-holder" type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="pay-account-holder">
+              Bank or building society name
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="pay-account-holder" name="pay-account-holder" type="text">
+          </div>
+          <fieldset class="govuk-fieldset" role="group">
+    		    <legend class="govuk-fieldset__legend">
+    		      <p class="govuk-label">
+    		        Sort code
+    		      </p>
+    		    </legend>
+    		    <span id="sortcode-hint" class="govuk-hint">
+    		      For example, 07 00 00
+    		    </span>
+    		        <div class="govuk-form-group">
+                  <input class="govuk-input govuk-input--width-2" id="sortcode-1" name="sortcode-digits-1-and-2" type="text" maxlength="2"> &mdash;
+                  <input class="govuk-input govuk-input--width-2" id="sortcode-2" name="sortcode-digits-3-and-4" type="text" maxlength="2"> &mdash;
+                  <input class="govuk-input govuk-input--width-2" id="sortcode-3" name="sortcode-digits-5-and-6" type="text" maxlength="2">
+    		          <!--<input class="govuk-input govuk-input--width-2 govuk-!-margin-1" id="sortcode-1" name="sortcode-digits-1-and-2" type="number" pattern="[0-9]*">
+                  <input class="govuk-input govuk-input--width-2 govuk-!-margin-1" id="sortcode-2" name="sortcode-digits-3-and-4" type="number" pattern="[0-9]*">
+                  <input class="govuk-input govuk-input--width-2 govuk-!-margin-1" id="sortcode-3" name="sortcode-digits-5-and-6" type="number" pattern="[0-9]*"> -->
+    		        </div>
+    		  </fieldset>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="pay-account-holder">
+              Account number
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="pay-account-holder" name="pay-account-holder" type="text" maxlength="8">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="pay-reference-number">
+              Building society roll or reference number (optional)
+            </label>
+            <span id="pay-reference-number-hint" class="govuk-hint">
+              If your building society uses a roll or reference number, you will find it on your passbook.
+            </span>
+            <input class="govuk-input govuk-input--width-20" id="pay-reference-number" name="pay-reference-number" type="number" aria-describedby="pay-reference-number-hint" maxlength="18">
+          </div>
+        </fieldset>
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- consent-outcome -->
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

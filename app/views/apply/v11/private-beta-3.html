@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<p class="red">Content updates to make</p>
+<ul class="govuk-list govuk-list--bullet red">
+  <li>Move before you save up and rewording so it’s less scary</li>
+  <li>Move bit about getting a bank account out or down</li>
+</ul>
+
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">You can only use this service if you have been invited</h1>
+
+    <p class="govuk-body">If you have not been invited, call the Universal Credit helpline to apply for New Style Employment and Support Allowance (ESA).
+    </p>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Universal Credit helpline
+        </span>
+      </summary>
+      <div class="govuk-body">
+        
+    <p class="govuk-body">
+        Telephone: 0800 328 5644 (choose option 2)<br>
+        Textphone: 0800 328 1344 (choose option 2)
+    </p>
+    
+    <p class="govuk-body">
+        <a href="https://www.ngts.org.uk/" class="govuk-link">NGT text relay</a> (if you cannot hear or speak on the phone): 18001 then 0800 328 5644
+    </p>
+    
+    <p class="govuk-body">
+        <a href="https://dwpesaclaim.signvideo.net/" class="govuk-link">Video relay service</a> for British Sign Language (<abbr title="British Sign Language">BSL</abbr>) users. <a href="https://www.youtube.com/watch?v=Osx7FFxFpNY" class="govuk-link">Check you can use the service</a>.<br>
+    </p>    
+    
+    <p class="govuk-body">Welsh language telephone: 0800 328 1744</p>
+    <p class="govuk-body">Monday to Friday, 9.30am to 3.30pm</p>
+    
+    <p class="govuk-body">
+        <a href="https://www.gov.uk/call-charges" class="govuk-link">Find out about call charges</a>.</p>
+    </p>
+
+  </div>
+</details>
+
+
+    <a href="MVP/start-page-steps" class="govuk-button">Continue</a>
+
+  </div>
+
+</div>
+{% endblock %}

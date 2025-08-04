@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Who is applying - Apply for New Style Employment and Support Allowance - GOV.UK - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+  
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="/prototype-experimental/eligibility/who-is-applying">
+  
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Who is applying?
+          </h1>
+        </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="apply-1" name="apply" type="radio" value="apply-myself" aria-describedby="apply-myself">
+            <label class="govuk-label govuk-radios__label" for="apply-1">
+              I'm applying for myself
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="apply-2" name="apply" type="radio" value="apply-someone" aria-describedby="apply-for-someone">
+            <label class="govuk-label govuk-radios__label" for="apply-2">
+              I’m applying for someone else
+            </label>
+            <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+              I’m a registered appointee, deputy, power of attorney or belong to a Corporate Acting Body (CAB).
+            </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="apply-3" name="apply" type="radio" value="apply-help" aria-describedby="apply-help">
+            <label class="govuk-label govuk-radios__label" for="apply-3">
+              I’m helping someone apply
+            </label>
+            <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+              The applicant is giving me the answers and I’m supporting them with their application.
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+  </form>
+
+  </div>
+
+</div>
+{% endblock %}

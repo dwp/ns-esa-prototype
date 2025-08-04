@@ -1,0 +1,99 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Version 2.0: Reasonable adjustments – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Version 2.0: Reasonable adjustments</h1>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Problem statement
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">
+            The current reasonable adjustment question on the NSESA online application is a simple yes-no radio question, with no further option to specify. This is causing confusion for users. Some users mistakenly believe they must select ‘yes’ in order to be eligible for NSESA. As a result, many users indicate they need a reasonable adjustment when they don’t. This triggers unnecessary outbound calls for Service centre agents, as every ‘yes’ must be followed up during processing.
+          </p>
+          <p class="govuk-body">
+            This leads to a higher workload to agents who need to make redundant outbound calls, delays in identifying and supporting claimants who genuinely need reasonable adjustments , and also a poor user experience for claimants who feel uncertain or mislead by the current question.
+          </p>
+          <p class="govuk-body">
+            We aim to improve the question’s clarity and format to help users understand what we mean by reasonable adjustments, so that they can select only what applies to them.
+          </p>
+      </details>
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Hypothesis
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">
+            We believe that by replacing the current yes-no radio question with clearer content making clear this is about adjustments for appointments and  moving the question to the end of the application,
+            will achieve that users better understand what we mean by reasonable adjustments, and only those who need it support will make a selection.
+          </p>
+          <p class="govuk-body">
+            We will know this when: 
+          </p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>fewer users select a reasonable adjustment by mistake</li>
+            <li>fewer unnecessary outbound call are made by SCAs</li>
+            <li>we see improved support for users who need a reasonable adjustment</li>
+          </ul>
+          <p class="govuk-body">
+            We believe this will ultimately result in a more inclusive service, increased user satisfaction and compliance with legal accessibility requirements.
+          </p>
+      </details>
+
+      <h2 class="govuk-heading-l">Option 1</h2>
+      <p class="govuk-body">
+       Adding a second page with check box options for reasonable adjustments, if yes is selected on previous screen. Positioned after alterantive formats questions.
+      </p>
+      <h3 class="govuk-heading-m">Individual screens:</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="/design-iterations/wt-6927-ra/ra-version1/reasonable-adjustment?checkanswers">Reasonable adjustments question flow</a></li>
+        <li><a href="/design-iterations/wt-6927-ra/ra-version1/af-check-answers?alt-formats=yes&adjustments=yes&ra-options=Disabled parking">Check your answers sample page: Yes, other accessibility needs</a></li>
+        <li><a href="/design-iterations/wt-6927-ra/ra-version1/af-check-answers?alt-formats=yes&adjustments=no">Check your answers sample page: No, other accessibility needs</a></li>
+      </ul>
+
+      <h3 class="govuk-heading-m">Full user journey (alternative formats and reasonable adjustments):</h3>
+      <p class="govuk-body">
+       <a href="/design-iterations/wt-6927-ra/ra-version1/guard">Alternative formats and reasonable adjustments journey</a>
+     </p>
+
+     <h2 class="govuk-heading-l">Option 2</h2>
+  
+      <p class="govuk-body">
+       Rephrasing existing screen to adjustments for in person appointments. Moving screen to the end of the journey before check answwers.
+      </p>
+      <h3 class="govuk-heading-m">Individual screens:</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="/design-iterations/wt-6927-ra/ra-version2/adjustments-appointments-v1">Adjustments for apointments - Radios</a> <br><span class="govuk-tag govuk-tag govuk-!-margin-bottom-2 govuk-!-margin-top-1" style="white-space:nowrap">Selected option</span></li>
+        <li><a href="/design-iterations/wt-6927-ra/ra-version2/adjustments-appointments-v2">Adjustments for apointments - Checkboxes</a></li>
+      </ul>
+
+      <h3 class="govuk-heading-m">Partial user journey <br>(Sharing constent, reasonable adjustments, check answers):</h3>
+      <p class="govuk-body">
+       <a href="/design-iterations/wt-6927-ra/ra-version2/consent-outcome">Reasonable adjustments journey - Radios</a>
+     </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

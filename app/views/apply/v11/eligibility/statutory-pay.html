@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="severe-disability">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="statutory-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Are you getting any of the following payments?
+          </h1>
+        </legend>
+
+<p>You can apply for New Style ESA if you do not receive any of these statutory payments, or if they end in the next 3 months.</p>
+
+        <span id="waste-hint" class="govuk-hint">
+          You only need to select one option.
+        </span>
+
+        <div class="govuk-radios">
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sap" name="statutory-pay" type="radio" value="Statutory Sick Pay">
+                <label class="govuk-label govuk-radios__label" for="sap">
+                  Statutory Sick Pay
+                </label>
+              </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sap" name="statutory-pay" type="radio" value="Statutory Adoption Pay">
+            <label class="govuk-label govuk-radios__label" for="sap">
+              Statutory Adoption Pay
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="where-do-you-live-2" name="statutory-pay" type="radio" value="Statutory Maternity Pay">
+            <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+              Statutory Maternity Pay
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="where-do-you-live-3" name="statutory-pay" type="radio" value="Statutory Paternity Pay">
+            <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+              Statutory Paternity Pay
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="where-do-you-live-4" name="statutory-pay" type="radio" value="Statutory Shared Parental Pay">
+            <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+              Statutory Shared Parental Pay
+            </label>
+          </div>
+          <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="none" name="statutory-pay" type="radio" value="none">
+            <label class="govuk-label govuk-radios__label" for="none">
+              None of these
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $(document).on('ready',function()
+    {
+      // target the #form element
+      // attached an event listener that runs
+      // a function when the form is submitted
+      $('#form').on('submit', function(e)
+      {
+        // depending on the value="" of the <input>
+        // that's been checked, change the action=""
+        // of the <form> and then allow it to submit.
+      	switch($('input[name="statutory-pay"]:checked').val())
+        {
+      		case 'Statutory Sick Pay':
+      	    $('#form').attr('action','statutory-pay-date');
+      		  break;
+          case 'Statutory Adoption Pay':
+      	    $('#form').attr('action','statutory-pay-date');
+      		  break;
+            case 'Statutory Maternity Pay':
+      	    $('#form').attr('action','statutory-pay-date');
+      		  break;
+            case 'Statutory Paternity Pay':
+      	    $('#form').attr('action','statutory-pay-date');
+      		  break;
+            case 'Statutory Shared Parental Pay':
+      	    $('#form').attr('action','statutory-pay-date');
+      		  break;
+            case 'none':
+      	    $('#form').attr('action','severe-disability-premium');
+      		  break;
+          // if nothing is ticked don't submit the form.
+          default: return false; break;
+        }
+        // returning 'true' allows the form to submit
+        // after we're finished with the above.
+        return true;
+      });
+    });
+  </script>
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Do you need us to contact you in an alternative format? - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-xl">Accessibility</span>
+      What type of audio do you need?
+    </h1>
+
+    <form class="form" action="audio" method="post">
+
+      
+
+
+
+
+
+<div class="govuk-form-group">
+
+<fieldset class="govuk-fieldset" aria-describedby="audio-hint">
+
+
+<div id="audio-hint" class="govuk-hint">
+  Select the best option for your needs.
+</div>
+
+
+<div class="govuk-radios">
+  
+    
+        
+      
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="audio" name="audio" type="radio" value="cassette">
+        <label class="govuk-label govuk-radios__label" for="audio">
+      Cassette
+    </label>
+        
+      </div>
+      
+      
+    
+  
+    
+      
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="audio-2" name="audio" type="radio" value="cd">
+        <label class="govuk-label govuk-radios__label" for="audio-2">
+      CD
+    </label>
+        
+      </div>
+      
+      
+    
+  
+    
+      
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="audio-3" name="audio" type="radio" value="mp3">
+        <label class="govuk-label govuk-radios__label" for="audio-3">
+      MP3
+    </label>
+        
+      </div>
+      
+      
+    
+  
+</div>
+
+
+</fieldset>
+
+
+</div>
+
+
+    
+      
+
+
+  
+
+
+<a href="phone-contact-preference" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+Continue
+</a>
+
+    
+
+    </form>
+  </div>
+</div>
+
+
+
+{% endblock %}
+

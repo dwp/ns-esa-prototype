@@ -1,0 +1,110 @@
+{% extends "layout-agent.html" %}
+
+{% block header %}
+<header class="govuk-header dwp-header" data-module="govuk-header" style="border-bottom-width: 0px"> 
+  <div class=" govuk-width-container ">
+  <a href="agent-start" class="govuk-header__link govuk-header__link--service-name dwp-header__container--service-name">
+    Apply for New Style Employment and Support Allowance
+  </a>
+  </div>
+  </header>
+
+<link rel="stylesheet" href="/public/stylesheets/agent-claim.css" type="text/css">
+
+<section class="dwp-key-details-bar" aria-label="Key details">
+  <div class="dwp-key-details-bar__key-details">
+  <dl class="dwp-key-details-bar__top-block">
+      <dt class="govuk-visually-hidden">Name:</dt>
+      <dd class="dwp-key-details-bar__primary">John Robins</dd>
+      <dt class="govuk-visually-hidden">National Insurance Number:</dt>
+      <dd class="dwp-key-details-bar__secondary">AA 11 22 33 C</dd>
+      <dt class="govuk-visually-hidden">Claim status:</dt>
+      <dd class="govuk-table__cell dwp-key-details-bar__status">
+          <strong class="govuk-tag dwp-key-details-bar__status--dwp-default">
+              VERIFIED
+          </strong>
+      </dd>
+  </dl>
+  </div>
+  </section> 
+
+{% endblock %}
+
+{% block beforeContent %}
+
+<a href="agent-table" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    Special rules
+  </strong>
+</div>
+
+    <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Application submitted
+          </dt>
+          <dd class="govuk-summary-list__value">
+            02/02/2023, 11:46am
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Claim start date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            02/04/2023
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            First name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            John
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Last name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Robins
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              National Insurance number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              AA 11 22 33 C
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              20/02/1990
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Postcode
+            </dt>
+            <dd class="govuk-summary-list__value">
+              RM8 2FE
+            </dd>
+          </div>
+      </dl>
+
+      <a href="/public/images/placeholder.png" aria-label="John Robins application form (download)" download>John Robins application form (download)</a></td>
+
+    {% endblock %}

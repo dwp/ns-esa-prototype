@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Do you need us to contact you in an alternative format? - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-xl">Accessibility</span>
+      What size font do you need?
+    </h1>
+    <p>Our letters are usually in Arial font size 12.</p>
+    <form action="address-is-it-postal" method="get">
+
+  
+
+<div class="govuk-form-group">
+
+<fieldset class="govuk-fieldset" aria-describedby="print-size-hint">
+
+
+<div id="print-size-hint" class="govuk-hint">
+  Select the best option for your needs.
+</div>
+
+
+<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+  
+    
+        
+      
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="print-size" name="Print size" type="radio" value="size-16">
+        <label class="govuk-label govuk-radios__label" for="print-size">
+      Size 16
+    </label>
+        
+      </div>
+      
+      
+    
+  
+    
+      
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="print-size-2" name="Print size" type="radio" value="size-18">
+        <label class="govuk-label govuk-radios__label" for="print-size-2">
+      Size 18
+    </label>
+        
+      </div>
+      
+      
+    
+  
+    
+      
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="print-size-3" name="Print size" type="radio" value="size-24">
+        <label class="govuk-label govuk-radios__label" for="print-size-3">
+      Size 24
+    </label>
+        
+      </div>
+      
+      
+    
+  
+    
+      
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="print-size-4" name="Print size" type="radio" value="other" aria-controls="conditional-print-size-4" aria-expanded="false">
+        <label class="govuk-label govuk-radios__label" for="print-size-4">
+      Other
+    </label>
+        
+      </div>
+      
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-print-size-4">
+          
+          
+
+<div class="govuk-form-group">
+
+
+<input class="govuk-input govuk-!-width-one-third" id="other" name="other" type="other" spellcheck="false">
+</div>
+
+      
+        </div>
+      
+      
+    
+  
+</div>
+
+
+</fieldset>
+
+
+</div>
+
+
+        
+
+
+  
+
+
+<a href="phone-contact-preference" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+Continue
+</a>
+
+
+    </form>
+  </div>
+</div>
+
+
+
+{% endblock %}
+

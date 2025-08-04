@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="insurance">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      Pension details
+    </h1>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="surgery">
+        Pension provider
+      </label>
+      <input class="govuk-input govuk-!-width-one-half" id="surgery" name="surgery" type="text">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="surgery">
+        Pension reference number
+      </label>
+      <input class="govuk-input govuk-!-width-one-half" id="surgery" name="surgery" type="text">
+    </div>
+
+    <div class="form-group">
+      <button id="add-button" class="govuk-button button-add-another-vertical" onclick="javascript:return false">Add another</button>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+
+<!-- <div class="list-item-wrapper-vertical">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <div class="form-group-compound">
+          <h2 class="heading-medium">Item 1</h2>
+
+          <div class="form-group">
+            <label class="form-label" for="field-1">
+              Field label
+            </label>
+
+            <input type="text" class="form-control" id="field-1" name="field-1">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="field-2">
+              Field label
+            </label>
+
+            <input type="text" class="form-control" id="field-2" name="field-2">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="field-3">
+              Field label
+            </label>
+
+            <input type="text" class="form-control" id="field-3" name="field-3">
+          </div>
+        </div>
+      </div>
+
+      <div class="column-one-third">
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <div class="form-group">
+          <button id="add-button" class="button button-add-another-vertical">Add another</button>
+        </div>
+      </div>
+    </div>
+  </div>  -->
+{% endblock %}
+
+{% block pageScripts %}
+
+
+
+{% endblock %}

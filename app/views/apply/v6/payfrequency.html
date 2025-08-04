@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="expenses">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" >
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              How often are you paid?
+            </h1>
+          </legend>
+
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="daily" data-aria-controls="conditional-how-contacted-conditional-1">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                Daily
+              </label>
+            </div> <!-- govuk-radio-item -->
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+              <label class="govuk-label" for="contact-by-email">What is your net pay?</label>
+                <span id="net-pay-hint" class="govuk-hint">
+                This is the exact amount that is paid into your bank account.
+                </span>
+                <div class="govuk-currency-input">
+                  <div class="govuk-currency-input__inner">
+                    <span class="govuk-currency-input__inner__unit govuk-body">£</span>
+                    <input class="govuk-!-width-two-thirds govuk-currency-input__inner__input govuk-input" aria-label="Enter amount in pounds" name="current-employment--weekly-net" data-non-numeric="" type="number" id="current-employment--weekly-net" pattern="[0-9]\d*(\.\d+)?" value="">
+                  </div>
+                </div>
+            </div> <!-- govuk-radios-conditional -->
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="weekly" data-aria-controls="conditional-how-contacted-conditional-2">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                Weekly
+              </label>
+            </div> <!-- govuk-radio-item -->
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+              <label class="govuk-label" for="contact-by-email">What is your net pay?</label>
+                <span id="net-pay-hint" class="govuk-hint">
+                This is the exact amount that is paid into your bank account.
+                </span>
+                <div class="govuk-currency-input">
+                  <div class="govuk-currency-input__inner">
+                    <span class="govuk-currency-input__inner__unit govuk-body">£</span>
+                    <input class="govuk-!-width-two-thirds govuk-currency-input__inner__input govuk-input" aria-label="Enter amount in pounds" name="current-employment--weekly-net" data-non-numeric="" type="number" id="current-employment--weekly-net" pattern="[0-9]\d*(\.\d+)?" value="">
+                  </div>
+                </div>
+            </div> <!-- govuk-radios-conditional -->
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+                Every 2 weeks
+              </label>
+            </div> <!-- govuk-radio-item -->
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
+                <label class="govuk-label" for="contact-by-text">What is your net pay?</label>
+                <span id="net-pay-hint" class="govuk-hint">
+                This is the exact amount that is paid into your bank account.
+                </span>
+                <div class="govuk-currency-input">
+                  <div class="govuk-currency-input__inner">
+                    <span class="govuk-currency-input__inner__unit govuk-body">£</span>
+                    <input class="govuk-!-width-two-thirds govuk-currency-input__inner__input govuk-input" aria-label="Enter amount in pounds" name="current-employment--weekly-net" data-non-numeric="" type="number" id="current-employment--weekly-net" pattern="[0-9]\d*(\.\d+)?" value="">
+                  </div>
+                </div>
+            </div> <!-- govuk-radios-conditional -->
+
+           <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-4" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-4">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-4">
+                Every 4 weeks
+              </label>
+            </div> <!-- govuk-radio-item -->
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-4">
+                  <label class="govuk-label" for="contact-by-text">What is your net pay?</label>
+                  <span id="net-pay-hint" class="govuk-hint">
+                  This is the exact amount that is paid into your bank account.
+                  </span>
+                  <div class="govuk-currency-input">
+                    <div class="govuk-currency-input__inner">
+                      <span class="govuk-currency-input__inner__unit govuk-body">£</span>
+                      <input class="govuk-!-width-two-thirds govuk-currency-input__inner__input govuk-input" aria-label="Enter amount in pounds" name="current-employment--weekly-net" data-non-numeric="" type="number" id="current-employment--weekly-net" pattern="[0-9]\d*(\.\d+)?" value="">
+                    </div>
+                  </div>
+              </div> <!-- govuk-radios-conditional -->
+
+             <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-contacted-conditional-5" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-5">
+                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-5">
+                  Monthly
+                </label>
+             </div> <!-- govuk-radio-item -->
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-5">
+                  <label class="govuk-label" for="contact-by-text">What is your net pay?</label>
+                  <span id="net-pay-hint" class="govuk-hint">
+                  This is the exact amount that is paid into your bank account.
+                  </span>
+                  <div class="govuk-currency-input">
+                    <div class="govuk-currency-input__inner">
+                      <span class="govuk-currency-input__inner__unit govuk-body">£</span>
+                      <input class="govuk-!-width-two-thirds govuk-currency-input__inner__input govuk-input" aria-label="Enter amount in pounds" name="current-employment--weekly-net" data-non-numeric="" type="number" id="current-employment--weekly-net" pattern="[0-9]\d*(\.\d+)?" value="">
+                    </div>
+                  </div>
+              </div> <!-- govuk-radios-conditional -->
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-6" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-6">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-6">
+                Other
+              </label>
+            </div> 
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-6">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-text">
+                  Can you provide more detail?
+                </label>
+               <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            </div>
+               
+          </div> <!-- govuk-radios -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+<input type="submit" class="govuk-button" value="Continue" id="submit">
+
+</form>
+
+</div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

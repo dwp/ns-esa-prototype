@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Do you need us to contact you in an alternative format? - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">Accessibility</span>
+
+    <form id="form" method="post" action="">
+
+   <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            What do you need instead of a standard letter?
+          </h1>
+        </legend>
+
+        <p>We usually send letters on white paper and in Arial font size 12.</p>
+
+        <p>We can contact you in one of the ways listed below if this letter is not suitable. You can tell us more about your needs later, for example if you select large print you can then choose the font size.</p>
+
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                How would you prefer to be contacted?
+              </h1>
+            </legend>
+            <div id="contact-hint" class="govuk-hint">
+              Select the best option for your needs.
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="letters-contact-preference" name="lettersContactPreference" type="radio" value="audio">
+                <label class="govuk-label govuk-radios__label" for="letters-contact-preference">
+                  Audio
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="letters-contact-preference-2" name="lettersContactPreference" type="radio" value="braille">
+                <label class="govuk-label govuk-radios__label" for="letters-contact-preference-2">
+                  Braille
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="letters-contact-preference-3" name="lettersContactPreference" type="radio" value="colouredPaper" >
+                <label class="govuk-label govuk-radios__label" for="letters-contact-preference-3">
+                  Coloured paper
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="letters-contact-preference-4" name="lettersContactPreference" type="radio" value="colouredPaperLargePrint">
+                <label class="govuk-label govuk-radios__label" for="letters-contact-preference-4">
+                  Coloured paper and large print
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="letters-contact-preference-5" name="lettersContactPreference" type="radio" value="largePrint" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="letters-contact-preference-5">
+                  Large print
+                </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="letters-contact-preference-6" name="lettersContactPreference" type="radio" value="email" data-aria-controls="conditional-contact-3">
+                <label class="govuk-label govuk-radios__label" for="letters-contact-preference-6">
+                  Email
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-email">
+                    Enter your email address
+                  </label>
+                  <div  class="govuk-hint">
+                    For example, name@example.com
+                  </div>
+                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="tel" autocomplete="email">
+                </div>
+        
+              </div>
+              <div class="govuk-radios__divider">or</div>
+
+            </div>
+            <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="letters-contact-preference-8" name="lettersContactPreference" type="radio" value="none">
+          <label class="govuk-label govuk-radios__label" for="letters-contact-preference-8">
+        You can contact me by standard letter
+      </label>
+          
+        </div>
+        
+          </fieldset>
+        </div>
+      </fieldset>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+

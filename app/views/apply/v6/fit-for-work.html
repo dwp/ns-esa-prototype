@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="work-self-emp-sick">
+
+      <div class="govuk-form-group">
+       <fieldset class="govuk-fieldset" ><legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <h1 class="govuk-fieldset__heading">
+          Do you know when you will be fit enough for work again?
+        </h1>
+      </legend>
+
+      <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                Yes
+              </label>
+            </div>
+           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+              <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <p class="govuk-fieldset__heading">
+              When do you go back to work?
+              </p>
+              </legend>
+                  <div class="govuk-date-input" id="whenfit-date">
+                     <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                           <label class="govuk-label govuk-date-input__label" for="whenfit-day">
+                            Day
+                           </label>
+                           <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="whenfit-day" name="whenfit-day" type="number" pattern="[0-9]*">
+                      </div>
+                   </div>
+                   <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="whenfit-month">
+                           Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="whenfit-month" name="whenfit-month" type="number" pattern="[0-9]*">
+                     </div>
+                   </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="whenfit-year">
+                           Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="whenfit-year" name="whenfit-year" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+              </div>
+              </fieldset>
+            </div>
+          </div>
+
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                        No
+                    </label>
+           </div>
+      </div>
+    </fieldset>
+  </div>
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+
+{% endblock %}

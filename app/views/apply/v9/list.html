@@ -1,0 +1,162 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}Task list - Apply for ‘new style’ Employment Support Allowance - GOV.UK{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Apply for ‘new style’ Employment Support Allowance</h1>
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section"><span class="app-task-list__section-number">1. </span> Before you start</h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="before-you-start" aria-describedby="#">
+                Check what you need
+                <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span>
+              </a>
+              
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section"><span class="app-task-list__section-number">2. </span> Prepare application</h2>
+          <ul class="app-task-list__items">
+            <li>
+              <ul class="app-task-list__items" style="padding: 0">
+                <li class="app-task-list__item">
+                  {% if sectionStatus.yourhealth === "completed" %}
+                    <a class="app-task-list__task-name " href="health/checkanswers" aria-describedby="#">Your health <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
+                    
+                  {% elif sectionStatus.yourhealth === "started" %}
+                    <a class="app-task-list__task-name " href="health/condition" aria-describedby="#">Your health <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
+                  {% else %}
+                    <a class="app-task-list__task-name " href="health/condition" aria-describedby="#">
+                      Your health
+                    </a>
+                  {% endif %}
+                </li>
+
+                <li class="app-task-list__item">
+                  {% if sectionStatus.paidwork === "completed" %}
+                    <a class="app-task-list__task-name " href="work/checkanswers-2" aria-describedby="#">Paid work <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
+                  {% elif sectionStatus.paidwork === "started" %}
+                    <a class="app-task-list__task-name " href="work/work" aria-describedby="#">Paid work <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
+                  {% else %}
+                    <a class="app-task-list__task-name " href="work/work" aria-describedby="#">
+                      Paid work
+                    </a>
+                  {% endif %}
+                </li>
+
+                <li class="app-task-list__item">
+                  {% if sectionStatus.ssp === "completed" %}
+                    <a class="app-task-list__task-name " href="ssp/checkanswers-2" aria-describedby="#">Statutory pay <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
+                  {% elif sectionStatus.ssp === "started" %}
+                    <a class="app-task-list__task-name " href="ssp/statutory-pay" aria-describedby="#">Statutory pay <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
+                  {% else %}
+                    <a class="app-task-list__task-name " href="ssp/statutory-pay" aria-describedby="#">
+                      Statutory pay
+                    </a>
+                  {% endif %}
+                </li>
+
+                <li class="app-task-list__item">
+                  {% if sectionStatus.voluntarywork === "completed" %}
+                    <a class="app-task-list__task-name " href="volunteering/checkanswers-2" aria-describedby="#">Voluntary work <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
+                  {% elif sectionStatus.voluntarywork === "started" %}
+                    <a class="app-task-list__task-name " href="volunteering/voluntary-work" aria-describedby="#">Voluntary work <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
+                  {% else %}
+                    <a class="app-task-list__task-name " href="volunteering/voluntary-work" aria-describedby="#">
+                      Voluntary work
+                    </a>
+                  {% endif %}
+                </li>
+
+                <li class="app-task-list__item">
+                  {% if sectionStatus.pension === "completed" %}
+                    <a class="app-task-list__task-name " href="pension/checkanswers-2" aria-describedby="#">Pensions <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
+                  {% elif sectionStatus.pension === "started" %}
+                    <a class="app-task-list__task-name " href="pension/pension" aria-describedby="#">Pensions <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
+                  {% else %}
+                    <a class="app-task-list__task-name " href="pension/pension" aria-describedby="#">
+                      Pensions
+                    </a>
+                  {% endif %}
+                </li>
+
+                <li class="app-task-list__item">
+                  {% if sectionStatus.insurance === "completed" %}
+                    <a class="app-task-list__task-name " href="insurance/checkanswers-2" aria-describedby="#">Income protection insurance <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
+                  {% elif sectionStatus.insurance === "started" %}
+                    <a class="app-task-list__task-name " href="insurance/insurance" aria-describedby="#">Income protection insurance <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
+                  {% else %}
+                    <a class="app-task-list__task-name " href="insurance/insurance" aria-describedby="#">
+                      Income protection insurance
+                    </a>
+                  {% endif %}
+                </li>
+
+                <li class="app-task-list__item">
+                  {% if sectionStatus.yourdetails === "completed" %}
+                    <a class="app-task-list__task-name " href="about-you/checkanswers" aria-describedby="#">Your details <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
+                  {% elif sectionStatus.yourdetails === "started" %}
+                    <a class="app-task-list__task-name " href="about-you/name" aria-describedby="#">Your details <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
+                  {% else %}
+                    <a class="app-task-list__task-name " href="about-you/name" aria-describedby="#">
+                      Your details
+                    </a>
+                  {% endif %}
+                </li>
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section"><span class="app-task-list__section-number">3. </span> Apply</h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+
+              {% if
+                (sectionStatus.yourhealth === "completed")
+                and (sectionStatus.paidwork === "completed")
+                and (sectionStatus.ssp === "completed")
+                and (sectionStatus.voluntarywork === "completed")
+                and (sectionStatus.pension === "completed")
+                and (sectionStatus.insurance === "completed")
+                and (sectionStatus.yourdetails === "completed")
+              %}
+
+                {# If dynamic date, go to the claim date screen. If not, go to the generic claim date screen #}
+                {% if whichDate %}
+                  <a class="app-task-list__task-name " href="claim-date-declaration/claimdate" aria-describedby="#">Submit your application</a>
+                {% else %}
+                  <a class="app-task-list__task-name " href="claim-date-declaration/claimdate-blank" aria-describedby="#">Submit your application</a>
+                {% endif %}
+
+              {% else %}
+
+                <span class="app-task-list__task-name " href="#" aria-describedby="#">
+                  <span style="opacity: 0.6">Submit your application <span style="font-weight: normal">(do this last)</span></span>
+                </span>
+
+              {% endif %}
+
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <p><a href="cancel-application">Cancel application</a></p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

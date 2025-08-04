@@ -1,0 +1,233 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+  <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6" style="padding: 0">
+    <h1 class="govuk-panel__large" style="font-size: 32px; margin-bottom: 5px">
+      Application sent
+    </h1>
+    <div class="govuk-panel__body" style="font-size: 28px;">Your reference number is your National Insurance number</div>
+    <p></p>
+  </div>
+
+  </div> <!-- govuk.grid-column-full -->
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">What happens next</h2>
+
+    <p class="govuk-body-l">There may be a delay in processing your application because of the coronavirus outbreak. We aim to get back to you by <span class="new-date"></span>.</p>
+    <p>Please do not contact the Department for Work and Pensions (DWP) for an update before then.</p>
+
+  {# BAU Evidence #}
+    {% if (data['coronavirus'] == "no" ) %}
+    <h3 class="govuk-heading-m">Send us medical evidence to support your application</h3>
+
+    <p>You can self-certify for the first 7 days of your claim but you need to send us medical evidence from day 8 onwards.</p>
+    <p>The most common type of medical certificate is a fit note (also called a statement of fitness for work or a sick note), but we also accept other types of medical evidence.</p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Other types of medical evidence
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p id="other-medical-evidence-hint">As well as fit notes, we also accept these medical certificates:
+          
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Med10 (a hospital certificate given to inpatients if your treatment lasts more than 7 days)</li>
+      <li>MATB1 (if you’re pregnant but you cannot get Statutory Maternity Pay or Maternity Allowance)</li>
+      <li>CF73 (a form issued by a psychiatric hospital)</li>
+      <li>DS1500 (a form completed and sent to us by a doctor, consultant or specialist nurse if they think you might not live longer than 6 months, because of your condition)</li>
+    </ul>
+
+    <p>Other forms of evidence might include a doctor’s statement, consultant’s report or Local Authority notice.</p>
+  
+  </div>
+  </details>
+
+  <p>You will need to keep sending us medical evidence as long as you’re unfit for work. We will tell you when you can stop sending it. For example, if your fit note is for 14 days, you will need to send us another one when it runs out.</p>
+
+
+
+    <h3 class="govuk-heading-m">How to send your evidence</h3>
+
+    <p>If you have a fit note, you can use the <a href="https://www.gov.uk/send-fit-note" target="_blank">Send Your Fit Note service (opens in tab)</a> to send it to us online.</p>
+
+    <p>If you have another form of medical evidence, you can send it to us by post. You can also post your fit note.</p>
+
+  <div class="govuk-inset-text">
+  <h4 class="govuk-heading-s">Where to send your medical evidence by post</h4>
+  <p>Freepost DWP ESA 26</p>
+  </div>
+  {% endif %}
+  {# End of BAU Evidence #}
+
+  {# Shielding Evidence #}
+  {% if (data['reason'] == "reason-1") %}
+  <h3 class="govuk-heading-m">Send us evidence that you're shielding to support your application</h3>
+
+  <p>There are different instructions depending on whether you have a letter or text message from the government or NHS.</p>
+
+  <p>Send us your evidence as soon as you can so we can process your claim.</p>
+  
+  <h4 class="govuk-heading-s">If you’re shielding because you got a letter or text message from the government or NHS</h4>
+
+  <p class="govuk-body">You should get a letter from your doctor or health authority if both the following apply:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>you live in an area with local restrictions that include advice to ‘shield’</li>
+    <li>you or your child need to ‘shield’ (take extra precautions to reduce contact with others) because you’re at very high risk of severe illness from coronavirus</li>
+  </ul>
+
+  <p>The letter will include the period you or your child should shield for. It is proof of your eligibility for ESA for days away from work in that period.</p>
+
+  <p>You may get more than one letter covering more than one shielding period.</p>
+  
+  <p>Send us a copy of your shielding letter. </p>
+  
+  <p>If you do not have a printed copy of your letter or cannot leave your home to post it, your local council might be able to help. Go to GOV.UK to <a href="https://www.gov.uk/coronavirus-local-help">find coronavirus help in your local area (opens in new tab)</a>.</p>
+
+  <div class="govuk-inset-text">
+  <h4 class="govuk-heading-s">Where to send your letter by post</h4>
+  <p>Freepost DWP ESA 26</p>
+  </div>
+
+  <h4 class="govuk-heading-s">If you work, but do not live, in an area with local restrictions that include advice to shield</h4>
+
+  <p>You can <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/people-at-higher-risk/shielding-note/">apply for a ‘shielding note’ (opens in new tab)</a> if you work in an area with local restrictions that include advice to shield, but do not live there. All of the following must be true:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>you cannot work from home or anywhere else outside of the area with local restrictions</li>
+    <li>you’ve previously been advised to ‘shield’ (take extra precautions to reduce contact with others) because you’re at very high risk of severe illness from coronavirus</li>
+    <li>you live in England</li>
+  </ul>
+
+  <p>Your shielding note will be valid for 3 weeks from the date you apply. If the note expires and you still need to shield, you will need to apply for another note. It will no longer be valid if local restrictions are lifted in the area you work in.</p>
+  
+  <p>Your shielding note will have a reference number. We will contact you in 14 days about your claim and take this reference number from you.</p>
+  
+  <h4 class="govuk-heading-s">If you did not get a letter or text message from the government or NHS</h4>
+
+  <p>Contact your doctor if you do not have a shielding letter but think you should have one. You should get a letter from your doctor or health authority if both the following apply: </p>
+  
+   <ul class="govuk-list govuk-list--bullet">
+    <li>you live in an area with local restrictions that include advice to ‘shield’</li>
+    <li>you or your child need to ‘shield’ (take extra precautions to reduce contact with others) because you’re at very high risk of severe illness from coronavirus</li>
+  </ul>
+
+  <p>If you do not have a shielding letter or cannot get one, you will need to send us medical evidence to support your application.</p>
+  
+  <p>The most common type of medical certificate is a fit note (also called a statement of fitness for work or a sick note), but we also accept other types of medical evidence.</p>
+  
+  <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Other types of medical evidence
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p id="other-medical-evidence-hint">As well as fit notes, we also accept these medical certificates:
+          
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Med10 (a hospital certificate given to inpatients if your treatment lasts more than 7 days)</li>
+      <li>MATB1 (if you’re pregnant but you cannot get Statutory Maternity Pay or Maternity Allowance)</li>
+      <li>CF73 (a form issued by a psychiatric hospital)</li>
+      <li>DS1500 (a form completed and sent to us by a doctor, consultant or specialist nurse if they think you might not live longer than 6 months, because of your condition)</li>
+    </ul>
+
+    <p>Other forms of evidence might include a doctor’s statement, consultant’s report or Local Authority notice.</p>
+  
+  </div>
+  </details>
+  
+  <p>You will need to keep sending us medical evidence as long as you’re unfit for work. We will tell you when you can stop sending it. For example, if your fit note is for 14 days, you will need to send us another one when it runs out.</p>
+
+    <p>If you have a fit note, you can use the <a href="https://www.gov.uk/send-fit-note" target="_blank">Send Your Fit Note service (opens in new tab)</a> to send it to us online.</p>
+
+    <p>If you have another form of medical evidence, you can send it to us by post. You can also post your fit note.</p>
+
+  <div class="govuk-inset-text">
+  <h4 class="govuk-heading-s">Where to send your medical evidence by post</h4>
+  <p>Freepost DWP ESA 26</p>
+  </div>
+  {% endif %}
+  {# End of Shielding Evidence #}
+
+  {# Self isolating and "other" Evidence #}
+  {% if (data['reason'] == "reason-2") or (data['reason'] == "reason-3") or (data['reason'] == "reason-4") %}
+  <h3 class="govuk-heading-m">Send us evidence that you’re self-isolating to support your application</h3>
+
+  <p>There are different instructions depending on the reason you're self-isolating.</p>
+
+  <p>Send us your evidence as soon as you can so we can process your claim.</p>
+  
+  <h4 class="govuk-heading-s">If you’re self-isolating (but not for surgery)</h4>
+
+  <p>You can get an <a href="https://111.nhs.uk/isolation-note/">‘isolation note’ online from NHS 111 (opens in new tab)</a> if any of the following apply:</p>
+  <ul class="govuk-list govuk-list--bullet">
+      <li>you’re self-isolating because you have symptoms of coronavirus</li>
+      <li>you’re self-isolating because you came into contact with someone who has symptoms of coronavirus</li>
+      <li>you were told to self-isolate by a test and trace service</li>
+      <li>you’re in quarantine because you’re returning from a trip abroad</li>
+    </ul>
+
+  <p>You do not have to go to your doctor or a hospital.</p>
+
+  <p>Your isolation note will have a 16-digit reference number. We will contact you in 14 days about your claim and take this reference number from you.</p>
+  
+  <h4 class="govuk-heading-s">If you’re self-isolating because you have surgery</h4>
+
+  <p>If you’ve been advised by your doctor or healthcare professional to self-isolate before going into hospital for surgery, your letter confirming the date of your procedure is proof. Send us a copy of your appointment letter.</p>
+
+  <p>If you do not have a printed copy of your letter or cannot leave your home to post it, your local council might be able to help. Go to GOV.UK to <a href="https://www.gov.uk/coronavirus-local-help">find coronavirus help in your local area (opens in new tab)</a>.</p>
+
+  <div class="govuk-inset-text">
+  <h4 class="govuk-heading-s">Where to send your letter by post</h4>
+  <p>Freepost DWP ESA 26</p>
+  </div>
+  {% endif %}
+  {# End of Self isolating and "other" Evidence #}
+
+  {# Universal Credit block #}
+  {# {% if (data['universal-credit'] == "no" and data['national-insurance'] == "yes" or data['national-insurance'] == "notsure" ) %} #}
+  {% if (data['universal-credit'] == "No") %}
+
+
+  <h3 class="govuk-heading-m">Do you need help with housing costs or support for a partner or child?</h3>
+
+      <p class="govuk-body">If you‘re on a low income or out of work, you can apply for Universal Credit as part of a dual claim with New Style ESA.</p>
+
+      <p>Unlike New Style ESA, you can apply with a partner and get support for housing costs, children and childcare.</p>
+      
+      <p class="govuk-body">You or your partner must have less than £16,000 in savings or investments to be eligible.</p>
+
+      <p class="govuk-body">Find out <a href="https://www.gov.uk/how-to-claim-universal-credit" target="_blank">how to claim for Universal Credit on GOV.UK (opens in new tab)</a>.</p>
+
+  {% endif %}    
+
+  {% if (data['universal-credit'] == "Yes") %}
+
+  <h3 class="govuk-heading-m">Tell Universal Credit</h3>
+
+      <p class="govuk-body">If you get or have applied for Universal Credit, you will need to tell them that you’ve applied for New Style ESA. You can do this by <a href="https://www.gov.uk/sign-in-universal-credit" target="_blank">signing in to your Universal Credit account (opens in new tab)</a> and using the journal to contact your case manager.</p>
+      
+      <p class="govuk-body">You must also enter details from your medical evidence into your Universal Credit account. For example, if you have a fit note, you do not need to send it to Universal Credit, but you must enter the dates.</p>
+
+  {% endif %}
+  {# End of Universal Credit block #}
+
+    
+    <h3 class="govuk-heading-m">Give us your feedback</h3>
+
+<p class="govuk-body"><a href="feedback.html" class="govuk-link" rel="noreferrer noopener" target="_blank">What did you think of this service? (opens in new tab)</a>. It takes 30 seconds.</p>
+<p class="govuk-body">Volunteer to<a href="https://getinvolved.dwp.gov.uk/digital/f56c176f" class="govuk-link" rel="noreferrer noopener" target="_blank"> take part in research (opens in new tab)</a> to help improve this service.</p>
+
+
+    <p><a href="https://www.gov.uk/employment-support-allowance/your-esa-claim" class="govuk-button">Finish</a></p>
+
+</div><!-- govuk-grid-row -->
+{% endblock %}
+

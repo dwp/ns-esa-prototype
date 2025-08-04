@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Adjustments for appointments in person – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+     text: "Prototype"
+  },
+  html: 'This is a prototype. No data is saved or stored.'
+}) }}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Adjustments for appointments in person 
+      </h1>
+
+     
+      <form class="form" action="ra-check-answers?ra-version=radios" method="post">
+      
+
+        <p class="govuk-body">
+        To assess your claim for New Style ESA we may ask you to attend an appointment at a DWP building. If you need any adjustments for this, you can tell us about them.
+        </p>
+        <p class="govuk-body">For example, you might need:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>a ramp, lift or ground floor appointment </li>
+            <li>a wide doorway </li>
+            <li>someone with you for your appointment </li>
+          </ul>
+        <p class="govuk-body">These adjustments will not affect the outcome of your claim.</p>
+
+        {{ govukRadios({
+          name: "appointment-adjustments",
+          value: data['appointment-adjustments'],
+          fieldset: {
+            legend: {
+              text: "Do you need any adjustments to attend an appointment in person?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+  hint: {
+    text: "We may contact you before your appointment to discuss your needs"
+  },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

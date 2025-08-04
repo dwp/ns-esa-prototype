@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Employment and National Insurance - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="/apply/v21/why-no-ssp">
+
+   <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Tell us why you are not getting Statutory Sick Pay</h1>
+        </legend>
+
+        <p>The reason(s) should be on your SSP1 form. If you’ve not been given an SSP1 form, you can get this information from your employer.</p>
+        
+        <p>If you&rsquo;re not sure, you can still apply for New Style ESA.</p>
+
+        
+
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="severe-disability-1" name="severe-disability" type="radio" value='12weeks~/apply/v21/may-be-eligible' data-aria-controls="yes-cond">
+            <label class="govuk-label govuk-radios__label" for="severe-disability-1">
+              You got ESA during the last 12 weeks
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="severe-disability-2" name="severe-disability" type="radio" value='employmentended~/apply/v21/may-be-eligible'>
+            <label class="govuk-label govuk-radios__label" for="severe-disability-2">
+              Your contract of employment has ended or will be ending
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="severe-disability-2" name="severe-disability" type="radio" value="sickafter~/apply/v21/may-be-eligible">
+            <label class="govuk-label govuk-radios__label" for="severe-disability-2">
+              You became sick after your contract ended
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="severe-disability-2" name="severe-disability" type="radio" value="ssp28weeks~/apply/v21/may-be-eligible">
+            <label class="govuk-label govuk-radios__label" for="severe-disability-2">
+              You will soon have been getting SSP for 28 weeks in a row
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="severe-disability-2" name="severe-disability" type="radio" value="zerohour~/apply/v21/may-be-eligible">
+            <label class="govuk-label govuk-radios__label" for="severe-disability-2">
+              You are on a zero hours contract
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="severe-disability-2" name="severe-disability" type="radio" value="anotherreason~/apply/v21/may-be-eligible">
+            <label class="govuk-label govuk-radios__label" for="severe-disability-2">
+              Another reason
+            </label>
+          </div>
+       
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="severe-disability-2" name="severe-disability" type="radio" value="notsure~/apply/v21/may-be-eligible">
+                <label class="govuk-label govuk-radios__label" for="severe-disability-2">
+                  You don't know
+                </label>
+              </div>
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </div>
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+
+

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="insurance-another">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            How much was your last {{ data['insurance-providers'] | split(',') | last }} insurance payment?
+          </h1>
+        </legend>
+        
+         <div class="govuk-form-group">
+          <label class="govuk-label" for="before-deductions">
+            Amount before deductions
+          </label>
+            <div class="govuk-currency-input">
+              <div class="govuk-currency-input__inner">
+                <span class="govuk-currency-input__inner__unit govuk-body">£</span>
+                <input class="govuk-!-width-two-thirds govuk-currency-input__inner__input govuk-input govuk-input--width-10" aria-label="Enter amount in pounds" name="current-employment--weekly-net" data-non-numeric="" type="number" id="before-deductions" pattern="[0-9]\d*(\.\d+)?" value="">
+              </div><!-- govuk-currency-input__inner -->
+            </div><!-- govuk-currency-input -->
+         </div> <!-- govuk-form-group -->
+
+         <div class="govuk-form-group">
+          <label class="govuk-label" for="after-deductions">
+            Amount after deductions
+          </label>
+            <div class="govuk-currency-input">
+              <div class="govuk-currency-input__inner">
+                <span class="govuk-currency-input__inner__unit govuk-body">£</span>
+                <input class="govuk-!-width-two-thirds govuk-currency-input__inner__input govuk-input govuk-input--width-10" aria-label="Enter amount in pounds" name="current-employment--weekly-net" data-non-numeric="" type="number" id="after-deductions" pattern="[0-9]\d*(\.\d+)?" value="">
+              </div><!-- govuk-currency-input__inner -->
+            </div><!-- govuk-currency-input -->
+         </div> <!-- govuk-form-group -->
+
+
+
+
+      </fieldset>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+  {% endblock %}

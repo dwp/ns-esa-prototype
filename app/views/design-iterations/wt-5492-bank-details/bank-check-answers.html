@@ -1,0 +1,732 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. No data is saved or stored.'
+}) }}
+{{ govukBackLink({
+  text: "Back",
+  href: "screens"
+}) }}
+  
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">
+        Check your answers before sending your application
+      </h1>
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Personal details</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Ian Johnson"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: "12 January 1988"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "National Insurance number"
+            },
+            value: {
+              text: "QQ 12 34 56 C"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "national insurance number"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+       <h2 class="govuk-heading-m govuk-!-padding-top-6">Contact details</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: "1 Main Street<br>Leeds<br>LS11NS"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Mobile phone number"
+            },
+            value: {
+              text: "07700 112233"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "mobile phone number"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Email address"
+            },
+            value: {
+              text: "ian.johnson88@email.com"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "email address"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Accessible formats</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Accessible format needs"
+            },
+            value: {
+              html: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "accessible format needs"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Health details</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Health condition"
+            },
+            value: {
+              html: "Asthma <br> 1 March 2022"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "health condition"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Any other health conditions"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "any other health conditions"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "GP surgery or medical centre details"
+            },
+            value: {
+              html: "New Amsterdam Medical Surgery<br> 
+                    49 Hospital Street <br>
+                    Leeds <br>
+                    LS11HT <br>
+                    01632 960000 <br>
+                    Dr Maxwell Goodwin"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "GP surgery or medical centre details"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Doctor said you might have less than 12 months to live"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "doctor said you might have less than 12 months to live"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Currently in hospital"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "currently in hospital"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Pregnant"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "pregnant"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Doctor can share details with DWP"
+            },
+            value: {
+              text: "Yes, information about my health can be shared with DWP or the healthcare professionals that work for them"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "doctor can share details with DWP"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Voluntary work</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Doing voluntary work"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "doing voluntary work"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Paid work</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Currently employed"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "currently employed"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+       <h2 class="govuk-heading-m govuk-!-padding-top-6">Statutory pay</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Getting Statutory Sick Pay"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "getting statutory sick pay"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Statutory Sick Pay end date"
+            },
+            value: {
+              text: "10 September 2024"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "statutory sick pay end date"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Other statutory payments"
+            },
+            value: {
+              text: "None"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "other statutory payments"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Universal Credit"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "universal credit"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Claim date</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Claim from 11 September 2024"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "claim date"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Claim end date"
+            },
+            value: {
+              text: "No, I do not know"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "claim end date"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+       <h2 class="govuk-heading-m govuk-!-padding-top-6">Working and living abroad</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Worked abroad in the last 5 years"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "worked abroad"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Lived abroad with family member in the armed forces in the last 12 weeks"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "lived abroad"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Pensions</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Getting money from a pension or annuity"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "getting money from a pension or annuity"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Permanent health insurance</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Permanent health insurance"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "permanent health insurance"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {% if data['roll-number']=="yes" %}
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Bank details</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Bank or building society details"
+            },
+            value: {
+              classes: "govuk-!-display-inline",
+              html: '<p class="govuk-body"><strong>Account holder</strong><br>Ian Johnson</p>
+                     <p class="govuk-body"><strong>Bank or building society</strong><br>Test bank</p>
+                     <p class="govuk-body"><strong>Sort code</strong><br>80 26 50</p>
+                     <p class="govuk-body"><strong>Account number</strong><br>10014069</p>
+                     <p class="govuk-body"><strong>Building society roll number</strong><br>12345678</p>'
+                     
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Bank or building society details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+    {% else %}
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Bank details</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Bank or building society details"
+            },
+            value: {
+              classes: "govuk-!-display-inline",
+              html: '<p class="govuk-body"><strong>Account holder</strong><br>Ian Johnson</p>
+                     <p class="govuk-body"><strong>Bank or building society</strong><br>Test bank</p>
+                     <p class="govuk-body"><strong>Sort code</strong><br>80 26 50</p>
+                     <p class="govuk-body"><strong>Account number</strong><br>10014069</p>'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Bank or building society details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+    {% endif %}
+{# BANK DETAILS option 2 formatting
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Bank details</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Bank or building society details"
+            },
+            value: {
+              classes: "govuk-!-display-inline",
+              html: "<strong>Account holder:</strong> Ian Johnson <br>
+                    <strong>Bank or building society:</strong> Test bank <br>
+                     <strong>Sort code:</strong> 80 26 50<br>
+                    <strong>Account number:</strong> 10014069<br>
+                    <strong>Roll number:</strong> 12345678"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Bank or building society details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}     
+#}
+{# BANK DETAILS option 3 formatting
+<h2 class="govuk-heading-m govuk-!-padding-top-6">Bank details</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Bank or building society details"
+            },
+            value: {
+              classes: "govuk-!-display-inline",
+              html: "Name: Ian Johnson <br>
+                    Bank or building society: Test bank <br>
+                    Sort code: 80 26 50<br>
+                    Account number: 10014069<br>
+                    Roll number: 12345678"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Bank or building society details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}      
+#}
+{# BANK DETAILS option 4 formatting
+       <h2 class="govuk-heading-m govuk-!-padding-top-6">Bank or building society details</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              html: "<strong>Account holder:</strong> <br>
+                    <strong> Bank or building society</strong><br>
+                     <strong>Sort code:</strong><br>
+                     <strong>Account number:</strong><br>
+                     <strong>Building society roll number:</strong>"
+            },
+            value: {
+              html: "Ian Johnson <br>
+                     Test bank<br>
+                      80 26 50<br>
+                       10014069<br>
+                       10014069"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Bank or building society details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+      #}
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Sharing the decision with your doctor</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "DWP can share decision with your doctor"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "DWP can share decision with your doctor"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <form action="#" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

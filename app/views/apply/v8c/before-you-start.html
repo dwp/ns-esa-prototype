@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="condition">
+
+      <h1 class="govuk-heading-xl">
+        Before you start
+      </h1>
+
+
+    <p>Make sure you have your:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>National Insurance number</li>
+      <li>bank or building society details (or those of a trusted family member or friend)</li>
+      <li>doctor's surgery name and address</li>
+    </ul>
+    <p>Find out <a href="https://www.citizensadvice.org.uk/debt-and-money/banking/getting-a-bank-account/">how to get a bank account</a> if you do not have one.</p>
+    <p>You'll also need details of the following, if they apply to you:
+     <ul class="govuk-list govuk-list--bullet">
+      <li>current or recent work</li>
+      <li>the date any Statutory Sick Pay ended or will end</li>
+      <li>pensions that you're getting, including proof of any pensions left to you by someone after they died</li>
+      <li>permanent health insurance payments</li>
+     </ul>
+
+    {% from "warning-text/macro.njk" import govukWarningText %}
+
+    {{ govukWarningText({
+    text: "It's not possible to save your answers and come back to them later, so make sure you have these things ready before you start.",
+    iconFallbackText: "Warning"
+    }) }}
+
+     <input type="submit" class="govuk-button" value="Continue" id="submit" a href="condition">
+
+  </div>
+
+</div>
+{% endblock %}

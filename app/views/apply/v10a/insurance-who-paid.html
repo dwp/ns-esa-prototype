@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl" style="display:none">
+          Your permanent health insurance
+    </span>
+
+    <form id="form" method="post" action="insurance-another">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Who set up this insurance?
+          </h1>
+        </legend>
+        <span class="govuk-hint">
+          Select all that apply.
+        </span>
+
+        <div class="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="opt1" name="options" type="checkbox" value="employer">
+            <label class="govuk-label govuk-checkboxes__label" for="opt1">
+              My current employer
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="opt2" name="options" type="checkbox" value="previous-employer">
+            <label class="govuk-label govuk-checkboxes__label" for="opt2">
+              A previous employer
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="opt3" name="options" type="checkbox" value="me">
+            <label class="govuk-label govuk-checkboxes__label" for="opt3">
+              Me
+            </label>
+          </div>
+        </div>
+        
+      </fieldset>
+    </div><!-- govuk-checkboxes -->
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $(document).on('ready',function()
+    {
+      // target the #form element
+      // attached an event listener that runs
+      // a function when the form is submitted
+      $('#form').on('submit', function(e)
+      {
+        // depending on the value="" of the <input>
+        // that's been checked, change the action=""
+        // of the <form> and then allow it to submit
+        $('input[id="opt2"]').prop('checked') && $('#form').attr('action','insurance-premium-half');
+        return true;
+      });
+    });
+  </script>
+{% endblock %}

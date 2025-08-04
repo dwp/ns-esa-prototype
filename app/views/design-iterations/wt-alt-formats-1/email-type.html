@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+   What type of email do you need? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+     text: "Prototype"
+  },
+  html: 'This is a prototype. No data is saved or stored.'
+}) }}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="email-type" method="get">
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "emailPreferences",
+        name: "emailPreferences",
+        fieldset: {
+          legend: {
+            text: "What type of email do you need?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+
+        items: [
+
+
+          {
+            value: "PDF",
+            text: "Attached PDF"
+          },
+
+          {
+            value: "wordDocument",
+            text: "Attached Word Document"
+          }
+
+        ]
+      }) }}
+
+        {{ govukButton({
+              text: "Continue",
+              href: "phone-contact-preference"
+          }) }}
+
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}

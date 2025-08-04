@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="terminallyill">
+
+      {{ govukSelect({
+        id: "more-detail",
+        name: "more-detail",
+        attributes: {
+          "data-source": "true"
+        },
+        label: {
+          text: "What are the names of the conditions or disabilities you have?",
+          isPageHeading: true,
+          classes: "govuk-label govuk-label--xl"
+        },
+        items: conditions
+      }) }}
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

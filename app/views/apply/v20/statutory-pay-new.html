@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Statutory payments - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="statutory-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Are you getting Statutory Sick Pay?
+          </h1>
+        </legend>
+
+     
+        <p>Statutory Sick Pay (SSP) is paid by your employer in the same way as your wages. 
+        </p>
+
+        <p>If you’re not sure, check our information on <a href="https://www.gov.uk/statutory-sick-pay">SSP and eligibility (opens in a new tab).</a></p>
+        <p>You can apply for New Style ESA if you do not get Statutory Sick Pay or it ends in the next 3 months.</p>
+
+        <div class="govuk-radios">
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sap" name="statutory-pay" type="radio" value='yes~/apply/v18/statutory-pay-date'>
+                <label class="govuk-label govuk-radios__label" for="sap">
+                  Yes
+                </label>
+              </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sap" name="statutory-pay" type="radio" value='no~/apply/v18/may-be-eligible'>
+            <label class="govuk-label govuk-radios__label" for="sap">
+              No
+            </label>
+          </div>
+          
+        </div>
+      </fieldset>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+

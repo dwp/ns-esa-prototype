@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Doctor&rsquo;s details - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="live-less-than-6-months">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+      What is the name of your GP surgery or medical centre?
+    </h1>
+
+    <span id="gp-hint" class="govuk-hint">
+      We might need to contact them for more information.
+    </span>
+
+    
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="surgery">
+        Name of GP surgery or medical centre
+      </label>
+      <input class="govuk-input govuk-!-width-one-half" id="surgery" name="surgery" type="text">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-1">
+        Address line 1
+        <span class="govuk-visually-hidden">line 1 of 2</span>
+      </label>
+      <input class="govuk-input govuk-!-width-two-thirds" id="gp-address-line-1" name="gp-address-line-1" type="text">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-2">
+        Address line 2 (optional)
+        <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+      </label>
+      <input class="govuk-input govuk-!-width-two-thirds" id="gp-address-line-2" name="gp-address-line-2" type="text">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-town">
+        Town or city
+      </label>
+      <input class="govuk-input govuk-!-width-one-half" id="gp-address-town" name="gp-address-town" type="text">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-postcode">
+        Postcode
+      </label>
+      <input class="govuk-input govuk-!-width-one-third" id="gp-address-postcode" name="gp-address-postcode" type="text">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="gp-phone">
+      Phone number
+      </label>
+      <input class="govuk-input govuk-!-width-one-half" id="gp-phone" name="gp-phone" type="text">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="gp">
+        Name of your doctor (optional)
+      </label>
+     
+      <input class="govuk-input govuk-!-width-one-half" id="gp" name="gp" type="text">
+    </div>
+
+        
+
+     </fieldset>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

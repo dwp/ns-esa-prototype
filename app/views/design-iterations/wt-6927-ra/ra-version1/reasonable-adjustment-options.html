@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What are your other accessibility needs? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+     text: "Prototype"
+  },
+  html: 'This is a prototype. No data is saved or stored.'
+}) }}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    
+      {% if data['checkanswers']=="visited" %}
+      <form class="form" action="/design-iterations/wt-6927-ra/ra-version1/af-check-answers" method="post">
+      {% else %}
+      <form class="form" action="/design-iterations/wt-6927-ra/ra-version1/after/condition" method="post">
+      {% endif %}
+
+      
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  name: "ra-options",
+  values: data['ra-options'],
+  fieldset: {
+    legend: {
+      text: " What are your other accessibility needs?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Select all that apply"
+  },
+  items: [
+    {
+      value: "A ground floor appointment room or lift access",
+      text: "A ground floor appointment room or lift access"
+    },
+    {
+      value: "Contact by telephone",
+      text: "Contact by telephone"
+    },
+    {
+      value: "Disabled parking",
+      text: "Disabled parking"
+    },
+    {
+      value: "Ramp access to a jobcentre",
+      text: "Ramp access to a jobcentre"
+    },
+    {
+      value: "Someone with you for your appointment",
+      text: "Someone with you for your appointment",
+      hint: {
+        text: "For example a friend or support worker"
+      }
+    },
+       {
+      value: "I need something else",
+      text: "I need something else",
+      hint: {
+        text: "DWP will contact you to discuss your accessibility needs"
+      }
+    },
+    {
+      divider: "or"
+    },
+    {
+      value: "No, I don't have any other accessibility needs",
+      text: "No, I don't have any other accessibility needs",
+      behaviour: "exclusive"
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+     

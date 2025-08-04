@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="expenses">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      Do you get help from a professional support worker at {{ data['employer-details'] | split(',') | last }}?
+    </h1>
+
+    <span  class="govuk-hint">
+    A professional support worker is someone from a public body or voluntary organisation whose job it is to give you ongoing support and supervision to help you stay in work.
+    </span>
+
+    <div class="govuk-form-group">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="terminal-1" name="terminal" type="radio" value="yes" data-aria-controls="yes-changed">
+          <label class="govuk-label govuk-radios__label" for="terminal-1">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="terminal-2" name="terminal" type="radio" value="no" aria-controls="no-reveal">
+          <label class="govuk-label govuk-radios__label" for="terminal-2">
+            No
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="terminal-2" name="terminal" type="radio" value="no" aria-controls="no-reveal">
+          <label class="govuk-label govuk-radios__label" for="terminal-2">
+            I'm not sure
+          </label>
+        </div>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new window)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+    <h1 class="govuk-fieldset__heading">
+      Based on your answers, you may not be eligible for New Style ESA</h1>
+  </legend>
+
+  <p class="govuk-body">You cannot claim New Style ESA if you get or you’re entitled to the severe disability premium.</p>
+
+  <h2 class="govuk-heading-m">What to do next</h2>
+  
+    <p class="govuk-body">Call Jobcentre Plus to check if you’re entitled to the severe disability premium.</p>
+
+    <div class="govuk-inset-text">
+        <h3 class="govuk-heading-s">Jobcentre Plus</h3>
+        <p class="govuk-body">Telephone: 0800 169 0350 (choose option 1)</br>
+        Textphone: 0800 023 4888</br>
+        <a href="https://www.relayuk.bt.com/">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 169 0350</br>
+        <a href="https://dwpesaclaim.signvideo.net/">Video relay service</a> for British Sign Language (BSL) users - <a href="https://www.youtube.com/watch?v=Osx7FFxFpNY">check you can use the service</a></br>
+        Welsh language telephone: 0800 012 1888</br>
+        Monday to Friday, 8am to 6pm</br>
+        <a href="https://www.gov.uk/call-charges">Find out about call charges</a></p>
+      </div>
+
+    <p class="govuk-body">If you’re not entitled to the severe disability premium, then you can apply for New Style ESA.</p>
+    <p class="govuk-body">If you’re entitled to the severe disability premium, you may be able to claim contribution-based or income-related Employment and Support Allowance instead.</p>
+    
+</div>
+
+
+
+    </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

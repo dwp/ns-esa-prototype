@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Voluntary work details - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new window)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="voluntary-work-role">
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+        Voluntary work details
+        </h1>
+        <span id="special-rules-hint" class="govuk-hint">
+        If you volunteer for more than one organisation, you will be asked about the others later.
+        </span>
+
+        <input type="hidden" value="" name="volunteer-details" id="volunteer-details-hidden"/>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="volunteer-details-name">
+          Organisation name
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="volunteer-details-name" name="volunteer-details-1" type="text">
+        </div>
+
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h2 class="govuk-fieldset__heading">
+              Organisation address
+            </h2>
+          </legend>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-1">
+              Building and street
+              <span class="govuk-visually-hidden">line 1 of 2</span>
+            </label>
+            <input class="govuk-input" id="voluntary-address-line-1" name="voluntary-address-line-1" type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-2">
+              <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+            </label>
+            <input class="govuk-input" id="voluntary-address-line-2" name="voluntary-address-line-2" type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-town">
+              Town or city
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="voluntary-address-town" name="voluntary-address-town" type="text">
+          </div>
+
+          {# <div class="govuk-form-group">
+            <label class="govuk-label" for="address-county">
+              County
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+          </div>  #}
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-postcode">
+              Postcode
+            </label>
+            <input class="govuk-input govuk-!-width-one-third" id="voluntary-address-postcode" name="voluntary-address-postcode" type="text">
+          </div>
+
+        </fieldset>
+
+        <input type="submit" class="govuk-button" value="Continue" id="formbutton">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+
+
+{% block pageScripts %}
+<!--
+  Using jQuery to branch the page flow based on which radio buttons are checked.
+-->
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+
+    // grab the existing data from the session (if it is there)
+    var session_data = "{{ data['volunteer-details'] }}" ;
+    // put it in log
+    console.log(session_data);
+
+
+    // whemn button is clicked
+    $('#formbutton').on('click',function(e)
+    {
+      // don't submit the form
+      e.preventDefault();
+      // grab what was typed into the name box.
+      var name = $('#volunteer-details-name').val();
+      // add that to the existing session data
+      var new_session_data = (session_data) ? session_data + ',' + name : name;
+      // put this new data back into the form (hidden)
+      $('#volunteer-details-hidden').val(new_session_data);
+      // submit the form as usual
+      $("#form").submit();
+    })
+  });
+</script>
+
+
+
+{% endblock %}
+

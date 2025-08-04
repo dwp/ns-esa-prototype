@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="insurance-another">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" >
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Insurance payments
+            </h1>
+          </legend>
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-fieldset__heading">
+                How often does {{ data['insurance-providers'] | split(',') | last }} pay you?
+              </h2>
+            </legend>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-often-paid-1" name="how-often-paid"" type="radio" value="daily">
+                <label class="govuk-label govuk-radios__label" for="how-often-paid-1">
+                  Daily
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-often-paid-2" name="how-often-paid" type="radio" value="weekly">
+                <label class="govuk-label govuk-radios__label" for="how-often-paid-2">
+                  Weekly
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-often-paid-3" name="how-often-paid" type="radio" value="2-weekly">
+                <label class="govuk-label govuk-radios__label" for="how-often-paid-3">
+                  Every 2 weeks
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-often-paid-4" name="how-often-paid" type="radio" value="4-weekly">
+                <label class="govuk-label govuk-radios__label" for="how-often-paid-4">
+                  Every 4 weeks
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-often-paid-5" name="how-often-paid" type="radio" value="monthly">
+                <label class="govuk-label govuk-radios__label" for="how-often-paid-5">
+                  Monthly
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-often-paid-6" name="how-often-paid" type="radio" value="quarterly">
+                <label class="govuk-label govuk-radios__label" for="how-often-paid-6">
+                  Quarterly
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-often-paid-7" name="how-often-paid" type="radio" value="6-monthly">
+                <label class="govuk-label govuk-radios__label" for="how-often-paid-7">
+                  Every 6 months
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-often-paid-8" name="how-often-paid" type="radio" value="annually">
+                <label class="govuk-label govuk-radios__label" for="how-often-paid-4">
+                  Annually
+                </label>
+              </div>
+
+            </div> <!-- govuk-radios -->
+
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-padding-top-6">
+              <h2 class="govuk-fieldset__heading">
+                How much do you get paid by {{ data['insurance-providers'] | split(',') | last }}?
+              </h2>
+            </legend>
+            <div class="govuk-currency-input">
+                <label class="govuk-label" for="event-name">
+                   This is the exact amount that is paid into your bank account.
+                </label>
+                <div class="govuk-currency-input__inner">
+                  <span class="govuk-currency-input__inner__unit govuk-body">£</span>
+                  <input class="govuk-!-width-two-thirds govuk-currency-input__inner__input govuk-input" aria-label="Enter amount in pounds" name="current-employment--weekly-net" data-non-numeric="" type="number" id="current-employment--weekly-net" pattern="[0-9]\d*(\.\d+)?" value="">
+                </div>
+            </div> <!-- govuk-currency-input -->
+
+
+
+
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

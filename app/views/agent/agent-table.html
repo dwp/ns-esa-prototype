@@ -1,0 +1,50 @@
+{% extends "layout-agent.html" %}
+
+{% block beforeContent %}
+
+<a href="agent-start" class="govuk-back-link">Back to search</a>
+
+{% endblock %}
+
+{% block content %}
+
+<table class="govuk-table">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4" tabindex="0">
+      Search results for AA112233C
+    </h1>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Name</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+        <th scope="col" class="govuk-table__header">Special rules</th>
+        <th scope="col" class="govuk-table__header">Application submitted</th>
+        <th scope="col" class="govuk-table__header" aria-label="Action"></th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row"> 
+        <th scope="row" class="govuk-table__header"><span style="font-weight:normal">John Robins</span></th>
+        <td class="govuk-table__cell"><strong class="govuk-tag">
+          VERIFIED
+        </strong></td>
+        <td class="govuk-table__cell">Yes</td>
+        <td class="govuk-table__cell">02 February 2023, 11:46am</td>
+        <td class="govuk-table__cell"><a href="agent-claim" aria-label="View claim for Row 1">View claim</a></td>
+      </tr>
+      <tr class="govuk-table__row"> 
+        <th scope="row" class="govuk-table__header"><span style="font-weight:normal">John Robins</span></th>
+        <td class="govuk-table__cell"><strong class="govuk-tag">
+          VERIFIED
+        </strong></td></td>
+        <td class="govuk-table__cell">Yes</td>
+        <td class="govuk-table__cell">02 February 2023, 11:50am</td>
+        <td class="govuk-table__cell"><a href="agent-claim2" aria-label="View claim for Row 2">View claim</a></td>
+
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,171 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Paid work details - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="worksick">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+        {% if (data['employment-status'] == "Self-employed") %}
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+          Tell us about your self-employment
+        </h1>
+      {% else %}
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+        Tell us about your job
+        </h1>
+      {% endif %}
+      
+      <span id="special-rules-hint" class="govuk-hint">
+        If you have more than one job, we will ask about your other jobs later.
+      </span>
+
+      <input type="hidden" value="" name="employer-details" id="employer-details-hidden"/>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="job-title">
+        Job title
+        </label>
+        <input class="govuk-input govuk-!-width-one-half" id="job-title" name="job-title" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        {% if (data['employment-status'] == "Self-employed") %}
+        <label class="govuk-label" for="employer-details-name">
+       Name of business (optional)
+        </label>
+        {% else %}
+        <label class="govuk-label" for="employer-details-name">
+        Name of employer
+        </label>
+        {% endif %}
+        <input class="govuk-input govuk-!-width-one-half" id="employer-details-name" name="employer-details-1" type="text">
+      </div>
+
+     
+
+      <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+      {% if (data['employment-status'] == "Self-employed") %}  
+        <h2 class="govuk-fieldset__heading">
+          Business address
+        </h2>
+      {% else %}
+    
+      {% endif %}
+      </legend>
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+        {% if (data['employment-status'] == "Self-employed") %}  
+          <h2 class="govuk-fieldset__heading">
+            Business address
+          </h2>
+        {% else %}
+          <h2 class="govuk-fieldset__heading">
+            Employer address
+          </h2>
+        {% endif %}
+        </legend>
+      
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-line-1">
+          Address line 1
+          <span class="govuk-visually-hidden">line 1 of 2</span>
+        </label>
+        <input class="govuk-input" id="employer-address-line-1" name="employer-address-line-1" type="text">
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-line-2">
+          Address line 2 (optional)
+          <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+        </label>
+        <input class="govuk-input" id="employer-address-line-2" name="employer-address-line-2" type="text">
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-town">
+          Town or city
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="employer-address-town" name="employer-address-town" type="text">
+      </div>
+
+      
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-postcode">
+          Postcode
+        </label>
+        <input class="govuk-input govuk-!-width-one-third" id="employer-address-postcode" name="employer-address-postcode" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="telephone">
+        Phone number
+        </label>
+        <input class="govuk-input govuk-!-width-one-half" id="telephone" name="employer-telephone" type="text">
+      </div>
+
+  </fieldset>
+    </fieldset>
+
+        <input type="submit" class="govuk-button" value="Continue" id="formbutton">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+
+
+{% block pageScripts %}
+<!--
+  Using jQuery to branch the page flow based on which radio buttons are checked.
+-->
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    // grab the existing data from the session (if it is there)
+    var session_data = "{{ data['employer-details'] }}" ;
+    // put it in log
+    console.log(session_data);
+
+
+    // whemn button is clicked
+    $('#formbutton').on('click',function(e) {
+      // don't submit the form
+      e.preventDefault();
+      // grab what was typed into the name box.
+      var name = $('#employer-details-name').val();
+      // add that to the existing session data
+      var new_session_data = (session_data) ? session_data + ',' + name : name;
+      // put this new data back into the form (hidden)
+      $('#employer-details-hidden').val(new_session_data);
+      // submit the form as usual
+      $("#form").submit();
+    })
+  });
+</script>
+
+
+
+{% endblock %}

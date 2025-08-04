@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new window)</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post">
+
+
+    <fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <h1 class="govuk-fieldset__heading">
+      Based on your answers, you may not be eligible for New Style ESA payments</h1>
+  </legend>
+
+  <p>If you’ve not made enough National Insurance contributions over the last 2 to 3 years, you may not be eligible to get New Style ESA payments. But you may be able to get <a href="https://www.gov.uk/national-insurance-credits" class="govuk-link" rel="noreferrer noopener" target="_blank">National Insurance credits (opens in a new window)</a>.</p>
+  
+  <p>New Style ESA gives you Class 1 credits, which can help to fill gaps in your National Insurance record and may help you qualify for certain benefits, including New Style Jobseeker’s Allowance and the State Pension.</p>
+  
+  <p>If you’re on a low income or out of work, you can check if you’re eligible for Universal Credit. This will give you a regular payment and Class 3 credits. They count towards your State Pension only.</p>
+
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h2 class="govuk-fieldset__heading">
+          What do you want to do?</h2>
+      </legend>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="apply-for-uc-2" name="apply-for-uc" type="radio" value='no~/apply/live/statutory-pay'>
+        <label class="govuk-label govuk-radios__label" for="apply-for-uc-2">
+          Continue to apply for New Style ESA
+        </label>
+        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">I understand that I might not get a payment, but I may get Class 1 National Insurance credits.</div>
+      </div>
+      
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="apply-for-uc-1" name="apply-for-uc" type="radio" value='yes~https://www.gov.uk/universal-credit/' data-aria-controls="yes-cond">
+          <label class="govuk-label govuk-radios__label" for="apply-for-uc-1">
+            Apply for Universal Credit
+          </label>
+          <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">I understand that if I’m eligible for Universal Credit, it will give me Class 3 National Insurance credits.
+          </div>
+        </div>
+        
+      </div>
+    </fieldset>
+  </div>
+
+  <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+  </form>
+
+</div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
+

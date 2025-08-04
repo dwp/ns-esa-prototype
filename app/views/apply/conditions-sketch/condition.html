@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">About your health condition, illness, disability or injury</h1>
+
+    
+
+    <form action="#" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="passport-number">
+          Name of condition
+        </label>
+        <p id="passport-number-hint" >Put what’s on your current fit note (you might call this a ‘sick note’), if you have one.</p>
+        <p class="govuk-hint">If you have more than one, you will be asked about others later.</p>
+        <input class="govuk-input govuk-input--width-40" id="passport-number" name="passport-number" type="text" aria-describedby="passport-number-hint">
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="expiry-hint" role="group">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            When it first started
+          </legend>
+          <p>If you don’t know the exact date, you can give an estimate.</p>
+          <span id="expiry-hint" class="govuk-hint">
+            For example, 30 3 1997.
+          </span>
+          <div class="govuk-date-input" id="expiry">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="expiry-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-day" name="expiry-day" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="expiry-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-month" name="expiry-month" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="expiry-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="expiry-year" name="expiry-year" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+
+{% endblock %}

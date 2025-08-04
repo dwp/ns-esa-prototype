@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl" style="display:none">
+      Your permanent health insurance
+    </span>
+
+     <form id="form" method="post" action="insurance-who-paid">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      Insurance policy details
+    </h1>
+     {% include "includes/non-mandatory-message.html" %}
+    <span id="special-rules-hint" class="govuk-hint">
+      If you have more than one policy, you’ll be asked about your other policies later in this form.
+    </span>
+
+    <input type="hidden" value="" name="insurance-providers" id="insurance-provider-hidden"/>
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="insurance-provider-name">
+            Insurance provider
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="insurance-provider-name" name="insurance-provider-1" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="surgery">
+            Insurance reference number
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="surgery" name="surgery" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="surgery">
+            Insurance provider telephone number
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="surgery" name="surgery" type="text">
+        </div>
+
+        <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h2 class="govuk-fieldset__heading">
+            Insurance provider address
+          </h2>
+        </legend>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Building and street
+            <span class="govuk-visually-hidden">line 1 of 2</span>
+          </label>
+          <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-2">
+            <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+          </label>
+          <input class="govuk-input" id="address-line-2" name="address-line-2" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-town">
+            Town or city
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            Postcode
+          </label>
+          <span id="event-name-hint" class="govuk-hint">
+            If the address is outside the UK and does not have a postcode you can enter the province, state or department.
+          </span>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
+        </div>
+
+     <!-- <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            Country (if outside the UK)
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
+        </div> -->
+
+    </fieldset>
+  
+    <input type="submit" class="govuk-button" value="Continue" id="formbutton"><!-- insurnace-premium-half-1 -->
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+
+
+{% endblock %}
+
+
+{% block pageScripts %}
+<!--
+  Using jQuery to branch the page flow based on which radio buttons are checked.
+-->
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+
+    // grab the existing data from the session (if it is there)
+    var session_data = "{{ data['insurance-providers'] }}" ; // "name" of hidden input
+    // put it in log
+    console.log(session_data);
+
+
+    // whemn button is clicked
+    $('#formbutton').on('click',function(e)
+    {
+      // don't submit the form
+      e.preventDefault();
+      // grab what was typed into the name box.
+      var name = $('#insurance-provider-name').val(); // "id" of temp input
+      // add that to the existing session data
+      var new_session_data = (session_data) ? session_data + ',' + name : name;
+
+      console.log(new_session_data)
+      // put this new data back into the form (hidden)
+      $('#insurance-provider-hidden').val(new_session_data); // "id" of hidden input
+      // submit the form as usual
+      $("#form").submit();
+    })
+  });
+</script>
+
+
+
+{% endblock %}

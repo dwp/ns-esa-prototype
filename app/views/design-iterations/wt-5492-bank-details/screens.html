@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Version 1.1: Bank details CYA – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Bank details on the check answers page</h1>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Problem
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          The current ‘Check your answers’ page does not display the bank details that the claimant has entered earlier in the claim form.
+          <br>This change aims to ensure that the bank details are displayed on the ‘Check your answers’ page.
+          <br><strong>Note: </strong> The bank details page is mandatory so claimants must provide answers.
+          </ul>
+        </div>
+      </details>
+
+      <h2 class="govuk-heading-m">Sample Check your answers pages:</h2>
+      <p class="govuk-body"><a class="govuk-link" href="/design-iterations/wt-5492-bank-details/bank-check-answers?roll-number=yes">Check your answers: Full bank details</a></p>
+      <p class="govuk-body"><a class="govuk-link" href="/design-iterations/wt-5492-bank-details/bank-check-answers?roll-number=no">Check your answers: Bank details without building society roll number</a></p>
+    </div>
+  </div>
+
+{% endblock %}

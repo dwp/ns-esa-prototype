@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="pension-inherited">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <span class="govuk-caption-l">Part 4 of 6: Pensions and insurance</span>
+          <h1 class="govuk-fieldset__heading">
+            Does any money get deducted from your {{ data['pension-provider'] | split(',') | last }} pension, such as tax or charity donations?
+          </h1>
+        </legend>
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="pension-deductions-yes" name="pension-deductions" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="pension-deductions-yes">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="pension-deductions-no" name="pension-deductions" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="pension-deductions-no">
+              No
+            </label>
+          </div>
+      </fieldset>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+  {% endblock %}
+
+  {% block pageScripts %}
+  <!--
+  Using jQuery to branch the page flow based on which radio buttons are checked.
+  -->
+  <script type="text/javascript">
+    $(document).on('ready',function()
+    {
+      // target the #form element
+      // attached an event listener that runs
+      // a function when the form is submitted
+      $('#form').on('submit', function(e)
+      {
+        // depending on the value="" of the <input>
+        // that's been checked, change the action=""
+        // of the <form> and then allow it to submit.
+        switch($('input[name="pension-deductions"]:checked').val())
+        {
+          case 'yes':
+            $('#form').attr('action','pension-amount-deductions');
+            break;
+          case 'no':
+            $('#form').attr('action','pension-amount');
+            break;
+          // if nothing is ticked don't submit the form.
+          default: return false; break;
+        }
+        // returning 'true' allows the form to submit
+        // after we're finished with the above.
+        return true;
+      });
+    });
+  </script>
+  {% endblock %}

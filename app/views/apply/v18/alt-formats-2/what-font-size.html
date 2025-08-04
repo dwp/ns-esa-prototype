@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What size large print do you need? - Apply for New Style Employment and Support
+Allowance - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us
+      to improve it.
+    </span>
+  </p>
+</div>
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+        <form id="form" method="post" action="address">
+    
+          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+            What font size do you need?
+          </h1>
+          <p>For example, font size 26</p>
+      
+          <div class="govuk-form-group">
+            <input class="govuk-input govuk-input--width-2" id="national-insurance-number" name="national-insurance-number" type="text" aria-describedby="national-insurance-number-hint">
+          </div>
+    
+         
+    
+          <input type="submit" class="govuk-button" value="Continue" id="submit">
+    
+        </form>
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="pension-frequency">		
+
+
+		<div class="govuk-form-group">
+		  <fieldset class="govuk-fieldset" aria-describedby="pension-start-hint" role="group">
+		    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+		      <h1 class="govuk-fieldset__heading">
+		        When did your pension from {{ data['pension-provider'] | split(',') | last }} start?
+		      </h1>
+		    </legend>
+		    <span id="pension-start-hint" class="govuk-hint">
+		      For example, 29&nbsp;1&nbsp;2019
+		    </span>
+		    <div class="govuk-date-input" id="pension-start">
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="pension-start-day">
+		            Day
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="pension-start-day" name="pension-start-day" type="text" pattern="[0-9]*" maxlength="2">
+		        </div>
+		      </div>
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="pension-start-month">
+		            Month
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="pension-start-month" name="pension-start-month" type="text" pattern="[0-9]*" maxlength="2">
+		        </div>
+		      </div>
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="pension-start-year">
+		            Year
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="pension-start-year" name="pension-start-year" type="text" pattern="[0-9]*" maxlength="4">
+		        </div>
+		      </div>
+		    </div>
+		  </fieldset>
+		</div>
+
+		<input type="submit" class="govuk-button" value="Continue" id="submit">
+
+		{% include "apply/v9/pension/_return-link.html" %}	
+
+ 	</form>
+
+ </div>
+</div> 	
+
+{% endblock %}

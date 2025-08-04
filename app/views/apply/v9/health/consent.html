@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="voluntary-work">
+
+      <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Do you agree that your doctor can share relevant information about your health condition to support your claim?
+      </h1>
+    </legend>
+    <p>The Department for Work and Pensions (DWP), or healthcare professionals approved by their <a href="https://www.gov.uk/government/ministers/secretary-of-state-for-work-and-pensions">Secretary of State</a>, may need more information or evidence to process and make a decision on your claim.
+    </p>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-1" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-1-item-hint">
+        <label class="govuk-label govuk-radios__label govuk-label--s" for="sign-in-1">
+          Yes, I agree
+        </label>
+        <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">
+          Your doctor can give us relevant information and evidence in support of your claim. DWP will collect and store your consent on their behalf.
+        </span>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label govuk-label--s" for="sign-in-2">
+          No, I do not agree
+        </label>
+        <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">
+          DWP will make a decision on your claim using the information they have already.
+        </span>
+      </div>
+    </div>
+  </fieldset>
+</div>
+  <h2 class="govuk-heading-m">How DWP uses this information</h2>
+  <p>DWP needs information about your health condition and how it affects you. This is to help them decide whether you are able to work or if you can get Employment and Support Allowance.</p>
+  <p>If you agree, your doctor will know they are legally allowed to share this information.</p>
+  <p>The law allows DWP to get, keep, and use this information for the purpose of processing and making a decision on your claim and on any mandatory reconsideration or appeal that you've made.</p>
+  <h2 class="govuk-heading-m">If you change your mind</h2>
+  <p>You can change your mind at any time. If you do, DWP will not ask your doctor to share any more information.</p>
+  <p>Call 0800 169 0310 and say you want to give or withdraw your consent.</p>
+
+  <a href="checkanswers" class="govuk-button">I’ve read and understood</a>
+
+  {% include "apply/v9/health/_return-link.html" %}
+
+    </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

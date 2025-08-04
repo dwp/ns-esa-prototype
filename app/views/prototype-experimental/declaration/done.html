@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        Application complete
+      </h1>
+      <div class="govuk-panel__body">
+        Your reference number is your National Insurance number
+<!--        Your reference number:<br><strong>{{ data['national-insurance-number']  | default("AB 00 12 34 C") }}</strong> -->
+      </div>
+    </div>
+
+  </div> 
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body">You cannot come back to this page later. Download or print it to save the information.</p>
+    </br>
+    <p class="govuk-body govuk-!-font-weight-bold"><a href="https://www.gov.uk/send-fit-note" target="_blank">Download this page</a></p>
+    <p class="govuk-body govuk-!-font-weight-bold"><a href="https://www.gov.uk/send-fit-note" target="_blank">Print this page</a></p></br>
+
+    <h2 class="govuk-heading-l">What happens next</h2>
+    <h2 class="govuk-heading-m">Send us medical evidence to support your application</h2>
+
+    {# BAU Evidence #}
+
+    <p class="govuk-body">You can self-certify for the first 7 days of your claim but after that you need to send us medical evidence. You've asked for your claim to start from ((claim start date)), so you need to provide medical evidence dated from ((claim start date + 7)) onwards.</p>
+    <p class="govuk-body">You can send us a fit note (also called a sick note or a statement of fitness for work) using the <a href="https://www.gov.uk/send-fit-note" target="_blank">Send Your Fit Note service (opens in new tab).</a></p>
+      </br>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Send us another type of medical evidence
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">As well as fit notes, we also accept these medical certificates:</p>
+    
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Med10 (if you're in hospital for treatment that lasts more than 7 days)</li>
+          <li>MATB1 (if you're pregnant but cannot get Statutory Maternity Pay or Maternity Allowance)</li>
+          <li>CF73 (if you've been admitted to a psychiatric hospital)</li>
+          <li>SR1 (a form completed and sent to us by a doctor, consultant or specialist nurse. This has replaced the DS1500 form)</li>
+        </ul>
+
+        <p class="govuk-body">Other forms of evidence might include a doctor's statement, consultant's report or Local Authority notice. </p>
+        <p class="govuk-body">Send your medical evidence to:</p>
+        <p class="govuk-body govuk-!-font-weight-bold">Freepost DWP ESA 26</p>
+
+      </div>
+    </details>
+    <p class="govuk-body">Medical evidence always needs to be in date. When your fit note or certificate expires, you need to get and send us a new one. We will tell you when you can stop sending it.</p>
+
+
+    <h2 class="govuk-heading-m">Claimant Commitment appointment</h2>
+
+    <p class="govuk-body">We will aim to contact you by ((contact date)) to book your 'Claimant Commitment' appointment. This is usually held over the phone.</p>
+
+    <p class="govuk-body">During this appointment we will ask you to:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>confirm your identity</li>
+      <li>agree to tell us if your circumstances change</li>
+      <li>accept an agreement that sets out what you can expect of us, and what we expect of you. This is called a Claimant Commitment</li>
+      
+    </ul>
+
+    <p class="govuk-body">We may also ask some questions about your health to help us understand your situation. You will not need to give us a detailed medical history at this appointment. We will ask for this at a later stage.</p>
+
+    <p class="govuk-body">You need to complete this appointment before you can get New Style ESA.</p>
+
+
+
+    <h3 class="govuk-heading-m">Report a change of circumstances</h3>
+    <p class="govuk-body">If your circumstances change, for example  you change your address, you need to <a href="" class="govuk-link" target="_blank">let us know (opens in a new tab).</a></p>
+<br>
+   <p><a href="" class="govuk-link" target="_blank">Learn more about the claim process</a></p><br>
+
+   
+<!--
+    <h3 class="govuk-heading-m">Give us your feedback</h3>
+
+    <p class="govuk-body"><a href="feedback.html" class="govuk-link" rel="noreferrer noopener" target="_blank">What did
+        you think of this service? (opens in a new window)</a>. It takes 30 seconds.</p>
+    <p class="govuk-body">Volunteer to<a href="https://getinvolved.dwp.gov.uk/digital/f56c176f" class="govuk-link"
+        rel="noreferrer noopener" target="_blank"> take part in research (opens in a new window)</a> to help improve
+      this service.
+
+
+    <p><a href="https://www.gov.uk/employment-support-allowance/your-esa-claim" class="govuk-button">Finish</a></p>
+
+
+
+-->
+
+
+
+
+
+
+
+
+    
+
+  
+
+
+
+    
+
+
+   
+
+
+
+    
+    
+
+    
+  </div>
+  {% endblock %}

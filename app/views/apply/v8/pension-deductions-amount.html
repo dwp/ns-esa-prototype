@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="pension-inherited">
+
+    <div class="govuk-form-group">
+      <h1 class="govuk-heading-xl">
+        Give details of all deductions from your last {{ data['pension-provider'] | split(',') | last }} pension payment?
+      </h1>
+  
+      {% for i in range(0, 20) %}
+      <div id="block-{{ i }}" class="{{ 'additional' if i != 0 }}">
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-width-one-half" for="pension-amount-{{i}}">
+            Deduction amount
+          </label>
+          <div class="govuk-currency-input">
+            <div class="govuk-currency-input__inner">
+              <span class="govuk-currency-input__inner__unit govuk-body">£</span>
+              <input class="govuk-!-width-two-thirds govuk-currency-input__inner__input govuk-input govuk-input--width-10" aria-label="Enter amount in pounds" name="pension-amount-{{i}}" data-non-numeric="" type="number" id="pension-amount-{{i}}" pattern="[0-9]\d*(\.\d+)?" value="">
+            </div><!-- govuk-currency-input__inner -->
+          </div><!-- govuk-currency-input -->
+        </div> <!-- govuk-form-group -->
+
+        <div class="govuk-form-group govuk-!-margin-bottom-4">
+          <label class="govuk-label govuk-!-width-one-half" for="deductions-{{i}}">
+            What's it for?
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="deductions-{{i}}" name="deductions-{{i}}" type="text">
+        </div>
+      
+        {% if i != 0 %}<p><a data-index="{{ i }}" href="#" class="govuk-link remove hidden">Remove</a></p>{% endif %}
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </div>
+      {% endfor %}
+      <p><a id="add-another" href="#" class="govuk-link hidden">Add another deduction</a></p>
+    </div> <!-- from-group -->
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
+<script>
+Array.prototype.slice.call(document.querySelectorAll('.hidden')).forEach(function(e) {
+  e.classList.remove('hidden');
+})
+Array.prototype.slice.call(document.querySelectorAll('.fallback, .js-hidden, .additional')).forEach(function(e) {
+  e.classList.add('hidden');
+})
+
+window.onload = function() {
+  var visible = 1;
+  document.querySelector('#add-another').addEventListener('click', function(e){
+    e.preventDefault();
+    document.querySelector('#block-'+visible).classList.remove('hidden');
+    visible++;
+    this.blur();
+    if(visible == 12) this.classList.add('hidden');
+  });
+
+  Array.prototype.slice.call(document.querySelectorAll('.remove')).forEach(function(r){
+    r.addEventListener('click', function(e){
+      e.preventDefault();
+      visible--;
+      this.blur();
+      var values = $('.additional').map(function(a){
+        return {
+          amount: $('#pension-amount-'+(a+1)).val(),
+          what: $('#deductions-'+(a+1)).val()
+        }
+      })
+      values.splice(this.getAttribute('data-index')-1, 1)
+      for (var i = 1; i <= $('.additional').length; i++) {
+        $('#pension-amount-'+i).val((values[i-1] ? values[i-1].amount : ''));
+        $('#deductions-'+i).val((values[i-1] ? values[i-1].what : ''));
+        if(i > visible-1) document.querySelector('#block-'+i).classList.add('hidden');
+      }
+      values = [];
+      document.querySelector('#add-another').classList.remove('hidden');
+    });
+  });
+}
+</script>
+{% endblock %}
